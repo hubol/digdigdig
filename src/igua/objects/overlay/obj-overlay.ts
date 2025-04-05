@@ -20,7 +20,7 @@ function objReadingBook() {
 
     const methods = {
         show(message: string) {
-            textObj.text = message.toUpperCase();
+            textObj.text = message;
             obj.visible = true;
         },
         hide() {
