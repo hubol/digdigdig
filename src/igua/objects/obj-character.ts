@@ -1,8 +1,10 @@
 import { Graphics, Sprite } from "pixi.js";
 import { Tx } from "../../assets/textures";
 import { approachLinear } from "../../lib/math/number";
+import { RgbInt } from "../../lib/math/number-alias-types";
 import { Rng } from "../../lib/math/rng";
 import { container } from "../../lib/pixi/container";
+import { MapRgbFilter } from "../../lib/pixi/filters/map-rgb-filter";
 
 const [
     txHead,
@@ -17,7 +19,13 @@ const [
 
 type FacingDirection = "north" | "east" | "south" | "west";
 
-export function objCharacter() {
+interface ObjCharacterArgs {
+    tint0: RgbInt;
+    tint1: RgbInt;
+    tint2: RgbInt;
+}
+
+export function objCharacter(args: ObjCharacterArgs) {
     const controls = {
         facingDirection: <FacingDirection> "south",
         pedometer: 0,
@@ -84,5 +92,6 @@ export function objCharacter() {
     );
 
     return container(lowerBodyObj, headObj)
-        .merge({ controls });
+        .merge({ controls })
+        .filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff));
 }

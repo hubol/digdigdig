@@ -1,11 +1,13 @@
+import { Rng } from "../../lib/math/rng";
 import { vnew } from "../../lib/math/vector-type";
 import { Key } from "../globals";
 import { objCharacter } from "./obj-character";
+import { generateNpcTints } from "./obj-npc";
 
 const v = vnew();
 
 export function objPlayer() {
-    return objCharacter()
+    return objCharacter(generateNpcTints(Rng.int(10_000_000, 420_000_000)))
         .step(self => {
             v.at(0, 0);
             if (Key.isDown("ArrowUp")) {
