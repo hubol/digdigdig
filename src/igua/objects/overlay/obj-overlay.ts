@@ -13,11 +13,14 @@ export function objOverlay() {
 }
 
 function objReadingBook() {
-    const textObj = objText.Large("", { tint: 0xA0A070, align: "center" }).anchored(0.5, 0.5).at(242, 50);
+    const textObj = objText.LargeNusty("", { tint: 0xA0A070, align: "center", maxWidth: 430 }).anchored(0.5, 0.5).at(
+        242,
+        50,
+    );
 
     const methods = {
         show(message: string) {
-            textObj.text = message;
+            textObj.text = message.toUpperCase();
             obj.visible = true;
         },
         hide() {

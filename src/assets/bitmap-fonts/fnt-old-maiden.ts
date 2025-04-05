@@ -1,0 +1,38 @@
+import { createBitmapFont } from "../../lib/pixi/create-bitmap-font";
+import { Tx } from "../textures";
+
+export const fntOldMaiden = createBitmapFont(Tx.Font.OldMaiden, {
+    name: "Old Maiden",
+    size: 23,
+    lineHeight: 27,
+    characters: {
+        " ": { x: 0, y: 0, w: 0, h: 0, xadv: 7, yoff: 0 },
+        A: { x: 6, y: 7, w: 19, h: 23, xadv: 20 },
+        B: { x: 28, y: 7, w: 13, h: 23, xadv: 14 },
+        C: { x: 44, y: 7, w: 14, h: 22, xadv: 15 },
+        D: { x: 62, y: 7, w: 14, h: 23, xadv: 15 },
+        E: { x: 79, y: 7, w: 11, h: 23, xadv: 12 },
+        F: { x: 92, y: 7, w: 11, h: 23, xadv: 12 },
+        G: { x: 104, y: 7, w: 16, h: 23, xadv: 17 },
+        H: { x: 122, y: 7, w: 14, h: 23, xadv: 15 },
+        I: { x: 139, y: 7, w: 7, h: 23, xadv: 8 },
+        J: { x: 148, y: 7, w: 17, h: 23, xadv: 18 },
+        K: { x: 167, y: 7, w: 14, h: 23, xadv: 15 },
+        L: { x: 185, y: 7, w: 12, h: 24, xadv: 13 },
+        M: { x: 200, y: 7, w: 16, h: 23, xadv: 17 },
+        N: { x: 220, y: 7, w: 14, h: 23, xadv: 15 },
+        O: { x: 239, y: 6, w: 16, h: 24, xadv: 17 },
+        P: { x: 258, y: 7, w: 13, h: 23, xadv: 14 },
+        Q: { x: 276, y: 7, w: 19, h: 26, xadv: 20 },
+        R: { x: 8, y: 43, w: 14, h: 24, xadv: 15 },
+        S: { x: 23, y: 42, w: 13, h: 24, xadv: 14 },
+        T: { x: 40, y: 43, w: 15, h: 23, xadv: 16 },
+        U: { x: 59, y: 43, w: 15, h: 23, xadv: 16 },
+        V: { x: 78, y: 43, w: 17, h: 23, xadv: 18 },
+        W: { x: 99, y: 43, w: 22, h: 24, xadv: 23 },
+        X: { x: 123, y: 42, w: 15, h: 24, xadv: 16 },
+        Y: { x: 144, y: 43, w: 12, h: 23, xadv: 13 },
+        Z: { x: 165, y: 43, w: 18, h: 23, xadv: 19 },
+    },
+    kernings: [["P", "A", -2], ["T", "A", -3], ["R", "T", -2], ["A", "W", -3]],
+});
