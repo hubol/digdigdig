@@ -131,7 +131,13 @@ function objDrawnLine() {
             const radius = Math.min(analysis.radius, maxRadius);
 
             const previousPositions = positions.map(({ x, y }) => ({ x, y }));
-            const targetPositions = getTargetPositions(positions, origin, radius);
+            const targetPositions = getTargetPositionsOrReject(positions, origin, radius);
+
+            if (targetPositions === null) {
+                // TODO reject sfx
+                obj.destroy();
+                return;
+            }
 
             const finishState = {
                 factor: 0,
@@ -198,24 +204,48 @@ function analyzePositions(positions: VectorSimple[]) {
     };
 }
 
-function getTargetPositions(positions: VectorSimple[], origin: VectorSimple, radius: number) {
+function getTargetPositionsOrReject(positions: VectorSimple[], origin: VectorSimple, radius: number) {
     const targetPositions: VectorSimple[] = [];
+
+    let north = false;
+    let east = false;
+    let south = false;
+    let west = false;
 
     for (const position of positions) {
         v.at(position).add(origin, -1).normalize();
-        const targetPosition = vnew(origin);
+        const targetPosition = vnew();
         if (Math.abs(v.x) > 0.5) {
-            targetPosition.x += radius * Math.sign(v.x);
-            targetPosition.y += radius * Math.min(1, Math.abs(v.y * 1.3)) * Math.sign(v.y);
+            targetPosition.x = Math.sign(v.x);
+            targetPosition.y = Math.min(1, Math.abs(v.y * 1.3)) * Math.sign(v.y);
         }
         else {
-            targetPosition.x += radius * Math.min(1, Math.abs(v.x * 1.3)) * Math.sign(v.x);
-            targetPosition.y += radius * Math.sign(v.y);
+            targetPosition.x = Math.min(1, Math.abs(v.x * 1.3)) * Math.sign(v.x);
+            targetPosition.y = Math.sign(v.y);
         }
+
+        if (targetPosition.y === -1) {
+            north = true;
+        }
+        else if (targetPosition.x === 1) {
+            east = true;
+        }
+        else if (targetPosition.y === 1) {
+            south = true;
+        }
+        else if (targetPosition.x === -1) {
+            west = true;
+        }
+
+        targetPosition.scale(radius).add(origin);
         targetPositions.push(targetPosition);
     }
 
-    return targetPositions;
+    if (north && east && south && west) {
+        return targetPositions;
+    }
+
+    return null;
 }
 
 type ObjDrawnLine = ReturnType<typeof objDrawnLine>;
