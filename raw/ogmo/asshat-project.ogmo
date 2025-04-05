@@ -269,7 +269,7 @@
         {"name": "depth", "definition": "Integer", "display": 0, "defaults": 0, "bounded": false, "min": -500, "max": 0}
       ],
       "isRegion": true,
-      "tintable": {"enabled": true, "defaultTint": "#00ff00", "rgbLevelValueName": "", "useDefaultTint": true},
+      "tintable": {"enabled": true, "defaultTint": "#00ff00", "rgbLevelValueName": null, "useDefaultTint": true},
       "texture": "preview-images/region.png",
       "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABPSURBVFhH7dcxCgAgDATB0/WSOKQuxzzS4Ipsq0aZJGPFsb4CLE9gdYv8rOzgyoYtydfc++AAAAAAAAAAAAAAAAACBfRnV9p5mjC7AlTcXvEDMTrZ50AAAAAElFTkSuQmCC"
     },
@@ -344,8 +344,8 @@
       "resizeableY": false,
       "rotatable": false,
       "rotationDegrees": 360,
-      "canFlipX": false,
-      "canFlipY": false,
+      "canFlipX": true,
+      "canFlipY": true,
       "flipOnlyScales": false,
       "canSetColor": false,
       "hasNodes": false,

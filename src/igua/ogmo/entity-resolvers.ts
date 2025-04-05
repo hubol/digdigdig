@@ -12,7 +12,7 @@ export const OgmoEntityResolvers = {
     "Marker": objMarker,
     "Region": () => new Graphics().beginFill(0x00ff00).drawRect(0, 0, 1, 1).invisible(),
     Book: (e) => objBook(e.values.message),
-    Acre: objAcre,
+    Acre: (e) => objAcre({ x: e.x, y: e.y }).pivoted(250, 140).at(250, 140),
 } satisfies {
     [TName in OgmoProject.Entities.Names]: (e: OgmoFactory.Entity<TName>) => unknown;
 };
