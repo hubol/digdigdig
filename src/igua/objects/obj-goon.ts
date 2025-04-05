@@ -2,7 +2,7 @@ import { Graphics, Sprite } from "pixi.js";
 import { Tx } from "../../assets/textures";
 import { Coro } from "../../lib/game-engine/routines/coro";
 import { holdf } from "../../lib/game-engine/routines/hold";
-import { interp } from "../../lib/game-engine/routines/interp";
+import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
 import { sleep } from "../../lib/game-engine/routines/sleep";
 import { PolarInt } from "../../lib/math/number-alias-types";
 import { Rng } from "../../lib/math/rng";
@@ -13,6 +13,7 @@ import { MapRgbFilter } from "../../lib/pixi/filters/map-rgb-filter";
 import { scene } from "../globals";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnShadow } from "../mixins/mxn-shadow";
+import { objGoonSpell } from "./obj-goon-spell";
 import { generateObjCharacterArgs } from "./obj-npc";
 import { playerObj } from "./obj-player";
 
@@ -21,7 +22,8 @@ const [txIdle, txWalk, ...txsCharge] = Tx.Enemy.Goon.split({ width: 92 });
 export function objGoon() {
     const args = generateObjCharacterArgs();
 
-    const sprite = Sprite.from(txIdle).filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2));
+    const filter = new MapRgbFilter(args.tint0, args.tint1, args.tint2);
+    const sprite = Sprite.from(txIdle).filtered(filter);
     const footHitboxObj = new Graphics().beginFill(0xff0000).drawRect(-20, -6, 40, 12).invisible();
 
     const state = {
@@ -91,9 +93,14 @@ export function objGoon() {
                 ]);
 
                 state.speed.at(0, 0);
+                yield interpv(sprite).factor(factor.sine).to(0, -16).over(150);
+                yield interpv(sprite).to(0, 0).over(100);
 
-                yield interp(state, "chargeUnit").to(1).over(500);
-                yield sleep(1000);
+                yield* Coro.all([
+                    interp(state, "chargeUnit").to(1).over(500),
+                    Coro.chain([sleep(400), () => (objGoonSpell().at(self).filtered(filter), true)]),
+                ]);
+                yield sleep(100);
                 state.chargeUnit = 0;
             }
         })
