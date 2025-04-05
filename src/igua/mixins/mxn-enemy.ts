@@ -3,6 +3,7 @@ import { areRectanglesOverlapping } from "../../lib/math/rectangle";
 import { vlerp } from "../../lib/math/vector";
 import { objDamage } from "../objects/obj-damage";
 import { mxnHoleListener } from "../objects/obj-ground-stage";
+import { progress } from "../objects/progress";
 
 interface MxnEnemyArgs {
     health: number;
@@ -20,18 +21,23 @@ export function mxnEnemy(obj: DisplayObject, args: MxnEnemyArgs) {
     return obj
         .mixin(mxnHoleListener)
         .merge({ mxnEnemy: { state } })
+        .dispatches<"mxnEnemy:died">()
         .handles("mxnHoleListener:hole_created", (self, holeRect) => {
             if (!areRectanglesOverlapping(args.vulnerableBoxObj.getWorldBounds(), holeRect)) {
                 return;
             }
 
-            const damageObj = objDamage(10).at(holeRect.x + holeRect.width / 2, holeRect.y + holeRect.height / 2)
+            const damageObj = objDamage(progress.attackPower).at(
+                holeRect.x + holeRect.width / 2,
+                holeRect.y + holeRect.height / 2,
+            )
                 .show();
             vlerp(damageObj, obj, 0.5);
 
             // TODO lots of things
-            state.health -= 10;
+            state.health -= progress.attackPower;
             if (state.health <= 0) {
+                self.dispatch("mxnEnemy:died");
                 self.destroy();
             }
         });

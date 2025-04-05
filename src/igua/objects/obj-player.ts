@@ -8,6 +8,7 @@ import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { Null } from "../../lib/types/null";
+import { ZIndex } from "../core/scene/z-index";
 import { Key, scene } from "../globals";
 import { objBlock } from "./obj-block";
 import { objCharacter, ObjCharacterArgs } from "./obj-character";
@@ -138,7 +139,7 @@ function objPlayer() {
 
             if (isInDrillMode) {
                 if (!lineObj) {
-                    lineObj = objDrawnLine().zIndexed(-1).show();
+                    lineObj = objDrawnLine().zIndexed(ZIndex.DrillPen).show();
                 }
 
                 const { x, y } = self.objects.hatTipObj.getWorldBounds();

@@ -6,7 +6,6 @@ import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
 import { sleep } from "../../lib/game-engine/routines/sleep";
 import { PolarInt } from "../../lib/math/number-alias-types";
 import { Rng } from "../../lib/math/rng";
-import { distance } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { MapRgbFilter } from "../../lib/pixi/filters/map-rgb-filter";
@@ -14,6 +13,7 @@ import { scene } from "../globals";
 import { mxnEnemy } from "../mixins/mxn-enemy";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnShadow } from "../mixins/mxn-shadow";
+import { objFxRelease } from "./fx/obj-fx-release";
 import { objGoonSpell } from "./obj-goon-spell";
 import { generateObjCharacterArgs } from "./obj-npc";
 import { playerObj } from "./obj-player";
@@ -128,5 +128,6 @@ export function objGoon() {
                 state.canRecoverEnergy = true;
             }
         })
+        .handles("mxnEnemy:died", (self) => objFxRelease().at(self).tinted(args.tint0))
         .show(scene.perspectiveStage);
 }
