@@ -103,7 +103,7 @@ export const Lvl = {
     FoliageFlower0_4: d(Tx.Foliage.Flower0, { x: 816, y: 128, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xc86060 }, "AboveGroundDecals"),
     FoliageFlower0_5: d(Tx.Foliage.Flower0, { x: 825, y: 71, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xc86060 }, "AboveGroundDecals"),
     FoliageFlower0_6: d(Tx.Foliage.Flower0, { x: 748, y: 122, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xc86060 }, "AboveGroundDecals"),
-    Book: e(r["Book"], { x: 256, y: 224, values: { message: "", name: "" } }, "DiggableEntities"),
+    Book: e(r["Book"], { x: 256, y: 224, values: { message: "Use Space to start digging. Draw a square!", name: "" } }, "DiggableEntities"),
     PlayerStartMarker: e(r["Marker"], { x: 248, y: 136, values: { name: "PlayerStartMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
 };

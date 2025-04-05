@@ -59,7 +59,7 @@
           "y": 224,
           "originX": 56,
           "originY": 34,
-          "values": {"message": "", "name": ""}
+          "values": {"message": "Use Space to start digging. Draw a square!", "name": ""}
         }
       ]
     },
