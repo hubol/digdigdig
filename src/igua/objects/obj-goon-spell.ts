@@ -19,6 +19,7 @@ export function objGoonSpell() {
         .pivoted(37, 95)
         .mixin(mxnShadow, {})
         .coro(function* (self) {
+            self.mxnShadow.controls.size = "small";
             yield interp(sprite, "textureIndex").to(2).over(200);
             sprite.coro(function* () {
                 while (true) {
