@@ -63,6 +63,16 @@ const characters = {
     ",": { x: 201, y: 136, w: 5, h: 6, xadv: 6, yoff: 20 },
     ":": { x: 218, y: 119, w: 3, h: 15, xadv: 4, yoff: 4 },
     ";": { x: 234, y: 119, w: 4, h: 17, xadv: 5, yoff: 3 },
+    "0": { x: 5, y: 158, w: 16, h: 23, xadv: 17, yoff: 0 },
+    "1": { x: 24, y: 158, w: 7, h: 23, xadv: 8, yoff: 0 },
+    "2": { x: 34, y: 158, w: 14, h: 23, xadv: 15, yoff: 0 },
+    "3": { x: 52, y: 158, w: 17, h: 23, xadv: 18, yoff: 0 },
+    "4": { x: 71, y: 158, w: 15, h: 23, xadv: 16, yoff: 0 },
+    "5": { x: 90, y: 158, w: 17, h: 23, xadv: 18, yoff: 0 },
+    "6": { x: 111, y: 158, w: 14, h: 23, xadv: 15, yoff: 0 },
+    "7": { x: 129, y: 158, w: 19, h: 23, xadv: 20, yoff: 0 },
+    "8": { x: 151, y: 157, w: 15, h: 24, xadv: 16, yoff: -1 },
+    "9": { x: 170, y: 157, w: 15, h: 24, xadv: 16, yoff: -1 },
 };
 
 Object.values(characters).forEach(x => x.xadv += 2);

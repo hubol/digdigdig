@@ -5,4 +5,5 @@ export enum ZIndex {
     FrontDecals = -30,
     RegionEntities = -15,
     MarkerEntities = -10,
+    PerspectiveStage = -1,
 }

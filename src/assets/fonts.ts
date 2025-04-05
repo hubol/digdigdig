@@ -7,6 +7,7 @@ import { fntErotixLight } from "./bitmap-fonts/fnt-erotix-light";
 import { fntFlaccid } from "./bitmap-fonts/fnt-flaccid";
 import { fntGoodBoy } from "./bitmap-fonts/fnt-good-boy";
 import { fntOldMaiden } from "./bitmap-fonts/fnt-old-maiden";
+import { fntScribdig } from "./bitmap-fonts/fnt-scribdig";
 
 type Style = Partial<Omit<IBitmapTextStyle, "fontName">>;
 
@@ -34,5 +35,8 @@ export const objText = {
     },
     LargeNusty(text = "", style: Style = {}) {
         return new IrregularBitmapText(text, { fontName: fntOldMaiden.font, ...style });
+    },
+    ScribbleDigits(text = "", style: Style = {}) {
+        return new BitmapText(text, { fontName: fntScribdig.font, ...style });
     },
 };

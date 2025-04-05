@@ -1,5 +1,7 @@
 import { DisplayObject } from "pixi.js";
 import { areRectanglesOverlapping } from "../../lib/math/rectangle";
+import { vlerp } from "../../lib/math/vector";
+import { objDamage } from "../objects/obj-damage";
 import { mxnHoleListener } from "../objects/obj-ground-stage";
 
 interface MxnEnemyArgs {
@@ -22,6 +24,10 @@ export function mxnEnemy(obj: DisplayObject, args: MxnEnemyArgs) {
             if (!areRectanglesOverlapping(args.vulnerableBoxObj.getWorldBounds(), holeRect)) {
                 return;
             }
+
+            const damageObj = objDamage(10).at(holeRect.x + holeRect.width / 2, holeRect.y + holeRect.height / 2)
+                .show();
+            vlerp(damageObj, obj, 0.5);
 
             // TODO lots of things
             state.health -= 10;

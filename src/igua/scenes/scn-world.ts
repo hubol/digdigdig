@@ -7,5 +7,5 @@ export function scnWorld() {
     const lvl = Lvl.World();
     createPlayerObj().at(lvl.PlayerStartMarker);
     lvl.WaterLineGroup.children.forEach(obj => obj.mixin(mxnBoilPivot));
-    // objGoon().at(lvl.PlayerStartMarker);
+    objGoon().at(lvl.PlayerStartMarker);
 }
