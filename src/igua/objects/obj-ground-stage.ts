@@ -1,8 +1,9 @@
-import { Graphics, IRendererRenderOptions, RenderTexture, Sprite, SpriteMaskFilter } from "pixi.js";
+import { DisplayObject, Graphics, IRendererRenderOptions, RenderTexture, Sprite, SpriteMaskFilter } from "pixi.js";
 import { Tx } from "../../assets/textures";
 import { Instances } from "../../lib/game-engine/instances";
 import { sleepf } from "../../lib/game-engine/routines/sleep";
-import { IRectangle } from "../../lib/math/rectangle";
+import { SceneLocal } from "../../lib/game-engine/scene-local";
+import { areRectanglesOverlapping, IRectangle } from "../../lib/math/rectangle";
 import { Rng } from "../../lib/math/rng";
 import { container } from "../../lib/pixi/container";
 import { renderer } from "../current-pixi-renderer";
@@ -116,4 +117,125 @@ export function objDeepestStage() {
         .merge({ methods })
         .step(render, StepOrder.AfterCamera)
         .autoSorted();
+}
+
+export const CtxHoles = new SceneLocal(() => {
+    const holeRectangles: IRectangle[] = [];
+
+    const object = {
+        digHole(x: number, y: number, width: number, height: number) {
+            holeRectangles.push({ x, y, width, height });
+            scene.groundStage.methods.drawHole(x, y, width, height);
+            scene.deepestStage.methods.drawHole(x, y, width, height);
+        },
+        holeRectangles,
+    };
+
+    return object;
+});
+
+export function mxnStaticAffectedByHoles(obj: DisplayObject) {
+    const state = {
+        coverageUnit: 0,
+    };
+
+    function updateState(count: number) {
+        const bounds = obj.getWorldBounds();
+
+        // Let's try to skip
+        if (count > 0 && count < CtxHoles.value.holeRectangles.length) {
+            let noOverlapCount = 0;
+
+            for (
+                let i = CtxHoles.value.holeRectangles.length - 1;
+                i >= CtxHoles.value.holeRectangles.length - count;
+                i--
+            ) {
+                const rect = CtxHoles.value.holeRectangles[i];
+                if (!areRectanglesOverlapping(bounds, rect)) {
+                    noOverlapCount++;
+                }
+                else {
+                    break;
+                }
+            }
+
+            if (noOverlapCount === count) {
+                return;
+            }
+        }
+
+        const availableArea = bounds.width * bounds.height;
+
+        // Deranged implementation inspired by this article
+        // https://www.construct.net/en/tutorials/calculating-rectangular-862
+
+        // Find hole rectangles that overlap with this
+        // and reduce them only to their overlap
+        const overlappingRectangles = CtxHoles.value.holeRectangles
+            .filter(rect => areRectanglesOverlapping(rect, bounds))
+            .map(rect => {
+                const x0 = Math.max(rect.x, bounds.x);
+                const y0 = Math.max(rect.y, bounds.y);
+                const x1 = Math.min(rect.x + rect.width, bounds.x + bounds.width);
+                const y1 = Math.min(rect.y + rect.height, bounds.y + bounds.height);
+
+                return {
+                    x0,
+                    y0,
+                    x1,
+                    y1,
+                };
+            });
+
+        const xCoords = [...new Set(overlappingRectangles.flatMap(rect => [rect.x0, rect.x1]))].sort();
+        const yCoords = [...new Set(overlappingRectangles.flatMap(rect => [rect.y0, rect.y1]))].sort();
+
+        const usedCells: boolean[][] = [];
+
+        for (const rectangle of overlappingRectangles) {
+            const xIndex0 = xCoords.indexOf(rectangle.x0);
+            const yIndex0 = yCoords.indexOf(rectangle.y0);
+            const xIndex1 = xCoords.indexOf(rectangle.x1);
+            const yIndex1 = yCoords.indexOf(rectangle.y1);
+
+            for (let x = xIndex0; x < xIndex1; x++) {
+                for (let y = yIndex0; y < yIndex1; y++) {
+                    if (!usedCells[x]) {
+                        usedCells[x] = [];
+                    }
+                    usedCells[x][y] = true;
+                }
+            }
+        }
+
+        let coverageArea = 0;
+
+        for (let i = 0; i < xCoords.length - 1; i++) {
+            if (!usedCells[i]) {
+                continue;
+            }
+
+            const width = xCoords[i + 1] - xCoords[i];
+            for (let j = 0; j < yCoords.length - 1; j++) {
+                if (usedCells[i][j]) {
+                    const height = yCoords[j + 1] - yCoords[j];
+                    coverageArea += width * height;
+                }
+            }
+        }
+
+        state.coverageUnit = coverageArea / availableArea;
+    }
+
+    return obj
+        .merge({ mxnStaticAffectedByHoles: { state } })
+        .coro(function* () {
+            let length = 0;
+            while (true) {
+                yield () => CtxHoles.value.holeRectangles.length !== length;
+                updateState(CtxHoles.value.holeRectangles.length - length);
+                length = CtxHoles.value.holeRectangles.length;
+            }
+        });
 }

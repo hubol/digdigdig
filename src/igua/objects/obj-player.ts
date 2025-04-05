@@ -7,8 +7,9 @@ import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { Null } from "../../lib/types/null";
-import { Key, scene } from "../globals";
+import { Key } from "../globals";
 import { objCharacter, ObjCharacterArgs } from "./obj-character";
+import { CtxHoles } from "./obj-ground-stage";
 import { generateObjCharacterArgs } from "./obj-npc";
 
 const v = vnew();
@@ -169,8 +170,7 @@ function objDrawnLine() {
                     .show(obj);
                 yield interpv(solidObj.scale).to(-1, -1).over(300);
                 gfx.destroy();
-                scene.groundStage.methods.drawHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
-                scene.deepestStage.methods.drawHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
+                CtxHoles.value.digHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
                 solidObj.tinted(tint);
                 for (let i = 0; i < 4; i++) {
                     solidObj.visible = !solidObj.visible;
