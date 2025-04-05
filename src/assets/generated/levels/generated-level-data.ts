@@ -9,6 +9,7 @@ const { createEntity: e, createDecal: d, createLevel: l, createDecalGroup: dg } 
 export const Lvl = {
   CharacterChooser: l({ width: 500, height: 280, backgroundTint: 0xab97b7 }, () => ({
     ShapesSquare32: d(Tx.Shapes.Square32, { x: 232, y: 112, scaleX: 19, scaleY: 10, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x585291 }, "BuriedDecals"),
+    ChooseCloud: d(Tx.Choose.Cloud, { x: 81, y: 102, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xb5b1d8 }, "GroundDecals"),
     FoliageGrass2: d(Tx.Foliage.Grass2, { x: 106, y: 183, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x416d3a }, "GroundDecals"),
     FoliageTrunk0: d(Tx.Foliage.Trunk0, { x: 153, y: 150, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x8b6656 }, "GroundDecals"),
     FoliagePineTree0: d(Tx.Foliage.PineTree0, { x: 155, y: 113, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x416d3a }, "GroundDecals"),
@@ -30,6 +31,7 @@ export const Lvl = {
     PatchShadow0_2: d(Tx.Patch.Shadow0, { x: 436, y: 274, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x32592b }, "GroundDecals"),
     FoliageGrass1_2: d(Tx.Foliage.Grass1, { x: 448, y: 256, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x97b45c }, "GroundDecals"),
     FoliageGrass1_3: d(Tx.Foliage.Grass1, { x: 423, y: 273, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xcbc773 }, "GroundDecals"),
+    ChooseCloud_1: d(Tx.Choose.Cloud, { x: 437, y: 50, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xb5b1d8 }, "GroundDecals"),
     TextGroup: dg("TextGroup", "AboveGroundDecals"),
     ChooseTitle: d(Tx.Choose.Title, { x: 156, y: 35, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, groupName: "TextGroup", tint: 0xffffff }, "AboveGroundDecals"),
     ChooseArrow: d(Tx.Choose.Arrow, { x: 83, y: 141, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, groupName: "TextGroup", tint: 0xffffff }, "AboveGroundDecals"),

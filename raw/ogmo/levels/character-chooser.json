@@ -193,6 +193,18 @@
       "gridCellsY": 35,
       "decals": [
         {
+          "x": 81,
+          "y": 102,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#b5b1d8",
+          "texture": "choose/cloud.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
           "x": 106,
           "y": 183,
           "scaleX": 1,
@@ -464,6 +476,18 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 437,
+          "y": 50,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#b5b1d8",
+          "texture": "choose/cloud.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"

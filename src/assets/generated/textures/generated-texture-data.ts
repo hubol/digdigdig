@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 33 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 34 }];
 
 interface TxData {
   id: string;
@@ -18,7 +18,8 @@ function txs<T>(tx: (data: TxData) => T) {
     Character: tx({ id: "Character", atlas: 0, x: 0, y: 0, width: 1000, height: 150 }),
     Choose: {
       Arrow: tx({ id: "Choose.Arrow", atlas: 0, x: 501, y: 219, width: 67, height: 120 }),
-      Otherwise: tx({ id: "Choose.Otherwise", atlas: 0, x: 0, y: 333, width: 177, height: 68 }),
+      Cloud: tx({ id: "Choose.Cloud", atlas: 0, x: 0, y: 333, width: 216, height: 41 }),
+      Otherwise: tx({ id: "Choose.Otherwise", atlas: 0, x: 0, y: 375, width: 177, height: 68 }),
       Reroll: tx({ id: "Choose.Reroll", atlas: 0, x: 0, y: 151, width: 316, height: 52 }),
       Title: tx({ id: "Choose.Title", atlas: 0, x: 317, y: 151, width: 280, height: 67 }),
     },
@@ -28,36 +29,36 @@ function txs<T>(tx: (data: TxData) => T) {
     Foliage: {
       Bush0: tx({ id: "Foliage.Bush0", atlas: 0, x: 598, y: 151, width: 254, height: 125 }),
       Flower0: tx({ id: "Foliage.Flower0", atlas: 0, x: 981, y: 221, width: 36, height: 24 }),
-      Grass0: tx({ id: "Foliage.Grass0", atlas: 0, x: 0, y: 442, width: 100, height: 43 }),
-      Grass1: tx({ id: "Foliage.Grass1", atlas: 0, x: 101, y: 455, width: 47, height: 25 }),
-      Grass2: tx({ id: "Foliage.Grass2", atlas: 0, x: 0, y: 427, width: 101, height: 14 }),
+      Grass0: tx({ id: "Foliage.Grass0", atlas: 0, x: 0, y: 484, width: 100, height: 43 }),
+      Grass1: tx({ id: "Foliage.Grass1", atlas: 0, x: 101, y: 497, width: 47, height: 25 }),
+      Grass2: tx({ id: "Foliage.Grass2", atlas: 0, x: 0, y: 469, width: 101, height: 14 }),
       Leaves0: tx({ id: "Foliage.Leaves0", atlas: 0, x: 967, y: 308, width: 51, height: 47 }),
-      PineTree0: tx({ id: "Foliage.PineTree0", atlas: 0, x: 178, y: 333, width: 65, height: 124 }),
+      PineTree0: tx({ id: "Foliage.PineTree0", atlas: 0, x: 178, y: 375, width: 65, height: 124 }),
       Trunk0: tx({ id: "Foliage.Trunk0", atlas: 0, x: 244, y: 333, width: 11, height: 84 }),
     },
     Font: {
       Diggit: tx({ id: "Font.Diggit", atlas: 0, x: 967, y: 299, width: 54, height: 8 }),
       ErotixLight: tx({ id: "Font.ErotixLight", atlas: 0, x: 853, y: 151, width: 160, height: 34 }),
       Erotix: tx({ id: "Font.Erotix", atlas: 0, x: 853, y: 186, width: 160, height: 34 }),
-      Flaccid: tx({ id: "Font.Flaccid", atlas: 0, x: 0, y: 402, width: 102, height: 24 }),
+      Flaccid: tx({ id: "Font.Flaccid", atlas: 0, x: 0, y: 444, width: 102, height: 24 }),
       GoodBoy: tx({ id: "Font.GoodBoy", atlas: 0, x: 0, y: 204, width: 256, height: 128 }),
     },
     Hints: {
-      Arrow: tx({ id: "Hints.Arrow", atlas: 0, x: 569, y: 219, width: 24, height: 17 }),
+      Arrow: tx({ id: "Hints.Arrow", atlas: 0, x: 217, y: 333, width: 24, height: 17 }),
       Book: tx({ id: "Hints.Book", atlas: 0, x: 853, y: 256, width: 113, height: 68 }),
-      Move: tx({ id: "Hints.Move", atlas: 0, x: 102, y: 427, width: 75, height: 27 }),
+      Move: tx({ id: "Hints.Move", atlas: 0, x: 102, y: 469, width: 75, height: 27 }),
     },
     Patch: {
       Shadow0: tx({ id: "Patch.Shadow0", atlas: 0, x: 853, y: 221, width: 127, height: 34 }),
       Splotch0: tx({ id: "Patch.Splotch0", atlas: 0, x: 257, y: 219, width: 243, height: 217 }),
     },
     Shapes: {
-      LightSmall0: tx({ id: "Shapes.LightSmall0", atlas: 0, x: 157, y: 402, width: 19, height: 7 }),
+      LightSmall0: tx({ id: "Shapes.LightSmall0", atlas: 0, x: 157, y: 444, width: 19, height: 7 }),
       Square32: tx({ id: "Shapes.Square32", atlas: 0, x: 766, y: 297, width: 32, height: 32 }),
-      VSmall0: tx({ id: "Shapes.VSmall0", atlas: 0, x: 157, y: 410, width: 19, height: 13 }),
+      VSmall0: tx({ id: "Shapes.VSmall0", atlas: 0, x: 157, y: 452, width: 19, height: 13 }),
     },
     Stone: {
-      Rock0: tx({ id: "Stone.Rock0", atlas: 0, x: 103, y: 402, width: 53, height: 24 }),
+      Rock0: tx({ id: "Stone.Rock0", atlas: 0, x: 103, y: 444, width: 53, height: 24 }),
       Rock1: tx({ id: "Stone.Rock1", atlas: 0, x: 668, y: 277, width: 97, height: 48 }),
     },
     Treasures: {
