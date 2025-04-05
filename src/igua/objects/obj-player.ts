@@ -74,7 +74,7 @@ export function objPlayer() {
                     lineObj = objDrawnLine().zIndexed(-1).show();
                 }
 
-                const { x, y } = self.getWorldPosition();
+                const { x, y } = self.objects.hatTipObj.getWorldBounds();
                 lineObj.methods.push(x, y);
             }
         });

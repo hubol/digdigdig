@@ -56,24 +56,30 @@ export function objCharacter(args: ObjCharacterArgs) {
     })
         .masked(faceMaskObj);
 
-    const hatObj = Sprite.from(txHatPointed).step(self => {
-        let targetX = 0;
+    const hatTipObj = new Graphics().beginFill(0xff0000).drawRect(49, 13, 1, 1).invisible();
 
-        if (controls.facingDirection === "east") {
-            targetX = -5;
-        }
-        else if (controls.facingDirection === "west") {
-            targetX = 5;
-        }
+    const hatObj = container(
+        Sprite.from(txHatPointed),
+        hatTipObj,
+    )
+        .step(self => {
+            let targetX = 0;
 
-        if (controls.upsideDownUnit > 0.5) {
-            targetX *= -1;
-        }
+            if (controls.facingDirection === "east") {
+                targetX = -5;
+            }
+            else if (controls.facingDirection === "west") {
+                targetX = 5;
+            }
 
-        if (Rng.float() > 0.67) {
-            self.x = approachLinear(self.x, targetX, 1 + Math.abs(self.x - targetX) * 0.3);
-        }
-    });
+            if (controls.upsideDownUnit > 0.5) {
+                targetX *= -1;
+            }
+
+            if (Rng.float() > 0.67) {
+                self.x = approachLinear(self.x, targetX, 1 + Math.abs(self.x - targetX) * 0.3);
+            }
+        });
 
     const underwearMaskObj = new Graphics().beginFill(0xff0000).drawRect(26, 111, 49, 13);
 
@@ -137,8 +143,12 @@ export function objCharacter(args: ObjCharacterArgs) {
 
     let nextUpsideDownSpinDirection = Rng.intp();
 
+    const objects = {
+        hatTipObj,
+    };
+
     return container(lowerBodyObj, headObj)
-        .merge({ controls })
+        .merge({ controls, objects })
         .filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff))
         .pivoted(50, 140)
         .step(self => {
