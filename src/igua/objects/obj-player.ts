@@ -62,26 +62,31 @@ function objPlayer() {
 
             v.at(0, 0);
 
-            if (isInNormalMode || isInDrillMode) {
-                if (Key.isDown("ArrowUp")) {
-                    v.add(0, -1);
-                }
-                if (Key.isDown("ArrowDown")) {
-                    v.add(0, 1);
-                }
-                if (Key.isDown("ArrowLeft")) {
-                    v.add(-1, 0);
-                }
-                if (Key.isDown("ArrowRight")) {
-                    v.add(1, 0);
-                }
+            if (Key.isDown("ArrowUp")) {
+                v.add(0, -1);
+            }
+            if (Key.isDown("ArrowDown")) {
+                v.add(0, 1);
+            }
+            if (Key.isDown("ArrowLeft")) {
+                v.add(-1, 0);
+            }
+            if (Key.isDown("ArrowRight")) {
+                v.add(1, 0);
             }
 
             if (!v.isZero) {
                 if (isInDrillMode) {
                     energyConsumption = 1;
                 }
-                v.normalize().scale(isInDrillMode ? 3 : 2);
+                let speed = 1;
+                if (isInDrillMode) {
+                    speed = 3.67;
+                }
+                else if (isInNormalMode) {
+                    speed = 2;
+                }
+                v.normalize().scale(speed);
             }
 
             if (!v.isZero && isInNormalMode) {
