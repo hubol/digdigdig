@@ -149,6 +149,7 @@ function objDrawnLine() {
                 yield interpv(solidObj.scale).to(-1, -1).over(300);
                 gfx.destroy();
                 scene.groundStage.methods.drawHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
+                scene.deepestStage.methods.drawHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
                 for (let i = 0; i < 4; i++) {
                     solidObj.visible = !solidObj.visible;
                     solidObj.alpha -= 0.2;
