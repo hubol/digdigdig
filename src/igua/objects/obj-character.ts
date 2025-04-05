@@ -31,7 +31,7 @@ export function objCharacter(args: ObjCharacterArgs) {
         pedometer: 0,
     };
 
-    const maskObj = new Graphics().beginFill(0xff0000).drawEllipse(50, 71, 38, 23);
+    const faceMaskObj = new Graphics().beginFill(0xff0000).drawEllipse(50, 71, 38, 23);
 
     const faceObj = Sprite.from(txFaceClown).step(self => {
         let targetX = 0;
@@ -50,7 +50,7 @@ export function objCharacter(args: ObjCharacterArgs) {
             self.x = approachLinear(self.x, targetX, 1 + Math.abs(self.x - targetX) * 0.3);
         }
     })
-        .masked(maskObj);
+        .masked(faceMaskObj);
 
     const hatObj = Sprite.from(txHatPointed).step(self => {
         let targetX = 0;
@@ -67,6 +67,8 @@ export function objCharacter(args: ObjCharacterArgs) {
         }
     });
 
+    const underwearMaskObj = new Graphics().beginFill(0xff0000).drawRect(26, 111, 49, 13);
+
     const lowerBodyObj = container(
         Sprite.from(txTorso),
         Sprite.from(txFootLeft).step(self =>
@@ -75,9 +77,29 @@ export function objCharacter(args: ObjCharacterArgs) {
         Sprite.from(txFootRight).step(self =>
             self.y = controls.pedometer === 0 ? 0 : (Math.round(Math.cos(controls.pedometer * Math.PI) - 1) * 6)
         ),
-        Sprite.from(txUnderwearFront).step(self =>
-            self.texture = controls.facingDirection === "north" ? txUnderwearBack : txUnderwearFront
-        ),
+        underwearMaskObj,
+        Sprite.from(txUnderwearFront).step(self => {
+            let targetX = 0;
+
+            if (controls.facingDirection === "east") {
+                targetX = 2;
+            }
+            else if (controls.facingDirection === "west") {
+                targetX = -2;
+            }
+
+            const nextTexture = controls.facingDirection === "north" ? txUnderwearBack : txUnderwearFront;
+
+            if (self.texture !== nextTexture) {
+                self.x = targetX;
+            }
+            else if (Rng.float() > 0.25) {
+                self.x = approachLinear(self.x, targetX, 1);
+            }
+
+            self.texture = nextTexture;
+        })
+            .masked(underwearMaskObj),
     ).step(self =>
         self.y = controls.pedometer === 0 ? 0 : (Math.round(Math.sin((controls.pedometer + 1) * Math.PI) + 1) * 2)
     );
@@ -86,7 +108,7 @@ export function objCharacter(args: ObjCharacterArgs) {
         Sprite.from(txHead),
         faceObj,
         hatObj,
-        maskObj,
+        faceMaskObj,
     ).step(self =>
         self.y = controls.pedometer === 0 ? 0 : (Math.round(Math.cos((controls.pedometer + 1) * Math.PI) + 1) * 2)
     );
