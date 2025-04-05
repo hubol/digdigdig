@@ -1,9 +1,11 @@
+import { Graphics } from "pixi.js";
 import { Lvl } from "../../assets/generated/levels/generated-level-data";
 import { EscapeTickerAndExecute } from "../../lib/game-engine/asshat-ticker";
+import { interpv, interpvr } from "../../lib/game-engine/routines/interp";
 import { sleep, sleepf } from "../../lib/game-engine/routines/sleep";
 import { container } from "../../lib/pixi/container";
 import { renderer } from "../current-pixi-renderer";
-import { Key, sceneStack } from "../globals";
+import { Key, layers, scene, sceneStack } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
 import { objCharacter, ObjCharacterArgs } from "../objects/obj-character";
 import { generateObjCharacterArgs } from "../objects/obj-npc";
@@ -32,16 +34,21 @@ function objCharacterChooser() {
             while (true) {
                 const playerObj = objChooseCharacterPlayer(generateObjCharacterArgs()).at(self).show();
                 yield sleepf(1);
-                yield () => Key.justWentDown("Space");
+                yield () => !playerObj.state.chosen && Key.justWentDown("Space");
                 playerObj.destroy();
             }
         });
 }
 
 function objChooseCharacterPlayer(args: ObjCharacterArgs) {
+    const state = {
+        chosen: false,
+    };
+
     return objCharacter(args)
+        .merge({ state })
         .step(self => {
-            if (Key.isDown("ArrowRight")) {
+            if (state.chosen || Key.isDown("ArrowRight")) {
                 self.x += 2;
                 self.controls.pedometer += 0.1;
                 self.controls.facingDirection = "east";
@@ -50,9 +57,17 @@ function objChooseCharacterPlayer(args: ObjCharacterArgs) {
                 self.controls.pedometer = 0;
             }
 
-            if (self.x >= renderer.width) {
+            if (!state.chosen && self.x >= renderer.width) {
                 setPlayerCharacterArgs(args);
-                throw new EscapeTickerAndExecute(() => sceneStack.replace(scnWorld, { useGameplay: true }));
+                state.chosen = true;
+                layers.overlay.coro(function* (self) {
+                    const gfx = new Graphics().beginFill(0).drawRect(0, 0, 700, 900).show(self).at(0, -989);
+                    gfx.angle = 45;
+                    yield interpvr(gfx).to(350, -350).over(1000);
+                    sceneStack.replace(scnWorld, { useGameplay: true });
+                    yield interpvr(gfx).to(989, 0).over(1000);
+                    gfx.destroy();
+                });
             }
         });
 }
