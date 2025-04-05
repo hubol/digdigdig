@@ -24,7 +24,7 @@ export function objBook(message: string) {
                 const after = corruptedMessage.substring(index + 1);
                 corruptedMessage = before + after;
             }
-            if (self.collides(playerObj) && corruptedMessage.length > 0) {
+            if (self.collides(playerObj.objects.feetHitboxObj) && corruptedMessage.length > 0) {
                 layers.overlay.objects.readingBookObj.methods.show(corruptedMessage);
             }
         });

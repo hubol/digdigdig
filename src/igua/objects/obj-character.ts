@@ -144,21 +144,22 @@ export function objCharacter(args: ObjCharacterArgs) {
 
     let nextUpsideDownSpinDirection = Rng.intp();
 
+    const feetHitboxObj = new Graphics().beginFill(0xff0000).drawRect(20, 132, 60, 8).invisible();
+
     const objects = {
+        feetHitboxObj,
         hatTipObj,
     };
 
-    const shadowHitboxObj = new Graphics().beginFill(0xff0000).drawRect(20, 132, 60, 8).invisible();
-
-    return container(lowerBodyObj, headObj, shadowHitboxObj)
-        .mixin(mxnShadow, { hitboxObj: shadowHitboxObj })
+    return container(lowerBodyObj, headObj, feetHitboxObj)
+        .mixin(mxnShadow, { hitboxObj: feetHitboxObj })
         .merge({ controls, objects })
         .filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff))
         .pivoted(50, 140)
         .step(self => {
             self.pivot.y = controls.upsideDownUnit >= 1 ? 16 : 140;
             self.angle = controls.upsideDownUnit >= 1 ? 180 : 0;
-            shadowHitboxObj.y = controls.upsideDownUnit >= 1 ? -117 : 0;
+            feetHitboxObj.y = controls.upsideDownUnit >= 1 ? -117 : 0;
 
             self.mxnShadow.controls.size = controls.upsideDownUnit > 0.5 ? "small" : "normal";
 
