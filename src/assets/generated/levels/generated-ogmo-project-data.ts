@@ -6,6 +6,7 @@ const entityValues = {
   Marker: null as unknown as { name: string; depth: number },
   Region: null as unknown as { name: string; depth: number },
   Book: null as unknown as { message: string; name: string },
+  Acre: null as unknown as { name: string },
 };
 
 export namespace OgmoProject {

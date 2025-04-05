@@ -15,8 +15,12 @@ export function ogmoAddToLayer(obj: DisplayObject, layerName: string) {
     else if (layerName === "AboveGroundDecals") {
         obj.show(scene.groundStage);
     }
+    else if (layerName === "AcreEntities") {
+        obj.zIndex = -5;
+        obj.show(scene.groundStage);
+    }
     else if (layerName === "GroundDecals") {
-        obj.zIndex = -1;
+        obj.zIndex = -10;
         obj.show(scene.groundStage);
     }
     else if (layerName === "BuriedDecals") {

@@ -241,9 +241,79 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 567,
+          "y": 244,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#c2c460",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 623,
+          "y": 246,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#c2c460",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 591,
+          "y": 231,
+          "scaleX": -1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#c2c460",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
+    },
+    {
+      "name": "AcreEntities",
+      "_eid": "87819512",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 500,
+      "gridCellHeight": 280,
+      "gridCellsX": 4,
+      "gridCellsY": 1,
+      "entities": [
+        {
+          "name": "Acre",
+          "id": 0,
+          "_eid": "87815551",
+          "x": 0,
+          "y": 0,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#7e8f3e",
+          "values": {"name": ""}
+        },
+        {
+          "name": "Acre",
+          "id": 1,
+          "_eid": "87815551",
+          "x": 500,
+          "y": 0,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#7e8f3e",
+          "values": {"name": ""}
+        }
+      ]
     },
     {
       "name": "GroundDecals",
@@ -255,6 +325,18 @@
       "gridCellsX": 126,
       "gridCellsY": 35,
       "decals": [
+        {
+          "x": 976,
+          "y": 120,
+          "scaleX": 4.1,
+          "scaleY": 10.1,
+          "rotation": 0,
+          "tint": "#ad885c",
+          "texture": "shapes/square32.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
         {
           "x": 67,
           "y": 75,
@@ -620,8 +702,8 @@
           "groupName": null
         },
         {
-          "x": 449,
-          "y": 20,
+          "x": 441,
+          "y": 28,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 0,
@@ -633,8 +715,8 @@
           "groupName": null
         },
         {
-          "x": 473,
-          "y": 75,
+          "x": 465,
+          "y": 83,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 0,
@@ -646,8 +728,8 @@
           "groupName": null
         },
         {
-          "x": 426,
-          "y": 75,
+          "x": 418,
+          "y": 83,
           "scaleX": -1,
           "scaleY": 1,
           "rotation": 0,
@@ -659,8 +741,8 @@
           "groupName": null
         },
         {
-          "x": 449,
-          "y": 80,
+          "x": 441,
+          "y": 88,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 90,
@@ -672,8 +754,8 @@
           "groupName": null
         },
         {
-          "x": 449,
-          "y": 52,
+          "x": 441,
+          "y": 60,
           "scaleX": -1,
           "scaleY": 1,
           "rotation": 90,
@@ -709,6 +791,43 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 696,
+          "y": 267,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#c2c460",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 519,
+          "y": 215,
+          "scaleX": -1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 512,
+          "y": 200,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/rock 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"

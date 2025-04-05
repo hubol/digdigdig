@@ -17,7 +17,7 @@
   "compactExport": false,
   "externalScript": "asshat-project.js",
   "playCommand": "",
-  "entityTags": ["Terrain", "Marker", "Region"],
+  "entityTags": ["Terrain", "Marker", "Region", "Acre"],
   "layers": [
     {
       "definition": "entity",
@@ -56,6 +56,14 @@
       "values": [
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
       ]
+    },
+    {
+      "definition": "entity",
+      "name": "AcreEntities",
+      "gridSize": {"x": 500, "y": 280},
+      "exportID": "87819512",
+      "requiredTags": ["Acre"],
+      "excludedTags": []
     },
     {
       "definition": "decal",
@@ -309,6 +317,50 @@
       "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
       "texture": "preview-images/book.png",
       "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABECAYAAAC2ydrOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARzSURBVHhe7ZxBa1QxEIC3PQseRVgE6aW/QEpBBOlNj9KLUDz6G4pH8Q948STSY/Got1JQoRR/QS9eZC/evWtnN1Nm00kySSZ5L/vyQdjs9u3LZL6Xydtl6dasw3J1dfXPdL3s7u4OnsMu0SCV5mMooZOXqCHPprbMyUosIY9SU+QkJZYWSKkhs7rE3ATmJKWmPEppkVUkDl26hpLHUULorROevdhRmfD87VfTq8PizTPTW0crjsvLD6bnZm/vten5ccUq4eDzr1vO1l7gBNaWkQtNUG7sEnEcUpmUGLG2yJsnmyAQOT39tHzc3z9YPgLz+dz0ZKQKRFJEuuAEU5FOia0KBBaLxezi4mzZR5FaEjk5IeEaQm2Ro5Koudcg2hKl45eWSUUOJlEizIc0CVhOgVSJqfjmWEritnnMBoLHVgM6nj0m3QtrA6Kw1SJbIpfEFOjkNZIwpEhEcz4+2HLKldIYUSUDRux46JiwJwKwL9YupyVx3dyolVOkhkAAr25sNnhjMwXUVmIteRJy7059c+Xm6TpeOyeulSiW2BKpEiVbRoxEQFPkoBIlV2pqAjlcEkNx1JBIj5XOh8J9zFDfEyFIu7UKJNluHJJjOLTypP45sQZ04prjpsqwyTlHypyyy2nMYDmJoXBj0nNrfO1WElfOYA70b1y+uHIqlhgjC9ASxtG6RB+jkVhSoISWJYYoKnFocZRYidK5xVzIiHZesiS2hE9ijggNidw5YkQ7JVKBQEmJ9iRSE+SbeJd4jabE0MTHJDEmman4JNK/uWLpEkeOnQNujlQiACKTJPoSbg/sOtYnwQU9V5e4gpV4/vvv7Ojkm3nGEyNxCGpI9F1Q0ouNI/Tek6Mns6cP7phnK4nq351uIpBYu0mJfR+IwyYlaSWOHc2VKE08RfIeJEYW0FfiNXRVcC0WTkKsmFx6OY0A5NjNhfQ4JOdiGkU5jQlakpDUz4mA5Pwl4OLiYuHKabbE2Ksml1yJY0UqEQCRAMjsd6cjAoSlVoFRScSJ2G1KpMxbtZyWSnjsGK1+YyOFllNgmwrUBBKPTUrKe0pDY3LFZR9DWw36nuihlARbNLZUJiuRS6LdapM67pZdTqeyJ8YmS3NukrFD49HPi72cCtC+OOF8mucsuhJjr3YKPVeJlThGYubZV+JIAXHYYugSN4DJ3ti0Ti+nG4bqSqxBX4kr+krcMJqSWGrPbZ3scjpGWiynEHMM58cvp1NOUWYrLBZf1pqEoES4cbFbpx4SmcFyykkruTfRf65HOTx8ZXphaDkFoKRqlFNXbBwx8QJYTl3C5vPnpreCltOt40f31iQCpSTGJCGEL0maErViDkm190RbJicRCUrMRVMcB5ecXImlY0Zo7LbEEMUl1kqCDSbFHl8icaiYEbyLlkAFAqxEIEXkkIm4/+O76YV5/P6j6Q0vj8Mn1BYIOCW2xsO7O6YXBiXir8ZaZ2MkTpn+3ekGsPzxMNBXZLvcSASmKPLdzz/NXsgYe7PlFCZAm3l5gsxm/wFJ1x4iSIMYgAAAAABJRU5ErkJggg=="
+    },
+    {
+      "exportID": "87815551",
+      "name": "Acre",
+      "limit": -1,
+      "size": {"x": 500, "y": 280},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "flipOnlyScales": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "hasUid": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": ["Acre"],
+      "values": [
+        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
+      ],
+      "isRegion": false,
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "texture": "preview-images/acre.png",
+      "textureImage": "data:image/png;base64,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"
     }
   ],
   "tilesets": []

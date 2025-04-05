@@ -22,7 +22,7 @@ export function objBook(message: string) {
                 const index = Rng.int(corruptedMessage.length);
                 const before = corruptedMessage.substring(0, index);
                 const after = corruptedMessage.substring(index + 1);
-                corruptedMessage = before + after;
+                corruptedMessage = (before + after).trim();
             }
             if (self.collides(playerObj.objects.feetHitboxObj) && corruptedMessage.length > 0) {
                 layers.overlay.objects.readingBookObj.methods.show(corruptedMessage);

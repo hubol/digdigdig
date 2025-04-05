@@ -45,5 +45,5 @@ const darkenedCache: Record<RgbInt, RgbInt> = {};
 
 function canInfluenceShadow(child: DisplayObject | undefined) {
     return child && "tint" in child && typeof child.tint === "number"
-        && child.tint !== 0xffffff && child.zIndex === -1;
+        && child.tint !== 0xffffff && child.zIndex === -10;
 }

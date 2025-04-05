@@ -183,6 +183,17 @@
       "folder": "../textures"
     },
     {
+      "name": "AcreEntities",
+      "_eid": "87819512",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 500,
+      "gridCellHeight": 280,
+      "gridCellsX": 1,
+      "gridCellsY": 1,
+      "entities": []
+    },
+    {
       "name": "GroundDecals",
       "_eid": "82786819",
       "offsetX": 0,
@@ -202,7 +213,8 @@
           "texture": "choose/cloud.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 106,
@@ -487,7 +499,8 @@
           "texture": "choose/cloud.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
