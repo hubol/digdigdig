@@ -33,6 +33,6 @@ export const objText = {
         return new BitmapText(text, { fontName: fntGoodBoy.font, ...style });
     },
     LargeNusty(text = "", style: Style = {}) {
-        return new BitmapText(text, { fontName: fntOldMaiden.font, ...style });
+        return new IrregularBitmapText(text, { fontName: fntOldMaiden.font, ...style });
     },
 };

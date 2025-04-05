@@ -50,7 +50,7 @@ class IrregularBitmapFontCharacter implements Omit<IBitmapFontCharacter, "page">
     }
 
     get yOffset() {
-        return this._yOffset + this.rng.intc(1);
+        return this._yOffset + this.rng.intc(3);
     }
 }
 
