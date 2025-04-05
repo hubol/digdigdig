@@ -20,7 +20,11 @@ export function generateNpcTints(seed: Integer) {
             prng.float(70, 100),
             prng.float(70, 100),
         ).toPixi(),
-        tint2: AdjustColor.hsv(hue + prng.float(30, 270) * prng.intp(), prng.float(30, 70), prng.float(70, 100))
+        tint2: AdjustColor.hsv(
+            cyclic(hue + prng.float(30, 270) * prng.intp(), 0, 360),
+            prng.float(30, 70),
+            prng.float(70, 100),
+        )
             .toPixi(),
     };
 }
