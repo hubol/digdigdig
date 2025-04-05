@@ -3,21 +3,26 @@ import { interp, interpv } from "../../lib/game-engine/routines/interp";
 import { sleepf } from "../../lib/game-engine/routines/sleep";
 import { approachLinear, nlerp } from "../../lib/math/number";
 import { RgbInt } from "../../lib/math/number-alias-types";
-import { Rng } from "../../lib/math/rng";
 import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { Null } from "../../lib/types/null";
 import { Key, scene } from "../globals";
-import { objCharacter } from "./obj-character";
-import { generateNpcTints } from "./obj-npc";
+import { objCharacter, ObjCharacterArgs } from "./obj-character";
+import { generateObjCharacterArgs } from "./obj-npc";
 
 const v = vnew();
+
+let playerCharacterArgs = generateObjCharacterArgs();
+
+export function setPlayerCharacterArgs(args: ObjCharacterArgs) {
+    playerCharacterArgs = args;
+}
 
 function objPlayer() {
     let lineObj = Null<ObjDrawnLine>();
 
-    return objCharacter(generateNpcTints(Rng.int(10_000_000, 420_000_000)))
+    return objCharacter(playerCharacterArgs)
         .step(self => {
             self.controls.upsideDownUnit = approachLinear(
                 self.controls.upsideDownUnit,

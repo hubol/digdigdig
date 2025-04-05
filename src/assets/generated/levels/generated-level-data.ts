@@ -7,6 +7,41 @@ import { Tx } from "../../../assets/textures";
 const { createEntity: e, createDecal: d, createLevel: l, createDecalGroup: dg } = OgmoFactory;
 
 export const Lvl = {
+  CharacterChooser: l({ width: 500, height: 280, backgroundTint: 0xab97b7 }, () => ({
+    ShapesSquare32: d(Tx.Shapes.Square32, { x: 232, y: 112, scaleX: 19, scaleY: 10, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x585291 }, "BuriedDecals"),
+    FoliageGrass2: d(Tx.Foliage.Grass2, { x: 106, y: 183, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x416d3a }, "GroundDecals"),
+    FoliageTrunk0: d(Tx.Foliage.Trunk0, { x: 153, y: 150, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x8b6656 }, "GroundDecals"),
+    FoliagePineTree0: d(Tx.Foliage.PineTree0, { x: 155, y: 113, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x416d3a }, "GroundDecals"),
+    FoliageTrunk0_1: d(Tx.Foliage.Trunk0, { x: 63, y: 153, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x8b6656 }, "GroundDecals"),
+    FoliagePineTree0_1: d(Tx.Foliage.PineTree0, { x: 65, y: 116, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x416d3a }, "GroundDecals"),
+    ShapesSquare32_1: d(Tx.Shapes.Square32, { x: 0, y: 184, scaleX: 17, scaleY: 3, rotation: 0, originX: 0, originY: 0, tint: 0x416d3a }, "GroundDecals"),
+    PatchShadow0: d(Tx.Patch.Shadow0, { x: 55, y: 200, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x32592b }, "GroundDecals"),
+    FoliageTrunk0_2: d(Tx.Foliage.Trunk0, { x: 26, y: 150, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x8b6656 }, "GroundDecals"),
+    FoliagePineTree0_2: d(Tx.Foliage.PineTree0, { x: 26, y: 114, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x223e1d }, "GroundDecals"),
+    FoliagePineTree0_3: d(Tx.Foliage.PineTree0, { x: 116, y: 111, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x223e1d }, "GroundDecals"),
+    FoliageTrunk0_3: d(Tx.Foliage.Trunk0, { x: 117, y: 152, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x8b6656 }, "GroundDecals"),
+    StoneRock0: d(Tx.Stone.Rock0, { x: -4, y: 260, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "GroundDecals"),
+    StoneRock0_1: d(Tx.Stone.Rock0, { x: 20, y: 274, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "GroundDecals"),
+    PatchShadow0_1: d(Tx.Patch.Shadow0, { x: 241, y: 194, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x32592b }, "GroundDecals"),
+    StoneRock1: d(Tx.Stone.Rock1, { x: 232, y: 176, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "GroundDecals"),
+    StoneRock0_2: d(Tx.Stone.Rock0, { x: 279, y: 198, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "GroundDecals"),
+    FoliageGrass1: d(Tx.Foliage.Grass1, { x: 33, y: 194, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x97b45c }, "GroundDecals"),
+    FoliageGrass1_1: d(Tx.Foliage.Grass1, { x: 8, y: 211, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xcbc773 }, "GroundDecals"),
+    PatchShadow0_2: d(Tx.Patch.Shadow0, { x: 436, y: 274, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x32592b }, "GroundDecals"),
+    FoliageGrass1_2: d(Tx.Foliage.Grass1, { x: 448, y: 256, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x97b45c }, "GroundDecals"),
+    FoliageGrass1_3: d(Tx.Foliage.Grass1, { x: 423, y: 273, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xcbc773 }, "GroundDecals"),
+    TextGroup: dg("TextGroup", "AboveGroundDecals"),
+    ChooseTitle: d(Tx.Choose.Title, { x: 156, y: 35, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, groupName: "TextGroup", tint: 0xffffff }, "AboveGroundDecals"),
+    ChooseArrow: d(Tx.Choose.Arrow, { x: 83, y: 141, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, groupName: "TextGroup", tint: 0xffffff }, "AboveGroundDecals"),
+    ChooseOtherwise: d(Tx.Choose.Otherwise, { x: 396, y: 136, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, groupName: "TextGroup", tint: 0xffffff }, "AboveGroundDecals"),
+    ChooseReroll: d(Tx.Choose.Reroll, { x: 191, y: 250, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, groupName: "TextGroup", tint: 0xffffff }, "AboveGroundDecals"),
+    FoliageGrass1_4: d(Tx.Foliage.Grass1, { x: 320, y: 197, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x97b45c }, "AboveGroundDecals"),
+    FoliageGrass1_5: d(Tx.Foliage.Grass1, { x: 295, y: 214, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xcbc773 }, "AboveGroundDecals"),
+    FoliageGrass2_1: d(Tx.Foliage.Grass2, { x: 416, y: 184, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x416d3a }, "AboveGroundDecals"),
+    FoliageFlower0: d(Tx.Foliage.Flower0, { x: 476, y: 270, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xf3b640 }, "AboveGroundDecals"),
+    FoliageFlower0_1: d(Tx.Foliage.Flower0, { x: 399, y: 262, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xd85f5f }, "AboveGroundDecals"),
+    PlayerMarker: e(r["Marker"], { x: 176, y: 216, values: { name: "PlayerMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+  })),
   Placeholder: l({ width: 500, height: 280, backgroundTint: 0x408000 }, () => ({
     Block: e(r["Block"], { x: 0, y: 192, width: 176, height: 88, values: { name: "", visible: true }, tint: 0x000000 }, "Entities"),
     Region: e(r["Region"], { x: 72, y: 40, width: 240, height: 120, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "RegionEntities"),
@@ -64,6 +99,7 @@ export const Lvl = {
 };
 
 export namespace LvlType {
+  export type CharacterChooser = ReturnType<(typeof Lvl)["CharacterChooser"]>;
   export type Placeholder = ReturnType<(typeof Lvl)["Placeholder"]>;
   export type World = ReturnType<(typeof Lvl)["World"]>;
 }

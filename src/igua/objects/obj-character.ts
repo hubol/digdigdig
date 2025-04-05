@@ -22,7 +22,7 @@ const [
 
 type FacingDirection = "north" | "east" | "south" | "west";
 
-interface ObjCharacterArgs {
+export interface ObjCharacterArgs {
     tint0: RgbInt;
     tint1: RgbInt;
     tint2: RgbInt;
