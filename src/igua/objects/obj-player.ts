@@ -16,6 +16,7 @@ import { generateObjCharacterArgs } from "./obj-npc";
 import { progress } from "./progress";
 
 const v = vnew();
+const v1 = vnew();
 
 let playerCharacterArgs = generateObjCharacterArgs();
 
@@ -103,12 +104,31 @@ function objPlayer() {
                 self.controls.facingDirection = "west";
             }
 
-            self.add(v);
-            self.x = Math.max(0, Math.min(self.x, scene.level.width));
-            self.y = Math.max(0, Math.min(self.y, scene.level.height));
+            const previousX = self.x;
+            const previousY = self.y;
 
-            if (self.objects.feetHitboxObj.collidesOne(Instances(objBlock))) {
+            const horizontalOk = !self.objects.feetHitboxObj.collidesOne(Instances(objBlock), v1.at(v.x, 0));
+            const verticalOk = !self.objects.feetHitboxObj.collidesOne(Instances(objBlock), v1.at(0, v.y));
+            if (!horizontalOk && !verticalOk) {
                 self.at(lastGoodPosition);
+            }
+            else if (horizontalOk && verticalOk) {
+                self.add(v);
+            }
+            else if (horizontalOk) {
+                self.x += v.x;
+            }
+            else if (verticalOk) {
+                self.y += v.y;
+            }
+
+            if (horizontalOk || verticalOk) {
+                self.x = Math.max(0, Math.min(self.x, scene.level.width));
+                self.y = Math.max(0, Math.min(self.y, scene.level.height));
+            }
+
+            if (previousX === self.x && previousY === self.y) {
+                energyConsumption = 0;
             }
 
             if (isInDrillMode) {
