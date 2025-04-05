@@ -18,19 +18,25 @@ function objReadingBook() {
         50,
     );
 
+    let count = 0;
+    let shownAtCount = -1;
+
     const methods = {
         show(message: string) {
             textObj.text = message;
             obj.visible = true;
-        },
-        hide() {
-            obj.visible = false;
+            shownAtCount = count;
         },
     };
 
     const obj = container(Sprite.from(Tx.Hud.Book), textObj);
 
-    return obj.merge({ methods }).invisible();
+    return obj.merge({ methods }).invisible().step(self => {
+        count++;
+        if (shownAtCount < count - 2) {
+            self.visible = false;
+        }
+    });
 }
 
 export type ObjOverlay = ReturnType<typeof objOverlay>;

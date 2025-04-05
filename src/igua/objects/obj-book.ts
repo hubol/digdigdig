@@ -27,8 +27,5 @@ export function objBook(message: string) {
             if (self.collides(playerObj) && corruptedMessage.length > 0) {
                 layers.overlay.objects.readingBookObj.methods.show(corruptedMessage);
             }
-            else {
-                layers.overlay.objects.readingBookObj.methods.hide();
-            }
         });
 }
