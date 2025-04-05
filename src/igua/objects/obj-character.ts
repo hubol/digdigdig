@@ -145,23 +145,23 @@ export function objCharacter(args: ObjCharacterArgs) {
     let nextUpsideDownSpinDirection = Rng.intp();
 
     const feetHitboxObj = new Graphics().beginFill(0xff0000).drawRect(20, 132, 60, 8).invisible();
+    const bodyVulnerableBoxObj = new Graphics().beginFill(0xff0000).drawRect(-25, -82, 50, 70).invisible();
+    const feetVulnerableBoxObj = new Graphics().beginFill(0x00ff00).drawRect(-30, -20, 60, 25).invisible();
 
     const objects = {
+        bodyVulnerableBoxObj,
+        feetVulnerableBoxObj,
         feetHitboxObj,
         hatTipObj,
     };
 
-    return container(lowerBodyObj, headObj, feetHitboxObj)
-        .mixin(mxnShadow, { hitboxObj: feetHitboxObj })
-        .merge({ controls, objects })
+    const innerObj = container(lowerBodyObj, headObj, feetHitboxObj)
         .filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff))
         .pivoted(50, 140)
         .step(self => {
             self.pivot.y = controls.upsideDownUnit >= 1 ? 16 : 140;
             self.angle = controls.upsideDownUnit >= 1 ? 180 : 0;
             feetHitboxObj.y = controls.upsideDownUnit >= 1 ? -117 : 0;
-
-            self.mxnShadow.controls.size = controls.upsideDownUnit > 0.5 ? "small" : "normal";
 
             headObj.offsetY = 0;
             lowerBodyObj.offsetY = 0;
@@ -187,5 +187,12 @@ export function objCharacter(args: ObjCharacterArgs) {
                 headObj.offsetY = nlerp(0, 10, Math.round(unit * 4) / 4);
                 lowerBodyObj.offsetY = nlerp(-30, -45, Math.round(unit * 4) / 4);
             }
+        }, -1);
+
+    return container(innerObj, bodyVulnerableBoxObj, feetVulnerableBoxObj)
+        .mixin(mxnShadow, { hitboxObj: feetHitboxObj })
+        .merge({ controls, objects })
+        .step(self => {
+            self.mxnShadow.controls.size = controls.upsideDownUnit > 0.5 ? "small" : "normal";
         }, -1);
 }

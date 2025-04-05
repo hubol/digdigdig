@@ -10,7 +10,7 @@ import { progress } from "../progress";
 export function objOverlay() {
     const readingBookObj = objReadingBook();
     const energyObj = objEnergy().step(self => self.visible = progress.firsts.everDrilled && !readingBookObj.visible);
-    const lifeObj = objLife().step(self => self.visible = progress.firsts.everDrilled && !readingBookObj.visible);
+    const lifeObj = objLife().step(self => self.visible = progress.firsts.everTookDamage && !readingBookObj.visible);
 
     const objects = {
         readingBookObj,
