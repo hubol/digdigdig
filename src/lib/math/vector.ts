@@ -34,7 +34,7 @@ export function normalize(vec: Vector) {
     return vec;
 }
 
-export function vlerp(a: Vector, b: VectorSimple, factor: number): Vector {
+export function vlerp<TVector extends VectorSimple>(a: TVector, b: VectorSimple, factor: number): TVector {
     a.x = nlerp(a.x, b.x, factor);
     a.y = nlerp(a.y, b.y, factor);
     return a;
