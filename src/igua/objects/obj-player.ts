@@ -11,6 +11,7 @@ import { Key } from "../globals";
 import { objCharacter, ObjCharacterArgs } from "./obj-character";
 import { CtxHoles } from "./obj-ground-stage";
 import { generateObjCharacterArgs } from "./obj-npc";
+import { progress } from "./progress";
 
 const v = vnew();
 
@@ -22,23 +23,38 @@ export function setPlayerCharacterArgs(args: ObjCharacterArgs) {
 
 function objPlayer() {
     let lineObj = Null<ObjDrawnLine>();
+    let expectJustWentDownToDrill = true;
 
     return objCharacter(playerCharacterArgs)
         .step(self => {
+            const attemptingToDrill = (Key.justWentDown("Space") || (!expectJustWentDownToDrill && Key.isDown("Space")))
+                && progress.energy > 0;
+
+            if (attemptingToDrill) {
+                progress.firsts.everDrilled = true;
+            }
+
+            expectJustWentDownToDrill = !attemptingToDrill;
+
+            let energyConsumption = 0;
+
             self.controls.upsideDownUnit = approachLinear(
                 self.controls.upsideDownUnit,
-                Key.isDown("Space") ? 1 : 0,
+                attemptingToDrill ? 1 : 0,
                 0.05,
             );
 
-            if (self.controls.upsideDownUnit <= 0 && lineObj) {
+            const isInNormalMode = self.controls.upsideDownUnit <= 0;
+            const isInDrillMode = self.controls.upsideDownUnit >= 1;
+
+            if (isInNormalMode && lineObj) {
                 lineObj.methods.finish(self.mxnShadow.state.tint);
                 lineObj = null;
             }
 
             v.at(0, 0);
 
-            if (self.controls.upsideDownUnit <= 0 || self.controls.upsideDownUnit >= 1) {
+            if (isInNormalMode || isInDrillMode) {
                 if (Key.isDown("ArrowUp")) {
                     v.add(0, -1);
                 }
@@ -54,10 +70,13 @@ function objPlayer() {
             }
 
             if (!v.isZero) {
+                if (isInDrillMode) {
+                    energyConsumption = 1;
+                }
                 v.normalize().scale(2);
             }
 
-            if (!v.isZero && self.controls.upsideDownUnit <= 0) {
+            if (!v.isZero && isInNormalMode) {
                 self.controls.pedometer += 0.1;
             }
             else {
@@ -79,13 +98,26 @@ function objPlayer() {
 
             self.add(v);
 
-            if (self.controls.upsideDownUnit >= 1) {
+            if (isInDrillMode) {
                 if (!lineObj) {
                     lineObj = objDrawnLine().zIndexed(-1).show();
                 }
 
                 const { x, y } = self.objects.hatTipObj.getWorldBounds();
                 lineObj.methods.push(x, y);
+            }
+
+            if (attemptingToDrill) {
+                progress.energy = Math.max(0, progress.energy - energyConsumption);
+                if (progress.energy === 0) {
+                    progress.energyBlockedSteps = progress.energyBlockedStepsMaximum;
+                }
+            }
+            else if (progress.energyBlockedSteps > 0) {
+                progress.energyBlockedSteps = Math.max(0, progress.energyBlockedSteps - 1);
+            }
+            else if (isInNormalMode) {
+                progress.energy = Math.min(progress.energy + 1, progress.energyMaximum);
             }
         });
 }
