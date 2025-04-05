@@ -61,11 +61,17 @@ export function objCharacter() {
 
     const lowerBodyObj = container(
         Sprite.from(txTorso),
-        Sprite.from(txFootLeft),
-        Sprite.from(txFootRight),
+        Sprite.from(txFootLeft).step(self =>
+            self.y = controls.pedometer === 0 ? 0 : (Math.round(Math.sin(controls.pedometer * Math.PI) - 1) * 6)
+        ),
+        Sprite.from(txFootRight).step(self =>
+            self.y = controls.pedometer === 0 ? 0 : (Math.round(Math.cos(controls.pedometer * Math.PI) - 1) * 6)
+        ),
         Sprite.from(txUnderwearFront).step(self =>
             self.texture = controls.facingDirection === "north" ? txUnderwearBack : txUnderwearFront
         ),
+    ).step(self =>
+        self.y = controls.pedometer === 0 ? 0 : (Math.round(Math.sin((controls.pedometer + 1) * Math.PI) + 1) * 2)
     );
 
     const headObj = container(
@@ -73,6 +79,8 @@ export function objCharacter() {
         faceObj,
         hatObj,
         maskObj,
+    ).step(self =>
+        self.y = controls.pedometer === 0 ? 0 : (Math.round(Math.cos((controls.pedometer + 1) * Math.PI) + 1) * 2)
     );
 
     return container(lowerBodyObj, headObj)

@@ -23,6 +23,10 @@ export function objPlayer() {
 
             if (!v.isZero) {
                 v.normalize().scale(2);
+                self.controls.pedometer += 0.1;
+            }
+            else {
+                self.controls.pedometer = 0;
             }
 
             if (v.y < -0.4) {
