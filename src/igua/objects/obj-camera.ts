@@ -3,6 +3,7 @@ import { Vector, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { renderer } from "../current-pixi-renderer";
 import { scene } from "../globals";
+import { playerObj } from "./obj-player";
 import { StepOrder } from "./step-order";
 
 type CameraMode = "follow_player";
@@ -23,8 +24,8 @@ const v = vnew();
 export function objCamera() {
     // TODO not sure if mode should be exposed...
     const obj = container().merge({ mode: <CameraMode> "follow_player" }).step(self => {
-        if (self.mode === "follow_player") {
-            // getCameraPositionToFrameSubject(self, playerObj);
+        if (self.mode === "follow_player" && playerObj?.destroyed === false) {
+            self.at(Math.floor(playerObj.x / 500) * 500, Math.floor(playerObj.y / 280) * 280);
         }
 
         // TODO switch for this?

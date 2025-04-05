@@ -4,4 +4,5 @@ export enum StepOrder {
     AfterPhysics = 1001,
     BeforeCamera = 1999,
     Camera = 2000,
+    AfterCamera = 2001,
 }

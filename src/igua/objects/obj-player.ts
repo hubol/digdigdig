@@ -13,7 +13,7 @@ import { generateNpcTints } from "./obj-npc";
 
 const v = vnew();
 
-export function objPlayer() {
+function objPlayer() {
     let lineObj = Null<ObjDrawnLine>();
 
     return objCharacter(generateNpcTints(Rng.int(10_000_000, 420_000_000)))
@@ -81,6 +81,14 @@ export function objPlayer() {
                 lineObj.methods.push(x, y);
             }
         });
+}
+
+export type ObjPlayer = ReturnType<typeof objPlayer>;
+
+export let playerObj: ObjPlayer;
+
+export function createPlayerObj() {
+    return playerObj = objPlayer();
 }
 
 function objDrawnLine() {

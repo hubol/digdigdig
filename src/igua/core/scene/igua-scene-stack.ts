@@ -4,6 +4,7 @@ import { SceneStack } from "../../../lib/game-engine/scene-stack";
 import { TickerContainer } from "../../../lib/game-engine/ticker-container";
 import { Logging } from "../../../lib/logging";
 import { merge } from "../../../lib/object/merge";
+import { container } from "../../../lib/pixi/container";
 import { renderer } from "../../current-pixi-renderer";
 import { forceGameLoop } from "../../globals";
 import { objCamera } from "../../objects/obj-camera";
@@ -26,12 +27,16 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
     const groundStage = objGroundStage().named("Ground Stage");
     const buriedStage = new Container().named("Buried Stage");
     const deepestStage = objDeepestStage().named("Deepest Stage");
+
     const stage = new Container().named("Stage");
     stage.sortableChildren = true;
 
+    const earthStage = container(deepestStage, buriedStage, groundStage).named("Earth Stage").zIndexed(-10000000);
+    earthStage.show(stage);
+
     const camera = objCamera();
 
-    root.addChild(background, parallaxStage, deepestStage, buriedStage, groundStage, stage, camera);
+    root.addChild(background, parallaxStage, stage, camera);
 
     const backgroundGfx = new Graphics().tinted(0x000000).beginFill(0xffffff).drawRect(
         0,
