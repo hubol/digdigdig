@@ -1,6 +1,6 @@
 {
   "ogmoVersion": "3.4.0-hubol",
-  "width": 500,
+  "width": 1008,
   "height": 280,
   "offsetX": 0,
   "offsetY": 0,
@@ -14,7 +14,7 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 64,
+      "gridCellsX": 126,
       "gridCellsY": 35,
       "entities": [
         {
@@ -37,7 +37,7 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 64,
+      "gridCellsX": 126,
       "gridCellsY": 35,
       "entities": []
     },
@@ -48,7 +48,7 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 64,
+      "gridCellsX": 126,
       "gridCellsY": 35,
       "entities": []
     },
@@ -59,7 +59,7 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 64,
+      "gridCellsX": 126,
       "gridCellsY": 35,
       "decals": [
         {
@@ -176,7 +176,7 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 64,
+      "gridCellsX": 126,
       "gridCellsY": 35,
       "decals": [
         {
@@ -334,6 +334,18 @@
           "originX": 0.5,
           "originY": 0.5,
           "values": {"name": ""}
+        },
+        {
+          "x": 805,
+          "y": 145,
+          "scaleX": 2,
+          "scaleY": 2,
+          "rotation": 0,
+          "tint": "#98ad46",
+          "texture": "patch/splotch 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -345,9 +357,22 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 64,
+      "gridCellsX": 126,
       "gridCellsY": 35,
-      "decals": [],
+      "decals": [
+        {
+          "x": 136,
+          "y": 120,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "treasures/bone 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        }
+      ],
       "folder": "../textures"
     }
   ]

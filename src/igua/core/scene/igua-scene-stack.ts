@@ -46,6 +46,7 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
         parallaxStage,
         stage,
         groundStage,
+        buriedStage,
         deepestStage,
         camera,
         ticker,

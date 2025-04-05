@@ -15,6 +15,9 @@ export function ogmoAddToLayer(obj: DisplayObject, layerName: string) {
         obj.zIndex = -1;
         obj.show(scene.groundStage);
     }
+    else if (layerName === "BuriedDecals") {
+        obj.show(scene.buriedStage);
+    }
     else if (layerName === "ParallaxDecals") {
         obj.show(scene.parallaxStage);
     }

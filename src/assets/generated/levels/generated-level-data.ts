@@ -15,7 +15,8 @@ export const Lvl = {
     Marker_2: e(r["Marker"], { x: 280, y: 112, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
     Marker_3: e(r["Marker"], { x: 272, y: 64, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
-  World: l({ width: 500, height: 280, backgroundTint: 0x408000 }, () => ({
+  World: l({ width: 1008, height: 280, backgroundTint: 0x408000 }, () => ({
+    TreasuresBone0: d(Tx.Treasures.Bone0, { x: 136, y: 120, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "BuriedDecals"),
     PatchSplotch0: d(Tx.Patch.Splotch0, { x: 67, y: 75, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x98ad46 }, "GroundDecals"),
     PatchSplotch0_1: d(Tx.Patch.Splotch0, { x: 98, y: 253, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xb0c16e }, "GroundDecals"),
     PatchSplotch0_2: d(Tx.Patch.Splotch0, { x: 293, y: 248, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x98ad46 }, "GroundDecals"),
@@ -29,6 +30,7 @@ export const Lvl = {
     PatchShadow0_4: d(Tx.Patch.Shadow0, { x: 402, y: 232, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x7e8f3e }, "GroundDecals"),
     PatchShadow0_5: d(Tx.Patch.Shadow0, { x: 160, y: 160, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x98ad46 }, "GroundDecals"),
     PatchShadow0_6: d(Tx.Patch.Shadow0, { x: 368, y: 168, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xb0c16e }, "GroundDecals"),
+    PatchSplotch0_6: d(Tx.Patch.Splotch0, { x: 805, y: 145, scaleX: 2, scaleY: 2, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x98ad46 }, "GroundDecals"),
     StoneRock0: d(Tx.Stone.Rock0, { x: 368, y: 226, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "AboveGroundDecals"),
     StoneRock0_1: d(Tx.Stone.Rock0, { x: 434, y: 224, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "AboveGroundDecals"),
     StoneRock1: d(Tx.Stone.Rock1, { x: 59, y: 244, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "AboveGroundDecals"),
