@@ -5,6 +5,7 @@ import { Rng } from "../../lib/math/rng";
 import { vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { MapRgbFilter } from "../../lib/pixi/filters/map-rgb-filter";
+import { scene } from "../globals";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnShadow } from "../mixins/mxn-shadow";
 import { generateObjCharacterArgs } from "./obj-npc";
@@ -67,5 +68,6 @@ export function objGoon() {
             while (true) {
                 yield* coroIdle();
             }
-        });
+        })
+        .show(scene.perspectiveStage);
 }

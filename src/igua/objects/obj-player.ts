@@ -152,7 +152,8 @@ function objPlayer() {
             else if (isInNormalMode) {
                 progress.energy = Math.min(progress.energy + 1, progress.energyMaximum);
             }
-        });
+        })
+        .show(scene.perspectiveStage);
 }
 
 export type ObjPlayer = ReturnType<typeof objPlayer>;

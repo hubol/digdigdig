@@ -9,6 +9,7 @@ import { renderer } from "../../current-pixi-renderer";
 import { forceGameLoop } from "../../globals";
 import { objCamera } from "../../objects/obj-camera";
 import { objDeepestStage, objGroundStage } from "../../objects/obj-ground-stage";
+import { objPerspectiveStage } from "../../objects/obj-perspective-stage";
 import { IguaLayers } from "../igua-layers";
 
 interface IguaSceneMeta {
@@ -24,6 +25,7 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
     const parallaxStage = new Container().named("Parallax Stage");
     //
 
+    const perspectiveStage = objPerspectiveStage().named("Perspective Stage").zIndexed(100000);
     const groundStage = objGroundStage().named("Ground Stage");
     const buriedStage = new Container().named("Buried Stage");
     const deepestStage = objDeepestStage().named("Deepest Stage");
@@ -33,6 +35,8 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
 
     const earthStage = container(deepestStage, buriedStage, groundStage).named("Earth Stage").zIndexed(-10000000);
     earthStage.show(stage);
+
+    perspectiveStage.show(stage);
 
     const camera = objCamera();
 
@@ -53,6 +57,7 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
         groundStage,
         buriedStage,
         deepestStage,
+        perspectiveStage,
         camera,
         ticker,
         level: {
