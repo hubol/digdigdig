@@ -115,8 +115,11 @@ function objDrawnLine() {
 
             gfx.lineTo(previewPosition.x, previewPosition.y);
         },
-        finish(radius = 32) {
-            const origin = getOriginOfPositions(positions);
+        finish(maxRadius = 32) {
+            const analysis = analyzePositions(positions);
+            const origin = analysis.origin;
+            const radius = Math.min(analysis.radius, maxRadius);
+
             const previousPositions = positions.map(({ x, y }) => ({ x, y }));
             const targetPositions = getTargetPositions(positions, origin, radius);
 
@@ -143,6 +146,7 @@ function objDrawnLine() {
                     .add(radius, radius)
                     .show(obj);
                 yield interpv(solidObj.scale).to(-1, -1).over(300);
+                gfx.destroy();
             });
         },
     };
@@ -152,7 +156,7 @@ function objDrawnLine() {
     return obj.merge({ methods });
 }
 
-function getOriginOfPositions(positions: VectorSimple[]) {
+function analyzePositions(positions: VectorSimple[]) {
     let minX = Number.MAX_VALUE;
     let minY = Number.MAX_VALUE;
     let maxX = Number.MIN_VALUE;
@@ -165,9 +169,12 @@ function getOriginOfPositions(positions: VectorSimple[]) {
         maxY = Math.max(maxY, position.y);
     }
 
+    const origin = { x: nlerp(minX, maxX, 0.5), y: nlerp(minY, maxY, 0.5) };
+    const radius = ((maxX - minX) / 2 + (maxY - minY) / 2) / 2;
+
     return {
-        x: nlerp(minX, maxX, 0.5),
-        y: nlerp(minY, maxY, 0.5),
+        origin,
+        radius,
     };
 }
 
