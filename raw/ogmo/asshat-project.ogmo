@@ -37,7 +37,7 @@
     },
     {
       "definition": "entity",
-      "name": "Entities",
+      "name": "DiggableEntities",
       "gridSize": {"x": 8, "y": 8},
       "exportID": "93086020",
       "requiredTags": [],
@@ -52,7 +52,7 @@
       "includeImageSequence": true,
       "scaleable": true,
       "rotatable": true,
-      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
       "values": [
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
       ]
@@ -66,7 +66,7 @@
       "includeImageSequence": true,
       "scaleable": true,
       "rotatable": true,
-      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
       "values": [
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
       ]
@@ -80,7 +80,7 @@
       "includeImageSequence": true,
       "scaleable": true,
       "rotatable": true,
-      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
       "values": [
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
       ]
@@ -264,6 +264,51 @@
       "tintable": {"enabled": true, "defaultTint": "#00ff00", "rgbLevelValueName": "", "useDefaultTint": true},
       "texture": "preview-images/region.png",
       "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABPSURBVFhH7dcxCgAgDATB0/WSOKQuxzzS4Ipsq0aZJGPFsb4CLE9gdYv8rOzgyoYtydfc++AAAAAAAAAAAAAAAAACBfRnV9p5mjC7AlTcXvEDMTrZ50AAAAAElFTkSuQmCC"
+    },
+    {
+      "exportID": "84364576",
+      "name": "Book",
+      "limit": -1,
+      "size": {"x": 113, "y": 68},
+      "origin": {"x": 56, "y": 34},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "flipOnlyScales": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "hasUid": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": [
+        {"name": "message", "definition": "String", "display": 1, "defaults": "", "maxLength": 0, "trimWhitespace": true},
+        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
+      ],
+      "isRegion": false,
+      "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
+      "texture": "preview-images/book.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABECAYAAAC2ydrOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARzSURBVHhe7ZxBa1QxEIC3PQseRVgE6aW/QEpBBOlNj9KLUDz6G4pH8Q948STSY/Got1JQoRR/QS9eZC/evWtnN1Nm00kySSZ5L/vyQdjs9u3LZL6Xydtl6dasw3J1dfXPdL3s7u4OnsMu0SCV5mMooZOXqCHPprbMyUosIY9SU+QkJZYWSKkhs7rE3ATmJKWmPEppkVUkDl26hpLHUULorROevdhRmfD87VfTq8PizTPTW0crjsvLD6bnZm/vten5ccUq4eDzr1vO1l7gBNaWkQtNUG7sEnEcUpmUGLG2yJsnmyAQOT39tHzc3z9YPgLz+dz0ZKQKRFJEuuAEU5FOia0KBBaLxezi4mzZR5FaEjk5IeEaQm2Ro5Koudcg2hKl45eWSUUOJlEizIc0CVhOgVSJqfjmWEritnnMBoLHVgM6nj0m3QtrA6Kw1SJbIpfEFOjkNZIwpEhEcz4+2HLKldIYUSUDRux46JiwJwKwL9YupyVx3dyolVOkhkAAr25sNnhjMwXUVmIteRJy7059c+Xm6TpeOyeulSiW2BKpEiVbRoxEQFPkoBIlV2pqAjlcEkNx1JBIj5XOh8J9zFDfEyFIu7UKJNluHJJjOLTypP45sQZ04prjpsqwyTlHypyyy2nMYDmJoXBj0nNrfO1WElfOYA70b1y+uHIqlhgjC9ASxtG6RB+jkVhSoISWJYYoKnFocZRYidK5xVzIiHZesiS2hE9ijggNidw5YkQ7JVKBQEmJ9iRSE+SbeJd4jabE0MTHJDEmman4JNK/uWLpEkeOnQNujlQiACKTJPoSbg/sOtYnwQU9V5e4gpV4/vvv7Ojkm3nGEyNxCGpI9F1Q0ouNI/Tek6Mns6cP7phnK4nq351uIpBYu0mJfR+IwyYlaSWOHc2VKE08RfIeJEYW0FfiNXRVcC0WTkKsmFx6OY0A5NjNhfQ4JOdiGkU5jQlakpDUz4mA5Pwl4OLiYuHKabbE2Ksml1yJY0UqEQCRAMjsd6cjAoSlVoFRScSJ2G1KpMxbtZyWSnjsGK1+YyOFllNgmwrUBBKPTUrKe0pDY3LFZR9DWw36nuihlARbNLZUJiuRS6LdapM67pZdTqeyJ8YmS3NukrFD49HPi72cCtC+OOF8mucsuhJjr3YKPVeJlThGYubZV+JIAXHYYugSN4DJ3ti0Ti+nG4bqSqxBX4kr+krcMJqSWGrPbZ3scjpGWiynEHMM58cvp1NOUWYrLBZf1pqEoES4cbFbpx4SmcFyykkruTfRf65HOTx8ZXphaDkFoKRqlFNXbBwx8QJYTl3C5vPnpreCltOt40f31iQCpSTGJCGEL0maErViDkm190RbJicRCUrMRVMcB5ecXImlY0Zo7LbEEMUl1kqCDSbFHl8icaiYEbyLlkAFAqxEIEXkkIm4/+O76YV5/P6j6Q0vj8Mn1BYIOCW2xsO7O6YXBiXir8ZaZ2MkTpn+3ekGsPzxMNBXZLvcSASmKPLdzz/NXsgYe7PlFCZAm3l5gsxm/wFJ1x4iSIMYgAAAAABJRU5ErkJggg=="
     }
   ],
   "tilesets": []

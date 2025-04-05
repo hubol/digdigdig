@@ -5,6 +5,7 @@ const entityValues = {
   Slope: null as unknown as { name: string; visible: boolean },
   Marker: null as unknown as { name: string; depth: number },
   Region: null as unknown as { name: string; depth: number },
+  Book: null as unknown as { message: string; name: string },
 };
 
 export namespace OgmoProject {

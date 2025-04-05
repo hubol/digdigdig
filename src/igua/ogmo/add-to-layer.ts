@@ -8,7 +8,11 @@ export function ogmoAddToLayer(obj: DisplayObject, layerName: string) {
         return;
     }
 
-    if (layerName === "AboveGroundDecals") {
+    if (layerName === "DiggableEntities") {
+        obj.zIndex = 1;
+        obj.show(scene.groundStage);
+    }
+    else if (layerName === "AboveGroundDecals") {
         obj.show(scene.groundStage);
     }
     else if (layerName === "GroundDecals") {

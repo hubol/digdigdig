@@ -43,7 +43,7 @@ export const Lvl = {
     PlayerMarker: e(r["Marker"], { x: 176, y: 216, values: { name: "PlayerMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
   Placeholder: l({ width: 500, height: 280, backgroundTint: 0x408000 }, () => ({
-    Block: e(r["Block"], { x: 0, y: 192, width: 176, height: 88, values: { name: "", visible: true }, tint: 0x000000 }, "Entities"),
+    Block: e(r["Block"], { x: 0, y: 192, width: 176, height: 88, values: { name: "", visible: true }, tint: 0x000000 }, "DiggableEntities"),
     Region: e(r["Region"], { x: 72, y: 40, width: 240, height: 120, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "RegionEntities"),
     Marker: e(r["Marker"], { x: 120, y: 88, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
     Marker_1: e(r["Marker"], { x: 184, y: 120, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
@@ -86,6 +86,8 @@ export const Lvl = {
     HintsArrow_1: d(Tx.Hints.Arrow, { x: 426, y: 75, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x7e8f3e }, "GroundDecals"),
     HintsArrow_2: d(Tx.Hints.Arrow, { x: 449, y: 80, scaleX: 1, scaleY: 1, rotation: 90, originX: 0.5, originY: 0.5, tint: 0x7e8f3e }, "GroundDecals"),
     HintsArrow_3: d(Tx.Hints.Arrow, { x: 449, y: 52, scaleX: -1, scaleY: 1, rotation: 90, originX: 0.5, originY: 0.5, tint: 0x7e8f3e }, "GroundDecals"),
+    PatchShadow0_10: d(Tx.Patch.Shadow0, { x: 273, y: 254, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x7e8f3e }, "GroundDecals"),
+    PatchShadow0_11: d(Tx.Patch.Shadow0, { x: 247, y: 218, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x7e8f3e }, "GroundDecals"),
     StoneRock0: d(Tx.Stone.Rock0, { x: 368, y: 226, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "AboveGroundDecals"),
     StoneRock0_1: d(Tx.Stone.Rock0, { x: 434, y: 224, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "AboveGroundDecals"),
     StoneRock1: d(Tx.Stone.Rock1, { x: 59, y: 244, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "AboveGroundDecals"),
@@ -99,6 +101,7 @@ export const Lvl = {
     FoliageFlower0_4: d(Tx.Foliage.Flower0, { x: 816, y: 128, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xc86060 }, "AboveGroundDecals"),
     FoliageFlower0_5: d(Tx.Foliage.Flower0, { x: 825, y: 71, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xc86060 }, "AboveGroundDecals"),
     FoliageFlower0_6: d(Tx.Foliage.Flower0, { x: 748, y: 122, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xc86060 }, "AboveGroundDecals"),
+    Book: e(r["Book"], { x: 256, y: 224, values: { message: "", name: "" } }, "DiggableEntities"),
     PlayerStartMarker: e(r["Marker"], { x: 248, y: 136, values: { name: "PlayerStartMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
 };
