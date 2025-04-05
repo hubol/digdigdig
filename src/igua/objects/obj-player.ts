@@ -1,8 +1,10 @@
 import { Graphics } from "pixi.js";
+import { interp, interpv } from "../../lib/game-engine/routines/interp";
 import { approachLinear, nlerp } from "../../lib/math/number";
 import { Rng } from "../../lib/math/rng";
 import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
+import { container } from "../../lib/pixi/container";
 import { Null } from "../../lib/types/null";
 import { Key } from "../globals";
 import { objCharacter } from "./obj-character";
@@ -87,7 +89,7 @@ function objDrawnLine() {
     const gfx = new Graphics();
 
     function drawPositions() {
-        gfx.clear().lineStyle(1, 0x000000).moveTo(positions[0].x, positions[0].y);
+        gfx.clear().lineStyle(1, 0x000000, 1, 0).moveTo(positions[0].x, positions[0].y);
         for (let i = 1; i < positions.length; i++) {
             gfx.lineTo(positions[i].x, positions[i].y);
         }
@@ -113,25 +115,41 @@ function objDrawnLine() {
 
             gfx.lineTo(previewPosition.x, previewPosition.y);
         },
-        finish() {
+        finish(radius = 32) {
             const origin = getOriginOfPositions(positions);
             const previousPositions = positions.map(({ x, y }) => ({ x, y }));
-            const targetPositions = getTargetPositions(positions, origin, 32);
-            let factor = 0;
+            const targetPositions = getTargetPositions(positions, origin, radius);
+
+            const finishState = {
+                factor: 0,
+            };
 
             gfx.step(() => {
-                factor = approachLinear(factor, 1, 0.025);
                 for (let i = 0; i < positions.length; i++) {
                     positions[i].x = previousPositions[i].x;
                     positions[i].y = previousPositions[i].y;
-                    vlerp(positions[i], targetPositions[i], factor);
+                    vlerp(positions[i], targetPositions[i], finishState.factor);
                 }
                 drawPositions();
+            });
+
+            obj.coro(function* () {
+                yield interp(finishState, "factor").steps(4).to(1).over(300);
+                const solidObj = new Graphics()
+                    .beginFill(0x000000)
+                    .drawRect(0, 0, radius * 2, radius * 2)
+                    .scaled(0, 0)
+                    .at(origin)
+                    .add(radius, radius)
+                    .show(obj);
+                yield interpv(solidObj.scale).to(-1, -1).over(300);
             });
         },
     };
 
-    return gfx.merge({ methods });
+    const obj = container(gfx);
+
+    return obj.merge({ methods });
 }
 
 function getOriginOfPositions(positions: VectorSimple[]) {
