@@ -10,12 +10,13 @@ import { progress } from "../progress";
 export function objOverlay() {
     const readingBookObj = objReadingBook();
     const energyObj = objEnergy().step(self => self.visible = progress.firsts.everDrilled && !readingBookObj.visible);
+    const lifeObj = objLife().step(self => self.visible = progress.firsts.everDrilled && !readingBookObj.visible);
 
     const objects = {
         readingBookObj,
     };
 
-    return container(energyObj, readingBookObj).merge({ objects });
+    return container(energyObj, lifeObj, readingBookObj).merge({ objects });
 }
 
 function objReadingBook() {
@@ -82,6 +83,29 @@ function objEnergy() {
             .filtered(new SpriteMaskFilter(barMaskObj)),
     )
         .at(5, 5);
+}
+
+function objLife() {
+    const barMaskObj = Sprite.from(Tx.Hud.EnergyBar).flipH();
+
+    return container(
+        Sprite.from(Tx.Hud.Life).tinted(0xff0000).at(18, 0),
+        container(
+            barMaskObj,
+            new Graphics().beginFill(0xffffff).drawRect(0, 0, Tx.Hud.EnergyBar.width, Tx.Hud.EnergyBar.height),
+            new Graphics().step(self =>
+                self.clear().beginFill(0xff0000).drawRect(
+                    0,
+                    0,
+                    getWidth(Tx.Hud.EnergyBar.width, progress.life / progress.lifeMaximum),
+                    Tx.Hud.EnergyBar.height,
+                )
+            ),
+        )
+            .at(54, 3)
+            .filtered(new SpriteMaskFilter(barMaskObj)),
+    )
+        .at(158, 5);
 }
 
 function getWidth(width: number, unit: number) {
