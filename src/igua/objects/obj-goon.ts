@@ -18,6 +18,7 @@ import { generateObjCharacterArgs } from "./obj-npc";
 import { playerObj } from "./obj-player";
 
 const [txIdle, txWalk, ...txsCharge] = Tx.Enemy.Goon.split({ width: 92 });
+const v = vnew();
 
 export function objGoon() {
     const args = generateObjCharacterArgs();
@@ -30,6 +31,14 @@ export function objGoon() {
         pedometer: 0,
         chargeUnit: 0,
         lastInsidePosition: vnew(),
+        canRecoverEnergy: true,
+        energy: 500,
+        energyMaximum: 500,
+    };
+
+    const consts = {
+        minimumEnergyToEngage: 100,
+        energyPerSpell: 250,
     };
 
     function* coroIdle() {
@@ -41,7 +50,8 @@ export function objGoon() {
 
     function noticePlayer(position: VectorSimple, facing: PolarInt) {
         const minDistanceToNotice = Math.sign(playerObj.x - position.x) === facing ? 400 : 100;
-        return Math.abs(playerObj.x - position.x) < minDistanceToNotice && Math.abs(playerObj.y - position.y) < 100;
+        return Math.abs(playerObj.x - position.x) < minDistanceToNotice && Math.abs(playerObj.y - position.y) < 100
+            && state.energy > consts.minimumEnergyToEngage;
     }
 
     return container(
@@ -77,6 +87,10 @@ export function objGoon() {
                 );
                 sprite.texture = txsCharge[txIndex];
             }
+
+            if (state.canRecoverEnergy) {
+                state.energy = Math.min(state.energyMaximum, state.energy + 1);
+            }
         })
         .pivoted(48, 134)
         .mixin(mxnShadow, {})
@@ -90,16 +104,23 @@ export function objGoon() {
                     ),
                 ]);
 
+                self.scale.x = -Math.sign(playerObj.x - self.x) || 1;
+
+                state.canRecoverEnergy = false;
+                state.energy -= consts.energyPerSpell;
+
                 state.speed.at(0, 0);
-                yield interpv(sprite).factor(factor.sine).to(0, -16).over(150);
-                yield interpv(sprite).to(0, 0).over(100);
+                yield interpv(sprite).factor(factor.sine).to(0, -32).over(275);
+                yield interpv(sprite).to(0, 0).over(200);
 
                 yield* Coro.all([
                     interp(state, "chargeUnit").to(1).over(500),
                     Coro.chain([sleep(400), () => (objGoonSpell().at(self).filtered(filter), true)]),
                 ]);
-                yield sleep(100);
+                yield sleep(500);
                 state.chargeUnit = 0;
+
+                state.canRecoverEnergy = true;
             }
         })
         .show(scene.perspectiveStage);
