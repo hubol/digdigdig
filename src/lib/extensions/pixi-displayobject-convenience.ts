@@ -36,6 +36,7 @@ declare module "pixi.js" {
         zIndexed(value: number): this;
 
         getWorldPosition(point?: Point): VectorSimple;
+        getWorldBounds(rectangle?: Rectangle): Rectangle;
     }
 
     interface Container {
@@ -165,6 +166,14 @@ Object.defineProperties(DisplayObject.prototype, {
             // TODO maybe a little naive
             point.add(-stage.x, -stage.y);
             return point;
+        },
+    },
+    getWorldBounds: {
+        value: function (this: DisplayObject, rectangle = r): Rectangle {
+            const stage = EngineConfig.worldStage;
+            this.getBounds(false, rectangle);
+            rectangle.add(-stage.x, -stage.y);
+            return rectangle;
         },
     },
 });
