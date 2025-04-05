@@ -1,4 +1,5 @@
 import { DisplayObject } from "pixi.js";
+import { playerObj } from "../objects/obj-player";
 
 export function mxnInhabitsAcre(obj: DisplayObject) {
     const consts = {
@@ -13,6 +14,10 @@ export function mxnInhabitsAcre(obj: DisplayObject) {
     const methods = {
         isInsideAcre() {
             return obj.x >= consts.minX && obj.y >= consts.minY && obj.x <= consts.maxX && obj.y <= consts.maxY;
+        },
+        isPlayerInsideAcre() {
+            return playerObj.x >= consts.minX && playerObj.y >= consts.minY && playerObj.x <= consts.maxX
+                && playerObj.y <= consts.maxY;
         },
     };
 
