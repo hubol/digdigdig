@@ -5,6 +5,7 @@ import { RgbInt } from "../../lib/math/number-alias-types";
 import { Rng } from "../../lib/math/rng";
 import { container } from "../../lib/pixi/container";
 import { MapRgbFilter } from "../../lib/pixi/filters/map-rgb-filter";
+import { mxnShadow } from "../mixins/mxn-shadow";
 
 const [
     txHead,
@@ -147,13 +148,19 @@ export function objCharacter(args: ObjCharacterArgs) {
         hatTipObj,
     };
 
-    return container(lowerBodyObj, headObj)
+    const shadowHitboxObj = new Graphics().beginFill(0xff0000).drawRect(20, 132, 60, 8).invisible();
+
+    return container(lowerBodyObj, headObj, shadowHitboxObj)
+        .mixin(mxnShadow, { hitboxObj: shadowHitboxObj })
         .merge({ controls, objects })
         .filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff))
         .pivoted(50, 140)
         .step(self => {
             self.pivot.y = controls.upsideDownUnit >= 1 ? 16 : 140;
             self.angle = controls.upsideDownUnit >= 1 ? 180 : 0;
+            shadowHitboxObj.y = controls.upsideDownUnit >= 1 ? -117 : 0;
+
+            self.mxnShadow.controls.size = controls.upsideDownUnit > 0.5 ? "small" : "normal";
 
             headObj.offsetY = 0;
             lowerBodyObj.offsetY = 0;

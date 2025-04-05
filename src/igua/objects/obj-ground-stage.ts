@@ -1,10 +1,13 @@
 import { Graphics, IRendererRenderOptions, RenderTexture, Sprite, SpriteMaskFilter } from "pixi.js";
 import { Tx } from "../../assets/textures";
+import { Instances } from "../../lib/game-engine/instances";
+import { sleepf } from "../../lib/game-engine/routines/sleep";
 import { IRectangle } from "../../lib/math/rectangle";
 import { Rng } from "../../lib/math/rng";
 import { container } from "../../lib/pixi/container";
 import { renderer } from "../current-pixi-renderer";
 import { scene } from "../globals";
+import { mxnShadow } from "../mixins/mxn-shadow";
 import { StepOrder } from "./step-order";
 
 const groundStageMaskRenderTexture = RenderTexture.create({ width: renderer.width, height: renderer.height });
@@ -43,11 +46,45 @@ export function objGroundStage() {
         },
     };
 
-    return container(maskObj)
+    return container(maskObj, objShadows().zIndexed(10000))
         .merge({ methods })
         .step(render, StepOrder.AfterCamera)
         .filtered(new SpriteMaskFilter(maskObj))
         .autoSorted();
+}
+
+function objShadow() {
+    return Sprite.from(Tx.CharacterShadow).anchored(0.5, 0.5).coro(function* (self) {
+        while (true) {
+            self.angle = Rng.int(2) * 180;
+            self.scale.x = Rng.intp();
+            self.scale.y = Rng.intp();
+            yield sleepf(Rng.int(10, 30));
+        }
+    });
+}
+
+function objShadows() {
+    return container<Sprite>()
+        .step(self => {
+            for (let i = 0; i < self.children.length; i++) {
+                self.children[i].visible = false;
+            }
+
+            const needsShadowObjs = Instances(mxnShadow);
+            for (let i = 0; i < needsShadowObjs.length; i++) {
+                if (!self.children[i]) {
+                    self.addChild(objShadow());
+                }
+
+                const needsShadowObj = needsShadowObjs[i];
+                self.children[i].visible = true;
+                self.children[i].at(needsShadowObj).tinted(needsShadowObj.mxnShadow.state.tint);
+                self.children[i].texture = needsShadowObj.mxnShadow.controls.size === "normal"
+                    ? Tx.CharacterShadow
+                    : Tx.CharacterShadowSmall;
+            }
+        });
 }
 
 export function objDeepestStage() {
