@@ -2,6 +2,7 @@ import { Graphics } from "pixi.js";
 import { interp, interpv } from "../../lib/game-engine/routines/interp";
 import { sleepf } from "../../lib/game-engine/routines/sleep";
 import { approachLinear, nlerp } from "../../lib/math/number";
+import { RgbInt } from "../../lib/math/number-alias-types";
 import { Rng } from "../../lib/math/rng";
 import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
@@ -27,7 +28,7 @@ function objPlayer() {
             );
 
             if (self.controls.upsideDownUnit <= 0 && lineObj) {
-                lineObj.methods.finish();
+                lineObj.methods.finish(self.mxnShadow.state.tint);
                 lineObj = null;
             }
 
@@ -124,7 +125,7 @@ function objDrawnLine() {
 
             gfx.lineTo(previewPosition.x, previewPosition.y);
         },
-        finish(maxRadius = 32) {
+        finish(tint: RgbInt, maxRadius = 32) {
             const analysis = analyzePositions(positions);
             const origin = analysis.origin;
             const radius = Math.min(analysis.radius, maxRadius);
@@ -148,16 +149,18 @@ function objDrawnLine() {
             obj.coro(function* () {
                 yield interp(finishState, "factor").steps(4).to(1).over(300);
                 const solidObj = new Graphics()
-                    .beginFill(0x000000)
+                    .beginFill(0xffffff)
                     .drawRect(0, 0, radius * 2, radius * 2)
                     .scaled(0, 0)
                     .at(origin)
                     .add(radius, radius)
+                    .tinted(0)
                     .show(obj);
                 yield interpv(solidObj.scale).to(-1, -1).over(300);
                 gfx.destroy();
                 scene.groundStage.methods.drawHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
                 scene.deepestStage.methods.drawHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
+                solidObj.tinted(tint);
                 for (let i = 0; i < 4; i++) {
                     solidObj.visible = !solidObj.visible;
                     solidObj.alpha -= 0.2;
