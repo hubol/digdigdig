@@ -8,7 +8,14 @@ export function ogmoAddToLayer(obj: DisplayObject, layerName: string) {
         return;
     }
 
-    if (layerName === "ParallaxDecals") {
+    if (layerName === "AboveGroundDecals") {
+        obj.show(scene.groundStage);
+    }
+    else if (layerName === "GroundDecals") {
+        obj.zIndex = -1;
+        obj.show(scene.groundStage);
+    }
+    else if (layerName === "ParallaxDecals") {
         obj.show(scene.parallaxStage);
     }
 

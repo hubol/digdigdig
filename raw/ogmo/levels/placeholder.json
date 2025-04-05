@@ -4,8 +4,8 @@
   "height": 280,
   "offsetX": 0,
   "offsetY": 0,
-  "backgroundColor": "#408000",
   "values": {"Terrain Color": "#000000"},
+  "backgroundColor": "#408000",
   "layers": [
     {
       "name": "MarkerEntities",
@@ -89,31 +89,6 @@
       ]
     },
     {
-      "name": "FrontDecals",
-      "_eid": "17577176",
-      "offsetX": 0,
-      "offsetY": 0,
-      "gridCellWidth": 8,
-      "gridCellHeight": 8,
-      "gridCellsX": 64,
-      "gridCellsY": 35,
-      "decals": [
-        {
-          "x": 408,
-          "y": 32,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "font/diggit.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""}
-        }
-      ],
-      "folder": "../textures"
-    },
-    {
       "name": "Entities",
       "_eid": "93086020",
       "offsetX": 0,
@@ -139,28 +114,39 @@
       ]
     },
     {
-      "name": "BackDecals",
-      "_eid": "64691217",
+      "name": "AboveGroundDecals",
+      "_eid": "82776801",
       "offsetX": 0,
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
       "gridCellsX": 64,
       "gridCellsY": 35,
-      "decals": [
-        {
-          "x": 160,
-          "y": 216,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "font/flaccid.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""}
-        }
-      ],
+      "decals": [],
+      "folder": "../textures"
+    },
+    {
+      "name": "GroundDecals",
+      "_eid": "82786819",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 35,
+      "decals": [],
+      "folder": "../textures"
+    },
+    {
+      "name": "BuriedDecals",
+      "_eid": "82780654",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 35,
+      "decals": [],
       "folder": "../textures"
     }
   ]

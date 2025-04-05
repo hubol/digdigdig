@@ -1,12 +1,13 @@
 import { Graphics } from "pixi.js";
 import { interp, interpv } from "../../lib/game-engine/routines/interp";
+import { sleepf } from "../../lib/game-engine/routines/sleep";
 import { approachLinear, nlerp } from "../../lib/math/number";
 import { Rng } from "../../lib/math/rng";
 import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { Null } from "../../lib/types/null";
-import { Key } from "../globals";
+import { Key, scene } from "../globals";
 import { objCharacter } from "./obj-character";
 import { generateNpcTints } from "./obj-npc";
 
@@ -147,6 +148,13 @@ function objDrawnLine() {
                     .show(obj);
                 yield interpv(solidObj.scale).to(-1, -1).over(300);
                 gfx.destroy();
+                scene.groundStage.methods.drawHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
+                for (let i = 0; i < 4; i++) {
+                    solidObj.visible = !solidObj.visible;
+                    solidObj.alpha -= 0.2;
+                    yield sleepf(6);
+                }
+                obj.destroy();
             });
         },
     };

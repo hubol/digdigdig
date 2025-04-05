@@ -36,20 +36,6 @@
       "excludedTags": []
     },
     {
-      "definition": "decal",
-      "name": "FrontDecals",
-      "gridSize": {"x": 8, "y": 8},
-      "exportID": "17577176",
-      "folder": "../textures",
-      "includeImageSequence": true,
-      "scaleable": true,
-      "rotatable": true,
-      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": false},
-      "values": [
-        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
-      ]
-    },
-    {
       "definition": "entity",
       "name": "Entities",
       "gridSize": {"x": 8, "y": 8},
@@ -59,9 +45,37 @@
     },
     {
       "definition": "decal",
-      "name": "BackDecals",
+      "name": "AboveGroundDecals",
       "gridSize": {"x": 8, "y": 8},
-      "exportID": "64691217",
+      "exportID": "82776801",
+      "folder": "../textures",
+      "includeImageSequence": true,
+      "scaleable": true,
+      "rotatable": true,
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "values": [
+        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
+      ]
+    },
+    {
+      "definition": "decal",
+      "name": "GroundDecals",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "82786819",
+      "folder": "../textures",
+      "includeImageSequence": true,
+      "scaleable": true,
+      "rotatable": true,
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "values": [
+        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
+      ]
+    },
+    {
+      "definition": "decal",
+      "name": "BuriedDecals",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "82780654",
       "folder": "../textures",
       "includeImageSequence": true,
       "scaleable": true,

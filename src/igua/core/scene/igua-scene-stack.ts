@@ -7,6 +7,7 @@ import { merge } from "../../../lib/object/merge";
 import { renderer } from "../../current-pixi-renderer";
 import { forceGameLoop } from "../../globals";
 import { objCamera } from "../../objects/obj-camera";
+import { objGroundStage } from "../../objects/obj-ground-stage";
 import { IguaLayers } from "../igua-layers";
 
 interface IguaSceneMeta {
@@ -17,14 +18,20 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
     const ticker = new AsshatTicker();
     const root = layers.scene.addChild(new TickerContainer(ticker, false).named(`Scene: ${source.name}`));
 
+    // Probably redundant
     const background = new Container().named("Background");
     const parallaxStage = new Container().named("Parallax Stage");
+    //
+
+    const groundStage = objGroundStage().named("Ground Stage").autoSorted();
+    const buriedStage = new Container().named("Buried Stage");
+    const deepestStage = new Container().named("Deepest Stage");
     const stage = new Container().named("Stage");
     stage.sortableChildren = true;
 
     const camera = objCamera();
 
-    root.addChild(background, parallaxStage, stage, camera);
+    root.addChild(background, parallaxStage, deepestStage, buriedStage, groundStage, stage, camera);
 
     const backgroundGfx = new Graphics().tinted(0x000000).beginFill(0xffffff).drawRect(
         0,
@@ -38,6 +45,7 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
         source,
         parallaxStage,
         stage,
+        groundStage,
         camera,
         ticker,
         level: {
