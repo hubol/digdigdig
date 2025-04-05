@@ -64,6 +64,17 @@
       ]
     },
     {
+      "name": "SolidEntities",
+      "_eid": "88158185",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 314,
+      "gridCellsY": 175,
+      "entities": []
+    },
+    {
       "name": "AboveGroundDecals",
       "_eid": "82776801",
       "offsetX": 0,

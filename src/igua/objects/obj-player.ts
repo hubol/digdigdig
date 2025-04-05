@@ -1,4 +1,5 @@
 import { Graphics } from "pixi.js";
+import { Instances } from "../../lib/game-engine/instances";
 import { interp, interpv } from "../../lib/game-engine/routines/interp";
 import { sleepf } from "../../lib/game-engine/routines/sleep";
 import { approachLinear, nlerp } from "../../lib/math/number";
@@ -8,6 +9,7 @@ import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { Null } from "../../lib/types/null";
 import { Key, scene } from "../globals";
+import { objBlock } from "./obj-block";
 import { objCharacter, ObjCharacterArgs } from "./obj-character";
 import { CtxHoles } from "./obj-ground-stage";
 import { generateObjCharacterArgs } from "./obj-npc";
@@ -24,9 +26,14 @@ export function setPlayerCharacterArgs(args: ObjCharacterArgs) {
 function objPlayer() {
     let lineObj = Null<ObjDrawnLine>();
     let expectJustWentDownToDrill = true;
+    const lastGoodPosition = vnew(0, 0);
 
     return objCharacter(playerCharacterArgs)
         .step(self => {
+            if (!self.objects.feetHitboxObj.collidesOne(Instances(objBlock))) {
+                lastGoodPosition.at(self);
+            }
+
             const attemptingToDrill = (Key.justWentDown("Space") || (!expectJustWentDownToDrill && Key.isDown("Space")))
                 && progress.energy > 0;
 
@@ -99,6 +106,10 @@ function objPlayer() {
             self.add(v);
             self.x = Math.max(0, Math.min(self.x, scene.level.width));
             self.y = Math.max(0, Math.min(self.y, scene.level.height));
+
+            if (self.objects.feetHitboxObj.collidesOne(Instances(objBlock))) {
+                self.at(lastGoodPosition);
+            }
 
             if (isInDrillMode) {
                 if (!lineObj) {

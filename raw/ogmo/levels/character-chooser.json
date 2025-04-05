@@ -53,6 +53,17 @@
       "entities": []
     },
     {
+      "name": "SolidEntities",
+      "_eid": "88158185",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 35,
+      "entities": []
+    },
+    {
       "name": "AboveGroundDecals",
       "_eid": "82776801",
       "offsetX": 0,

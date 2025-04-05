@@ -29,6 +29,9 @@ export function ogmoAddToLayer(obj: DisplayObject, layerName: string) {
     else if (layerName === "ParallaxDecals") {
         obj.show(scene.parallaxStage);
     }
+    else if (layerName === "SolidEntities") {
+        obj.show();
+    }
 
     if (!obj.parent) {
         const zIndex = ZIndex[layerName];

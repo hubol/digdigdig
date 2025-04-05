@@ -17,7 +17,7 @@
   "compactExport": false,
   "externalScript": "asshat-project.js",
   "playCommand": "",
-  "entityTags": ["Terrain", "Marker", "Region", "Acre"],
+  "entityTags": ["Terrain", "Marker", "Region", "Acre", "Solid"],
   "layers": [
     {
       "definition": "entity",
@@ -42,6 +42,14 @@
       "exportID": "93086020",
       "requiredTags": [],
       "excludedTags": ["Marker", "Region"]
+    },
+    {
+      "definition": "entity",
+      "name": "SolidEntities",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "88158185",
+      "requiredTags": ["Solid"],
+      "excludedTags": []
     },
     {
       "definition": "decal",
@@ -130,7 +138,7 @@
       "nodeLimit": 0,
       "nodeDisplay": 0,
       "nodeGhost": true,
-      "tags": ["Terrain"],
+      "tags": ["Solid"],
       "values": [
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true},
         {"name": "visible", "definition": "Boolean", "display": 0, "defaults": true}
@@ -269,7 +277,7 @@
         {"name": "depth", "definition": "Integer", "display": 0, "defaults": 0, "bounded": false, "min": -500, "max": 0}
       ],
       "isRegion": true,
-      "tintable": {"enabled": true, "defaultTint": "#00ff00", "rgbLevelValueName": null, "useDefaultTint": true},
+      "tintable": {"enabled": true, "defaultTint": "#00ff00", "rgbLevelValueName": "", "useDefaultTint": true},
       "texture": "preview-images/region.png",
       "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABPSURBVFhH7dcxCgAgDATB0/WSOKQuxzzS4Ipsq0aZJGPFsb4CLE9gdYv8rOzgyoYtydfc++AAAAAAAAAAAAAAAAACBfRnV9p5mjC7AlTcXvEDMTrZ50AAAAAElFTkSuQmCC"
     },
@@ -358,7 +366,7 @@
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
       ],
       "isRegion": false,
-      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
       "texture": "preview-images/acre.png",
       "textureImage": "data:image/png;base64,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"
     }
