@@ -231,10 +231,26 @@ export function mxnStaticAffectedByHoles(obj: DisplayObject) {
     return obj
         .merge({ mxnStaticAffectedByHoles: { state } })
         .coro(function* () {
-            let length = 0;
+            let length = CtxHoles.value.holeRectangles.length;
             while (true) {
                 yield () => CtxHoles.value.holeRectangles.length !== length;
                 updateState(CtxHoles.value.holeRectangles.length - length);
+                length = CtxHoles.value.holeRectangles.length;
+            }
+        });
+}
+
+// TODO could probably be used above...
+export function mxnHoleListener(obj: DisplayObject) {
+    return obj
+        .dispatchesValue<"mxnHoleListener:hole_created", IRectangle>()
+        .coro(function* (self) {
+            let length = CtxHoles.value.holeRectangles.length;
+            while (true) {
+                yield () => CtxHoles.value.holeRectangles.length !== length;
+                for (let i = length; i < CtxHoles.value.holeRectangles.length; i++) {
+                    self.dispatch("mxnHoleListener:hole_created", CtxHoles.value.holeRectangles[i]);
+                }
                 length = CtxHoles.value.holeRectangles.length;
             }
         });

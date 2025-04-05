@@ -11,6 +11,7 @@ import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { MapRgbFilter } from "../../lib/pixi/filters/map-rgb-filter";
 import { scene } from "../globals";
+import { mxnEnemy } from "../mixins/mxn-enemy";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnShadow } from "../mixins/mxn-shadow";
 import { objGoonSpell } from "./obj-goon-spell";
@@ -54,8 +55,11 @@ export function objGoon() {
             && state.energy > consts.minimumEnergyToEngage;
     }
 
+    const vulnerableBoxObj = new Graphics().beginFill(0xff0000).drawRect(0, 30, 92, 109).invisible();
+
     return container(
         sprite,
+        vulnerableBoxObj,
     )
         .mixin(mxnInhabitsAcre)
         .step(self => {
@@ -94,6 +98,7 @@ export function objGoon() {
         })
         .pivoted(48, 134)
         .mixin(mxnShadow, {})
+        .mixin(mxnEnemy, { health: 30, healthMaximum: 30, vulnerableBoxObj })
         .coro(function* (self) {
             while (true) {
                 yield* Coro.race([
