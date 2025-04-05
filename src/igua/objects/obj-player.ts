@@ -7,7 +7,7 @@ import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { Null } from "../../lib/types/null";
-import { Key } from "../globals";
+import { Key, scene } from "../globals";
 import { objCharacter, ObjCharacterArgs } from "./obj-character";
 import { CtxHoles } from "./obj-ground-stage";
 import { generateObjCharacterArgs } from "./obj-npc";
@@ -97,6 +97,8 @@ function objPlayer() {
             }
 
             self.add(v);
+            self.x = Math.max(0, Math.min(self.x, scene.level.width));
+            self.y = Math.max(0, Math.min(self.y, scene.level.height));
 
             if (isInDrillMode) {
                 if (!lineObj) {

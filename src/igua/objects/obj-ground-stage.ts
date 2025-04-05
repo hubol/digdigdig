@@ -33,7 +33,7 @@ export function objGroundStage() {
 
     function render() {
         maskObj.at(scene.camera);
-        holesGfx.clear().beginFill(0xff0000).drawRect(0, 0, 2000, 2000).beginFill(0);
+        holesGfx.clear().beginFill(0xff0000).drawRect(0, 0, 2500, 2500).beginFill(0);
         for (const hole of holes) {
             holesGfx.drawRoundedRect(hole.x, hole.y, hole.width, hole.height, 3);
         }
@@ -89,7 +89,7 @@ function objShadows() {
 }
 
 export function objDeepestStage() {
-    const holesObj = container(new Graphics().beginFill(0xff0000).drawRect(0, 0, 2000, 2000));
+    const holesObj = container(new Graphics().beginFill(0xff0000).drawRect(0, 0, 2500, 2500));
 
     const maskObj = Sprite.from(deepestStageMaskRenderTexture);
 
@@ -109,8 +109,8 @@ export function objDeepestStage() {
 
     return container(
         maskObj,
-        new Graphics().beginFill(0x312410).drawRect(0, 0, 2000, 2000).zIndexed(-1000),
-        new Graphics().beginFill(0x775234).drawRect(0, 0, 2000, 2000).zIndexed(-1000).filtered(
+        new Graphics().beginFill(0x312410).drawRect(0, 0, 2500, 2500).zIndexed(-1000),
+        new Graphics().beginFill(0x775234).drawRect(0, 0, 2500, 2500).zIndexed(-1000).filtered(
             new SpriteMaskFilter(maskObj),
         ),
     )
