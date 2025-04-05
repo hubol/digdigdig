@@ -4,6 +4,7 @@ import { Rng } from "../../lib/math/rng";
 import { container } from "../../lib/pixi/container";
 import { scene } from "../globals";
 import { mxnBoilScaleX } from "../mixins/mxn-boil-scale-x";
+import { mxnShadow } from "../mixins/mxn-shadow";
 import { playerObj } from "./obj-player";
 import { objIndexedSprite } from "./utils/obj-indexed-sprite";
 
@@ -16,6 +17,7 @@ export function objGoonSpell() {
         sprite.pivoted(34, 54).at(34, 54).mixin(mxnBoilScaleX),
     )
         .pivoted(37, 95)
+        .mixin(mxnShadow, {})
         .coro(function* (self) {
             yield interp(sprite, "textureIndex").to(2).over(200);
             sprite.coro(function* () {

@@ -24,7 +24,6 @@ export function objGoon() {
 
     const filter = new MapRgbFilter(args.tint0, args.tint1, args.tint2);
     const sprite = Sprite.from(txIdle).filtered(filter);
-    const footHitboxObj = new Graphics().beginFill(0xff0000).drawRect(-20, -6, 40, 12).invisible();
 
     const state = {
         speed: vnew(),
@@ -46,7 +45,6 @@ export function objGoon() {
     }
 
     return container(
-        footHitboxObj,
         sprite,
     )
         .mixin(mxnInhabitsAcre)
@@ -81,7 +79,7 @@ export function objGoon() {
             }
         })
         .pivoted(48, 134)
-        .mixin(mxnShadow, { hitboxObj: footHitboxObj })
+        .mixin(mxnShadow, {})
         .coro(function* (self) {
             while (true) {
                 yield* Coro.race([
