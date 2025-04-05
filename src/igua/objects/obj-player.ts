@@ -1,6 +1,9 @@
+import { Graphics } from "pixi.js";
 import { approachLinear } from "../../lib/math/number";
 import { Rng } from "../../lib/math/rng";
-import { vnew } from "../../lib/math/vector-type";
+import { distance } from "../../lib/math/vector";
+import { VectorSimple, vnew } from "../../lib/math/vector-type";
+import { Null } from "../../lib/types/null";
 import { Key } from "../globals";
 import { objCharacter } from "./obj-character";
 import { generateNpcTints } from "./obj-npc";
@@ -8,6 +11,8 @@ import { generateNpcTints } from "./obj-npc";
 const v = vnew();
 
 export function objPlayer() {
+    let lineObj = Null<ObjDrawnLine>();
+
     return objCharacter(generateNpcTints(Rng.int(10_000_000, 420_000_000)))
         .step(self => {
             v.at(0, 0);
@@ -17,6 +22,11 @@ export function objPlayer() {
                 Key.isDown("Space") ? 1 : 0,
                 0.05,
             );
+
+            if (self.controls.upsideDownUnit <= 0 && lineObj) {
+                lineObj.destroy();
+                lineObj = null;
+            }
 
             if (self.controls.upsideDownUnit <= 0 || self.controls.upsideDownUnit >= 1) {
                 if (Key.isDown("ArrowUp")) {
@@ -58,5 +68,50 @@ export function objPlayer() {
             }
 
             self.add(v);
+
+            if (self.controls.upsideDownUnit >= 1) {
+                if (!lineObj) {
+                    lineObj = objDrawnLine().zIndexed(-1).show();
+                }
+
+                const { x, y } = self.getWorldPosition();
+                lineObj.methods.push(x, y);
+            }
         });
 }
+
+function objDrawnLine() {
+    const positions: VectorSimple[] = [];
+    let previewPosition = Null<VectorSimple>();
+
+    const gfx = new Graphics();
+
+    const methods = {
+        push(x: number, y: number) {
+            if (previewPosition === null) {
+                previewPosition = { x, y };
+            }
+            else if (previewPosition.x === x && previewPosition.y === y) {
+                return;
+            }
+
+            previewPosition.x = x;
+            previewPosition.y = y;
+
+            if (positions.length === 0 || distance(previewPosition, positions.last) > 5) {
+                positions.push({ x: previewPosition.x, y: previewPosition.y });
+            }
+
+            gfx.clear().lineStyle(1, 0x000000).moveTo(positions[0].x, positions[0].y);
+            for (let i = 1; i < positions.length; i++) {
+                gfx.lineTo(positions[i].x, positions[i].y);
+            }
+
+            gfx.lineTo(previewPosition.x, previewPosition.y);
+        },
+    };
+
+    return gfx.merge({ methods });
+}
+
+type ObjDrawnLine = ReturnType<typeof objDrawnLine>;
