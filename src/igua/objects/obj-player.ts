@@ -1,7 +1,7 @@
 import { Graphics } from "pixi.js";
-import { approachLinear } from "../../lib/math/number";
+import { approachLinear, nlerp } from "../../lib/math/number";
 import { Rng } from "../../lib/math/rng";
-import { distance } from "../../lib/math/vector";
+import { distance, vlerp } from "../../lib/math/vector";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
 import { Null } from "../../lib/types/null";
 import { Key } from "../globals";
@@ -24,7 +24,7 @@ export function objPlayer() {
             );
 
             if (self.controls.upsideDownUnit <= 0 && lineObj) {
-                lineObj.destroy();
+                lineObj.methods.finish();
                 lineObj = null;
             }
 
@@ -86,6 +86,13 @@ function objDrawnLine() {
 
     const gfx = new Graphics();
 
+    function drawPositions() {
+        gfx.clear().lineStyle(1, 0x000000).moveTo(positions[0].x, positions[0].y);
+        for (let i = 1; i < positions.length; i++) {
+            gfx.lineTo(positions[i].x, positions[i].y);
+        }
+    }
+
     const methods = {
         push(x: number, y: number) {
             if (previewPosition === null) {
@@ -102,16 +109,68 @@ function objDrawnLine() {
                 positions.push({ x: previewPosition.x, y: previewPosition.y });
             }
 
-            gfx.clear().lineStyle(1, 0x000000).moveTo(positions[0].x, positions[0].y);
-            for (let i = 1; i < positions.length; i++) {
-                gfx.lineTo(positions[i].x, positions[i].y);
-            }
+            drawPositions();
 
             gfx.lineTo(previewPosition.x, previewPosition.y);
+        },
+        finish() {
+            const origin = getOriginOfPositions(positions);
+            const previousPositions = positions.map(({ x, y }) => ({ x, y }));
+            const targetPositions = getTargetPositions(positions, origin, 32);
+            let factor = 0;
+
+            gfx.step(() => {
+                factor = approachLinear(factor, 1, 0.025);
+                for (let i = 0; i < positions.length; i++) {
+                    positions[i].x = previousPositions[i].x;
+                    positions[i].y = previousPositions[i].y;
+                    vlerp(positions[i], targetPositions[i], factor);
+                }
+                drawPositions();
+            });
         },
     };
 
     return gfx.merge({ methods });
+}
+
+function getOriginOfPositions(positions: VectorSimple[]) {
+    let minX = Number.MAX_VALUE;
+    let minY = Number.MAX_VALUE;
+    let maxX = Number.MIN_VALUE;
+    let maxY = Number.MIN_VALUE;
+
+    for (const position of positions) {
+        minX = Math.min(minX, position.x);
+        minY = Math.min(minY, position.y);
+        maxX = Math.max(maxX, position.x);
+        maxY = Math.max(maxY, position.y);
+    }
+
+    return {
+        x: nlerp(minX, maxX, 0.5),
+        y: nlerp(minY, maxY, 0.5),
+    };
+}
+
+function getTargetPositions(positions: VectorSimple[], origin: VectorSimple, radius: number) {
+    const targetPositions: VectorSimple[] = [];
+
+    for (const position of positions) {
+        v.at(position).add(origin, -1).normalize();
+        const targetPosition = vnew(origin);
+        if (Math.abs(v.x) > 0.5) {
+            targetPosition.x += radius * Math.sign(v.x);
+            targetPosition.y += radius * Math.min(1, Math.abs(v.y * 1.3)) * Math.sign(v.y);
+        }
+        else {
+            targetPosition.x += radius * Math.min(1, Math.abs(v.x * 1.3)) * Math.sign(v.x);
+            targetPosition.y += radius * Math.sign(v.y);
+        }
+        targetPositions.push(targetPosition);
+    }
+
+    return targetPositions;
 }
 
 type ObjDrawnLine = ReturnType<typeof objDrawnLine>;
