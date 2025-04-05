@@ -19,8 +19,6 @@ function objPlayer() {
 
     return objCharacter(generateNpcTints(Rng.int(10_000_000, 420_000_000)))
         .step(self => {
-            v.at(0, 0);
-
             self.controls.upsideDownUnit = approachLinear(
                 self.controls.upsideDownUnit,
                 Key.isDown("Space") ? 1 : 0,
@@ -31,6 +29,8 @@ function objPlayer() {
                 lineObj.methods.finish(self.mxnShadow.state.tint);
                 lineObj = null;
             }
+
+            v.at(0, 0);
 
             if (self.controls.upsideDownUnit <= 0 || self.controls.upsideDownUnit >= 1) {
                 if (Key.isDown("ArrowUp")) {
