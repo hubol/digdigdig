@@ -81,7 +81,7 @@ function objPlayer() {
                 if (isInDrillMode) {
                     energyConsumption = 1;
                 }
-                v.normalize().scale(2);
+                v.normalize().scale(isInDrillMode ? 3 : 2);
             }
 
             if (!v.isZero && isInNormalMode) {
