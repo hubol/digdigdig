@@ -1,6 +1,7 @@
 import { Lvl } from "../../assets/generated/levels/generated-level-data";
 import { scene } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
+import { mxnBoilScaleXY } from "../mixins/mxn-boil-scale-xy";
 import { createPlayerObj } from "../objects/obj-player";
 
 export function scnWorld() {
@@ -12,6 +13,13 @@ export function scnWorld() {
 
     // Northern goon prize
     lvl.NorthernGoon.handles("mxnEnemy:died", () => lvl.NorthernGoonPrize.dispatch("objTreasurePrize:reward"));
+
+    // Northwest goon blocking tic-tac-toe
+    lvl.NorthwestWallDecal.mixin(mxnBoilScaleXY);
+    lvl.NorthwesternGoon.handles("mxnEnemy:died", () => {
+        lvl.NorthwestWallDecal.destroy();
+        lvl.NorthwestWall.destroy();
+    });
 
     // Tic-tac-toe
     scene.stage.coro(function* () {

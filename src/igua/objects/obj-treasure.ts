@@ -33,6 +33,7 @@ const treasures = {
         description: "Max EN. UP",
         progress: () => {
             progress.upgrades.drill.energy += 1;
+            progress.energy = progress.energyMaximum;
         },
     },
     "DrillUpgradeRadius": {
