@@ -67,7 +67,7 @@ const treasures = {
     },
     "InvisibleUnderwear": {
         tx: Tx.Treasures.InvisibleUnderwear,
-        description: "I want to wear them.",
+        description: "Invisible,\nbut I'll wear them.",
         progress: () => {
             progress.upgrades.nude = true;
         },
