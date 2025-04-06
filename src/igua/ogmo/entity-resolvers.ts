@@ -16,7 +16,7 @@ export const OgmoEntityResolvers = {
     "Region": () => new Graphics().beginFill(0x00ff00).drawRect(0, 0, 1, 1).invisible(),
     Book: (e) => objBook(e.values.message),
     Acre: (e) => objAcre({ x: e.x, y: e.y }).pivoted(250, 140).at(250, 140),
-    Goon: objGoon,
+    Goon: (e) => objGoon({ rank: e.values.rank }),
     Treasure: (e) => objTreasure(e.values.kind),
 } satisfies {
     [TName in OgmoProject.Entities.Names]: (e: OgmoFactory.Entity<TName>) => unknown;
