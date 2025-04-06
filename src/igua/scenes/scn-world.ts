@@ -9,6 +9,8 @@ import { objBather } from "../objects/obj-bather";
 import { objEvilSpawner } from "../objects/obj-evil-spawner";
 import { createPlayerObj, playerObj } from "../objects/obj-player";
 import { objSpider } from "../objects/obj-spider";
+import { transitionToScene } from "./scn-choose-character";
+import { scnFinalWorld } from "./scn-final-world";
 
 export function scnWorld() {
     const lvl = Lvl.World();
@@ -94,6 +96,10 @@ export function scnWorld() {
         setupFinalStep(lvl.FinalDecal0, lvl.FinalBlock0, lvl.FinalStep0Region);
         setupFinalStep(lvl.FinalDecal1, lvl.FinalBlock1, lvl.FinalStep1Region);
         setupFinalStep(lvl.FinalDecal2, lvl.FinalBlock2, lvl.FinalStep2Region);
+        lvl.FinalRegion.coro(function* (self) {
+            yield holdf(() => playerObj.objects.feetHitboxObj.collides(self), 30);
+            transitionToScene(scnFinalWorld);
+        });
     }
 }
 

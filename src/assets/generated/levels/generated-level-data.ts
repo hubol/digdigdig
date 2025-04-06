@@ -44,6 +44,7 @@ export const Lvl = {
     FoliageFlower0_1: d(Tx.Foliage.Flower0, { x: 399, y: 262, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xd85f5f }, "AboveGroundDecals"),
     PlayerMarker: e(r["Marker"], { x: 176, y: 216, values: { name: "PlayerMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
+  FinalWorld: l({ width: 500, height: 568, backgroundTint: 0x408000 }, () => ({ Acre: e(r["Acre"], { x: 0, y: 0, flippedX: false, flippedY: false, values: { name: "" }, tint: 0xffffff }, "AcreEntities"), Acre_1: e(r["Acre"], { x: 0, y: 280, flippedX: false, flippedY: false, values: { name: "" }, tint: 0xffffff }, "AcreEntities"), PlayerStartMarker: e(r["Marker"], { x: 248, y: 424, values: { name: "PlayerStartMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities") })),
   Placeholder: l({ width: 500, height: 280, backgroundTint: 0x408000 }, () => ({
     Block: e(r["Block"], { x: 0, y: 192, width: 176, height: 88, values: { name: "", visible: true }, tint: 0x000000 }, "DiggableEntities"),
     Region: e(r["Region"], { x: 72, y: 40, width: 240, height: 120, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "RegionEntities"),
@@ -658,6 +659,7 @@ export const Lvl = {
 
 export namespace LvlType {
   export type CharacterChooser = ReturnType<(typeof Lvl)["CharacterChooser"]>;
+  export type FinalWorld = ReturnType<(typeof Lvl)["FinalWorld"]>;
   export type Placeholder = ReturnType<(typeof Lvl)["Placeholder"]>;
   export type World = ReturnType<(typeof Lvl)["World"]>;
 }

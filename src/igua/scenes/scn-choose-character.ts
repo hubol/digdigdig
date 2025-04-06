@@ -60,14 +60,18 @@ function objChooseCharacterPlayer(args: ObjCharacterArgs) {
             if (!state.chosen && self.x >= renderer.width) {
                 setPlayerCharacterArgs(args);
                 state.chosen = true;
-                layers.overlay.coro(function* (self) {
-                    const gfx = new Graphics().beginFill(0).drawRect(0, 0, 700, 900).show(self).at(0, -989);
-                    gfx.angle = 45;
-                    yield interpvr(gfx).to(350, -350).over(1000);
-                    sceneStack.replace(scnWorld, { useGameplay: true });
-                    yield interpvr(gfx).to(989, 0).over(1000);
-                    gfx.destroy();
-                });
+                transitionToScene(scnWorld);
             }
         });
+}
+
+export function transitionToScene(sceneFn: () => unknown) {
+    layers.overlay.coro(function* (self) {
+        const gfx = new Graphics().beginFill(0).drawRect(0, 0, 700, 900).show(self).at(0, -989);
+        gfx.angle = 45;
+        yield interpvr(gfx).to(350, -350).over(1000);
+        sceneStack.replace(sceneFn, { useGameplay: true });
+        yield interpvr(gfx).to(989, 0).over(1000);
+        gfx.destroy();
+    });
 }

@@ -1,0 +1,175 @@
+{
+  "ogmoVersion": "3.4.0-hubol",
+  "width": 500,
+  "height": 568,
+  "offsetX": 0,
+  "offsetY": 0,
+  "backgroundColor": "#408000",
+  "values": {"Terrain Color": "#000000"},
+  "layers": [
+    {
+      "name": "MarkerEntities",
+      "_eid": "73166939",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "entities": [
+        {
+          "name": "Marker",
+          "id": 0,
+          "_eid": "73148747",
+          "x": 248,
+          "y": 424,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#00ff00",
+          "values": {"name": "PlayerStartMarker", "depth": 0}
+        }
+      ]
+    },
+    {
+      "name": "RegionEntities",
+      "_eid": "01831167",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "entities": []
+    },
+    {
+      "name": "PerspectiveDecals",
+      "_eid": "90023176",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "decals": [],
+      "folder": "../textures"
+    },
+    {
+      "name": "PerspectiveEntities",
+      "_eid": "89874966",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "entities": []
+    },
+    {
+      "name": "DiggableEntities",
+      "_eid": "93086020",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "entities": []
+    },
+    {
+      "name": "SolidEntities",
+      "_eid": "88158185",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "entities": []
+    },
+    {
+      "name": "AboveGroundDecals",
+      "_eid": "82776801",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "decals": [],
+      "folder": "../textures"
+    },
+    {
+      "name": "AcreEntities",
+      "_eid": "87819512",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 500,
+      "gridCellHeight": 280,
+      "gridCellsX": 1,
+      "gridCellsY": 4,
+      "entities": [
+        {
+          "name": "Acre",
+          "id": 0,
+          "_eid": "87815551",
+          "x": 0,
+          "y": 0,
+          "originX": 0,
+          "originY": 0,
+          "flippedX": false,
+          "flippedY": false,
+          "tint": "#ffffff",
+          "values": {"name": ""}
+        },
+        {
+          "name": "Acre",
+          "id": 1,
+          "_eid": "87815551",
+          "x": 0,
+          "y": 280,
+          "originX": 0,
+          "originY": 0,
+          "flippedX": false,
+          "flippedY": false,
+          "tint": "#ffffff",
+          "values": {"name": ""}
+        }
+      ]
+    },
+    {
+      "name": "GroundDecals",
+      "_eid": "82786819",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "decals": [],
+      "folder": "../textures"
+    },
+    {
+      "name": "BuriedDecals",
+      "_eid": "82780654",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "decals": [],
+      "folder": "../textures"
+    },
+    {
+      "name": "BuriedEntities",
+      "_eid": "90730210",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 71,
+      "entities": []
+    }
+  ]
+}
