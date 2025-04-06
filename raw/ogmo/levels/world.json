@@ -149,7 +149,7 @@
         {"x": 813, "y": 400, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
         {"x": 870, "y": 356, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
         {"x": 928, "y": 395, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
-        {"x": 2344, "y": 536, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "characters/bather tub.png", "originX": 0.5, "originY": 1}
+        {"x": 2344, "y": 536, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "characters/bather tub.png", "originX": 0.5, "originY": 1, "groupName": null}
       ],
       "folder": "../textures"
     },
@@ -342,6 +342,16 @@
           "originX": 0,
           "originY": 0,
           "values": {"name": "TicTacToeSpot22"}
+        },
+        {
+          "name": "Book",
+          "id": 12,
+          "_eid": "84364576",
+          "x": 1896,
+          "y": 496,
+          "originX": 56,
+          "originY": 34,
+          "values": {"message": "Entering realm of the giants.", "name": ""}
         }
       ]
     },
@@ -2758,6 +2768,54 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1899,
+          "y": 506,
+          "scaleX": 4.4,
+          "scaleY": 2.4,
+          "rotation": 0,
+          "tint": "#6b8792",
+          "texture": "shapes/square32.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1898,
+          "y": 499,
+          "scaleX": 4.4,
+          "scaleY": 2.4,
+          "rotation": 0,
+          "tint": "#9abfce",
+          "texture": "shapes/square32.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1957,
+          "y": 465,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#bcdce9",
+          "texture": "shapes/light small 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1899,
+          "y": 525,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#6b8792",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -5914,7 +5972,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1996,
@@ -5926,7 +5985,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1992,
@@ -5938,7 +5998,112 @@
           "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1732,
+          "y": 397,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1784,
+          "y": 411,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1750,
+          "y": 420,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2093,
+          "y": 397,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2124,
+          "y": 421,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2388,
+          "y": 387,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2432,
+          "y": 406,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2477,
+          "y": 387,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -6368,6 +6533,32 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 2145,
+          "y": 417,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/soap.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1864,
+          "y": 224,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/concentric circles.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -6571,6 +6762,16 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "EvilSpawnerTreasure", "kind": "DrillUpgradeEnergy"}
+        },
+        {
+          "name": "Treasure",
+          "id": 19,
+          "_eid": "90732369",
+          "x": 1856,
+          "y": 224,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "Diamond"}
         }
       ]
     }

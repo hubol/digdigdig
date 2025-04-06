@@ -76,6 +76,11 @@ const treasures = {
         tx: Tx.Treasures.FishingPole,
         description: "Commonly used\nfor helping fish",
     },
+    "Diamond": {
+        tx: Tx.Treasures.Diamond,
+        description: "Appears expensive.",
+        value: 200,
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {
