@@ -15,8 +15,7 @@ export function scnFinalWorld() {
 
     lvl.FinalGoon.handles("mxnEnemy:died", () => {
         scene.stage.coro(function* () {
-            yield holdf(() => !playerObj.state.isBusy, 60);
-            // TODO fanfare? anything?
+            yield holdf(() => !playerObj.state.isBusy, 180);
             transitionToScene(scnEnding);
         });
     });

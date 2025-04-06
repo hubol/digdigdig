@@ -535,6 +535,18 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 481,
+          "y": 5,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "hints/digdigdig.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"

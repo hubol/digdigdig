@@ -1,6 +1,7 @@
 import { Graphics } from "pixi.js";
 import { Lvl } from "../../assets/generated/levels/generated-level-data";
 import { Mzk } from "../../assets/music";
+import { Sfx } from "../../assets/sounds";
 import { EscapeTickerAndExecute } from "../../lib/game-engine/asshat-ticker";
 import { interpv, interpvr } from "../../lib/game-engine/routines/interp";
 import { sleep, sleepf } from "../../lib/game-engine/routines/sleep";
@@ -39,6 +40,7 @@ function objCharacterChooser() {
                 const playerObj = objChooseCharacterPlayer(generateObjCharacterArgs()).at(self).show();
                 yield sleepf(1);
                 yield () => !playerObj.state.chosen && Key.justWentDown("Space");
+                Sfx.PlayerExplainTreasure.rate(0.9, 1.1).play();
                 playerObj.destroy();
             }
         });

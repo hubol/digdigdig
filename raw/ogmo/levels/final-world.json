@@ -4,8 +4,8 @@
   "height": 568,
   "offsetX": 0,
   "offsetY": 0,
-  "backgroundColor": "#001480",
   "values": {"Terrain Color": "#000000"},
+  "backgroundColor": "#001480",
   "layers": [
     {
       "name": "MarkerEntities",
@@ -120,7 +120,20 @@
       "gridCellHeight": 8,
       "gridCellsX": 64,
       "gridCellsY": 71,
-      "decals": [],
+      "decals": [
+        {
+          "x": 120,
+          "y": 522,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#0c1545",
+          "texture": "hints/final world.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        }
+      ],
       "folder": "../textures"
     },
     {
@@ -143,7 +156,7 @@
           "originY": 0,
           "flippedX": false,
           "flippedY": false,
-          "tint": "#484848",
+          "tint": "#0c1545",
           "values": {"name": ""}
         },
         {
@@ -156,7 +169,7 @@
           "originY": 0,
           "flippedX": false,
           "flippedY": false,
-          "tint": "#484848",
+          "tint": "#0c1545",
           "values": {"name": ""}
         }
       ]
@@ -181,7 +194,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -207,7 +221,18 @@
       "gridCellHeight": 8,
       "gridCellsX": 64,
       "gridCellsY": 71,
-      "entities": []
+      "entities": [
+        {
+          "name": "Treasure",
+          "id": 0,
+          "_eid": "90732369",
+          "x": 464,
+          "y": 528,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "Skull"}
+        }
+      ]
     }
   ]
 }
