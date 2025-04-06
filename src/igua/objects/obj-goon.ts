@@ -23,7 +23,17 @@ import { playerObj } from "./obj-player";
 const [txIdle, txWalk, ...txsCharge] = Tx.Enemy.Goon.split({ width: 92 });
 const v = vnew();
 
-export function objGoon() {
+interface ObjGoonArgs {
+    rank: number;
+}
+
+const GoonRanks = [
+    { health: 30, energy: 500, spellAttackDamage: 10 },
+    { health: 30, energy: 500, spellAttackDamage: 20 },
+];
+
+export function objGoon(goonArgs: ObjGoonArgs) {
+    const rank = GoonRanks[goonArgs.rank] ?? GoonRanks[0];
     const args = generateObjCharacterArgs();
 
     const filter = new MapRgbFilter(args.tint0, args.tint1, args.tint2);
@@ -35,8 +45,8 @@ export function objGoon() {
         chargeUnit: 0,
         lastAcceptablePosition: vnew(),
         canRecoverEnergy: true,
-        energy: 500,
-        energyMaximum: 500,
+        energy: rank.energy,
+        energyMaximum: rank.energy,
     };
 
     const consts = {
@@ -106,7 +116,7 @@ export function objGoon() {
         })
         .pivoted(48, 134)
         .mixin(mxnShadow, {})
-        .mixin(mxnEnemy, { health: 30, healthMaximum: 30, vulnerableBoxObj })
+        .mixin(mxnEnemy, { health: rank.health, healthMaximum: rank.health, vulnerableBoxObj })
         .coro(function* (self) {
             while (true) {
                 yield* Coro.race([
@@ -128,7 +138,10 @@ export function objGoon() {
 
                 yield* Coro.all([
                     interp(state, "chargeUnit").to(1).over(500),
-                    Coro.chain([sleep(400), () => (objGoonSpell().at(self).filtered(filter), true)]),
+                    Coro.chain([
+                        sleep(400),
+                        () => (objGoonSpell(rank.spellAttackDamage).at(self).filtered(filter), true),
+                    ]),
                 ]);
                 yield sleep(500);
                 state.chargeUnit = 0;

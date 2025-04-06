@@ -49,7 +49,7 @@ const treasures = {
     },
     "Tea": {
         tx: Tx.Treasures.Tea,
-        description: "Scented water raises Max LI.",
+        description: "Scented water\nraises Max LI.",
         progress: p => {
             p.upgrades.life += 1;
             p.life = p.lifeMaximum;

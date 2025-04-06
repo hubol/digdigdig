@@ -16,9 +16,9 @@ function createInitialProgress() {
         },
         energyBlockedSteps: 0,
         energyBlockedStepsMaximum: 30,
-        life: 30,
+        life: 50,
         get lifeMaximum() {
-            return 30 + upgrades.life * 70;
+            return 50 + upgrades.life * 50;
         },
         money: 0,
         moneyMaximum: 1000, // TODO set to something that makes sense

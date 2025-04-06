@@ -17,7 +17,7 @@
   "compactExport": false,
   "externalScript": "asshat-project.js",
   "playCommand": "",
-  "entityTags": ["Terrain", "Marker", "Region", "Acre", "Solid", "Perspective", "Buried"],
+  "entityTags": ["Terrain", "Marker", "Region", "Acre", "Solid", "Perspective", "Buried", "Diggable"],
   "layers": [
     {
       "definition": "entity",
@@ -60,7 +60,7 @@
       "name": "DiggableEntities",
       "gridSize": {"x": 8, "y": 8},
       "exportID": "93086020",
-      "requiredTags": [],
+      "requiredTags": ["Diggable"],
       "excludedTags": ["Marker", "Region"]
     },
     {
@@ -344,7 +344,7 @@
       "nodeLimit": 0,
       "nodeDisplay": 0,
       "nodeGhost": true,
-      "tags": [],
+      "tags": ["Diggable"],
       "values": [
         {"name": "message", "definition": "String", "display": 1, "defaults": "", "maxLength": 0, "trimWhitespace": true},
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
@@ -435,7 +435,8 @@
       "nodeGhost": true,
       "tags": ["Perspective"],
       "values": [
-        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
+        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true},
+        {"name": "rank", "definition": "Integer", "display": 1, "defaults": 0, "bounded": false, "min": 0, "max": 100}
       ],
       "isRegion": false,
       "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
@@ -484,7 +485,7 @@
           "name": "kind",
           "definition": "Enum",
           "display": 1,
-          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy"],
+          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea"],
           "defaults": 0
         }
       ],

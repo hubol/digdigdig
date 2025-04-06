@@ -14,7 +14,7 @@ import { objIndexedSprite } from "./utils/obj-indexed-sprite";
 const txs = Tx.Enemy.GoonSpell.split({ width: 80 });
 const v = vnew();
 
-export function objGoonSpell() {
+export function objGoonSpell(damage: number) {
     const sprite = objIndexedSprite(txs);
     const bodyHurtBoxObj = new Graphics().beginFill(0xff0000).drawRect(-20, -8, 30, 38).at(37, 30).invisible();
     const feetHurtBoxObj = new Graphics().beginFill(0xff0000).drawRect(-15, -8, 30, 16).at(37, 95).invisible();
@@ -26,7 +26,7 @@ export function objGoonSpell() {
     )
         .pivoted(37, 95)
         .mixin(mxnShadow, {})
-        .mixin(mxnAttack, { damage: 20, bodyHurtBoxObj, feetHurtBoxObj })
+        .mixin(mxnAttack, { damage, bodyHurtBoxObj, feetHurtBoxObj })
         .coro(function* (self) {
             self.mxnShadow.controls.size = "small";
             yield interp(sprite, "textureIndex").to(2).over(200);

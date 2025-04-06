@@ -7,8 +7,8 @@ const entityValues = {
   Region: null as unknown as { name: string; depth: number },
   Book: null as unknown as { message: string; name: string },
   Acre: null as unknown as { name: string },
-  Goon: null as unknown as { name: string },
-  Treasure: null as unknown as { name: string; kind: "GoldIdol" | "Bone" | "Skull" | "RingWithGreenStone" | "DrillUpgradeEnergy" | "DrillUpgradeRadius" | "DrillUpgradeSpeed" | "DrillUpgradeAttack" | "GoldenIdolHappy" },
+  Goon: null as unknown as { name: string; rank: number },
+  Treasure: null as unknown as { name: string; kind: "GoldIdol" | "Bone" | "Skull" | "RingWithGreenStone" | "DrillUpgradeEnergy" | "DrillUpgradeRadius" | "DrillUpgradeSpeed" | "DrillUpgradeAttack" | "GoldenIdolHappy" | "Tea" },
 };
 
 export namespace OgmoProject {

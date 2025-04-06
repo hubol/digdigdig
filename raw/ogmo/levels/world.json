@@ -95,17 +95,17 @@
           "y": 176,
           "originX": 40,
           "originY": 97,
-          "values": {"name": "NorthernGoon"}
+          "values": {"name": "NorthernGoon", "rank": 1}
         },
         {
           "name": "Goon",
           "id": 1,
           "_eid": "89869392",
-          "x": 1752,
-          "y": 1312,
+          "x": 1880,
+          "y": 1344,
           "originX": 40,
           "originY": 97,
-          "values": {"name": "SoutheasternGoon"}
+          "values": {"name": "SoutheasternGoon", "rank": 0}
         }
       ]
     },
@@ -138,6 +138,16 @@
           "originX": 56,
           "originY": 34,
           "values": {"message": "Drill squares onto goons to defeat them.", "name": ""}
+        },
+        {
+          "name": "Book",
+          "id": 2,
+          "_eid": "84364576",
+          "x": 1856,
+          "y": 976,
+          "originX": 56,
+          "originY": 34,
+          "values": {"message": "Worthless things should be destroyed.", "name": ""}
         }
       ]
     },
@@ -341,6 +351,19 @@
           "y": 800,
           "width": 72,
           "height": 64,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 21,
+          "_eid": "93117141",
+          "x": 1680,
+          "y": 824,
+          "width": 344,
+          "height": 80,
           "originX": 0,
           "originY": 0,
           "tint": "#000000",
@@ -1410,6 +1433,119 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1751,
+          "y": 874,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1857,
+          "y": 874,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1963,
+          "y": 874,
+          "scaleX": -1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2032,
+          "y": 1080,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "foliage/bush 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1777,
+          "y": 933,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#689952",
+          "texture": "foliage/grass 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1734,
+          "y": 971,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#689952",
+          "texture": "foliage/grass 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1715,
+          "y": 935,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#689952",
+          "texture": "foliage/grass 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1767,
+          "y": 923,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffc046",
+          "texture": "foliage/flower 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1721,
+          "y": 962,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffc046",
+          "texture": "foliage/flower 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -1603,7 +1739,7 @@
           "originY": 0,
           "flippedX": true,
           "flippedY": false,
-          "tint": "#ffffff",
+          "tint": "#7e8f3e",
           "values": {"name": ""}
         },
         {
@@ -1668,7 +1804,7 @@
           "originY": 0,
           "flippedX": false,
           "flippedY": true,
-          "tint": "#ffffff",
+          "tint": "#464f44",
           "values": {"name": ""}
         },
         {
@@ -2063,45 +2199,6 @@
         {
           "x": 1752,
           "y": 746,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#7e8f3e",
-          "texture": "shapes/v small 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1793,
-          "y": 727,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#7e8f3e",
-          "texture": "shapes/v small 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1833,
-          "y": 748,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#7e8f3e",
-          "texture": "shapes/v small 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1862,
-          "y": 723,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 0,
@@ -3060,6 +3157,78 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1696,
+          "y": 816,
+          "scaleX": 15.5,
+          "scaleY": 3.7,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1841,
+          "y": 1006,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1886,
+          "y": 962,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1744,
+          "y": 960,
+          "scaleX": -1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1862,
+          "y": 725,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "hints/worthless.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1858,
+          "y": 778,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 180,
+          "tint": "#7e8f3e",
+          "texture": "hints/arrow medium.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -3097,7 +3266,8 @@
           "texture": "hints/wasd.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1438,
@@ -3109,7 +3279,8 @@
           "texture": "hints/cross.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -3263,6 +3434,16 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "", "kind": "DrillUpgradeAttack"}
+        },
+        {
+          "name": "Treasure",
+          "id": 14,
+          "_eid": "90732369",
+          "x": 1856,
+          "y": 976,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "Tea"}
         }
       ]
     }
