@@ -3,8 +3,10 @@ import { OgmoProject } from "../../assets/generated/levels/generated-ogmo-projec
 import { objAcre } from "../objects/obj-acre";
 import { objBlock } from "../objects/obj-block";
 import { objBook } from "../objects/obj-book";
+import { objCharacter } from "../objects/obj-character";
 import { objDigSpot } from "../objects/obj-dig-spot";
 import { objGoon } from "../objects/obj-goon";
+import { generateObjCharacterArgs } from "../objects/obj-npc";
 import { objSolidSlope } from "../objects/obj-terrain";
 import { objTreasure } from "../objects/obj-treasure";
 import { objTreasurePrize } from "../objects/obj-treasure-prize";
@@ -22,6 +24,7 @@ export const OgmoEntityResolvers = {
     Treasure: (e) => objTreasure(e.values.kind),
     TreasurePrize: (e) => objTreasurePrize(e.values.kind),
     DigSpot: objDigSpot,
+    Character: () => objCharacter(generateObjCharacterArgs()),
 } satisfies {
     [TName in OgmoProject.Entities.Names]: (e: OgmoFactory.Entity<TName>) => unknown;
 };

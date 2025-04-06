@@ -11,6 +11,7 @@ const entityValues = {
   Treasure: null as unknown as { name: string; kind: "GoldIdol" | "Bone" | "Skull" | "RingWithGreenStone" | "DrillUpgradeEnergy" | "DrillUpgradeRadius" | "DrillUpgradeSpeed" | "DrillUpgradeAttack" | "GoldenIdolHappy" | "Tea" | "InvisibleUnderwear" | "FishingPole" | "Diamond" },
   DigSpot: null as unknown as { name: string },
   TreasurePrize: null as unknown as { kind: "GoldIdol" | "Bone" | "Skull" | "RingWithGreenStone" | "DrillUpgradeEnergy" | "DrillUpgradeRadius" | "DrillUpgradeSpeed" | "DrillUpgradeAttack" | "GoldenIdolHappy" | "Tea" | "InvisibleUnderwear" | "FishingPole" | "Diamond"; name: string },
+  Character: null as unknown as { name: string },
 };
 
 export namespace OgmoProject {

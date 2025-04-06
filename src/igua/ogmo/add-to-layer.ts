@@ -12,7 +12,7 @@ export function ogmoAddToLayer(obj: DisplayObject, layerName: string) {
         obj.zIndex = 1;
         obj.show(scene.groundStage);
     }
-    else if (layerName === "PerspectiveDecals") {
+    else if (layerName === "PerspectiveDecals" || layerName === "PerspectiveEntities") {
         obj.show(scene.perspectiveStage);
     }
     else if (layerName === "AboveGroundDecals") {
