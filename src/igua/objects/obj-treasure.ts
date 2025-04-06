@@ -17,6 +17,11 @@ const treasures = {
     "GoldIdol": { tx: Tx.Treasures.GoldenIdol, value: 100 },
     "Bone": { tx: Tx.Treasures.Bone, description: "Unfamiliar with this." },
     "Skull": { tx: Tx.Treasures.Skull, description: "Who left this here?" },
+    "RingWithGreenStone": {
+        tx: Tx.Treasures.RingWithGreenStone,
+        description: "Green stone is worth money.",
+        value: 100,
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {

@@ -3014,6 +3014,16 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "", "kind": "Bone"}
+        },
+        {
+          "name": "Treasure",
+          "id": 11,
+          "_eid": "90732369",
+          "x": 744,
+          "y": 984,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "RingWithGreenStone"}
         }
       ]
     }

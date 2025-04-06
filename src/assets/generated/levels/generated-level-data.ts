@@ -64,6 +64,7 @@ export const Lvl = {
     Treasure_8: e(r["Treasure"], { x: 624, y: 1072, values: { name: "", kind: "Skull" } }, "BuriedEntities"),
     Treasure_9: e(r["Treasure"], { x: 736, y: 1072, values: { name: "", kind: "Bone" } }, "BuriedEntities"),
     Treasure_10: e(r["Treasure"], { x: 624, y: 984, values: { name: "", kind: "Bone" } }, "BuriedEntities"),
+    Treasure_11: e(r["Treasure"], { x: 744, y: 984, values: { name: "", kind: "RingWithGreenStone" } }, "BuriedEntities"),
     TreasuresBone0: d(Tx.Treasures.Bone0, { x: 1136, y: 680, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "BuriedDecals"),
     TreasuresHeart0: d(Tx.Treasures.Heart0, { x: 1786, y: 656, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "BuriedDecals"),
     HintsLookEast: d(Tx.Hints.LookEast, { x: 1260, y: 785, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x775234 }, "BuriedDecals"),

@@ -484,7 +484,7 @@
           "name": "kind",
           "definition": "Enum",
           "display": 1,
-          "choices": ["GoldIdol", "Bone", "Skull"],
+          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone"],
           "defaults": 0
         }
       ],
