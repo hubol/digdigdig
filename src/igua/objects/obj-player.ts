@@ -20,7 +20,7 @@ import { progress } from "./progress";
 const v = vnew();
 const v1 = vnew();
 
-let playerCharacterArgs = generateObjCharacterArgs();
+export let playerCharacterArgs = generateObjCharacterArgs();
 
 export function setPlayerCharacterArgs(args: ObjCharacterArgs) {
     playerCharacterArgs = args;

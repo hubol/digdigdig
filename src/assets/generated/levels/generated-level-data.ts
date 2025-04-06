@@ -44,6 +44,45 @@ export const Lvl = {
     FoliageFlower0_1: d(Tx.Foliage.Flower0, { x: 399, y: 262, scaleX: -1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xd85f5f }, "AboveGroundDecals"),
     PlayerMarker: e(r["Marker"], { x: 176, y: 216, values: { name: "PlayerMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
+  Ending: l({ width: 500, height: 280, backgroundTint: 0x408000 }, () => ({
+    ShapesSquare32: d(Tx.Shapes.Square32, { x: 232, y: 144, scaleX: 18, scaleY: 9, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x33412b }, "GroundDecals"),
+    HintsThanks: d(Tx.Hints.Thanks, { x: 315, y: 325, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 2, tint: 0xffffff }, "PerspectiveDecals"),
+    PlayerMarker: e(r["Marker"], { x: 48, y: 256, values: { name: "PlayerMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker: e(r["Marker"], { x: 48, y: 104, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_1: e(r["Marker"], { x: 128, y: 112, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_2: e(r["Marker"], { x: 208, y: 96, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_3: e(r["Marker"], { x: 288, y: 104, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_4: e(r["Marker"], { x: 360, y: 88, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_5: e(r["Marker"], { x: 432, y: 104, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_6: e(r["Marker"], { x: 80, y: 160, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_7: e(r["Marker"], { x: 160, y: 160, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_8: e(r["Marker"], { x: 240, y: 144, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_9: e(r["Marker"], { x: 312, y: 160, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_10: e(r["Marker"], { x: 392, y: 144, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_11: e(r["Marker"], { x: 464, y: 160, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_12: e(r["Marker"], { x: 152, y: 208, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_13: e(r["Marker"], { x: 240, y: 208, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_14: e(r["Marker"], { x: 312, y: 208, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_15: e(r["Marker"], { x: 416, y: 200, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_16: e(r["Marker"], { x: 480, y: 208, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_17: e(r["Marker"], { x: 168, y: 256, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_18: e(r["Marker"], { x: 272, y: 256, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_19: e(r["Marker"], { x: 352, y: 240, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_20: e(r["Marker"], { x: 432, y: 248, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_21: e(r["Marker"], { x: 8, y: 56, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_22: e(r["Marker"], { x: 80, y: 64, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_23: e(r["Marker"], { x: 152, y: 56, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_24: e(r["Marker"], { x: 232, y: 56, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_25: e(r["Marker"], { x: 296, y: 40, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_26: e(r["Marker"], { x: 400, y: 48, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_27: e(r["Marker"], { x: 488, y: 40, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_28: e(r["Marker"], { x: -24, y: 8, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_29: e(r["Marker"], { x: 48, y: 16, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_30: e(r["Marker"], { x: 104, y: 8, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_31: e(r["Marker"], { x: 208, y: 16, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_32: e(r["Marker"], { x: 320, y: 0, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    Marker_33: e(r["Marker"], { x: 464, y: 8, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+  })),
   FinalWorld: l({ width: 500, height: 568, backgroundTint: 0x001480 }, () => ({
     ShapesSquare32: d(Tx.Shapes.Square32, { x: 0, y: 0, scaleX: 16, scaleY: 18, rotation: 0, originX: 0, originY: 0, tint: 0x001480 }, "GroundDecals"),
     Acre: e(r["Acre"], { x: 0, y: 0, flippedX: false, flippedY: false, values: { name: "" }, tint: 0x484848 }, "AcreEntities"),
@@ -666,6 +705,7 @@ export const Lvl = {
 
 export namespace LvlType {
   export type CharacterChooser = ReturnType<(typeof Lvl)["CharacterChooser"]>;
+  export type Ending = ReturnType<(typeof Lvl)["Ending"]>;
   export type FinalWorld = ReturnType<(typeof Lvl)["FinalWorld"]>;
   export type Placeholder = ReturnType<(typeof Lvl)["Placeholder"]>;
   export type World = ReturnType<(typeof Lvl)["World"]>;
