@@ -1,4 +1,5 @@
 import { DisplayObject } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { sleepf } from "../../lib/game-engine/routines/sleep";
 import { areRectanglesOverlapping } from "../../lib/math/rectangle";
 import { vlerp } from "../../lib/math/vector";
@@ -39,10 +40,12 @@ export function mxnEnemy(obj: DisplayObject, args: MxnEnemyArgs) {
             // TODO lots of things
             state.health -= progress.attackPower;
             if (state.health <= 0) {
+                self.play(Sfx.EnemyDie.rate(0.9, 1.1));
                 self.dispatch("mxnEnemy:died");
                 self.destroy();
             }
             else {
+                self.play(Sfx.EnemyTakeDamage.rate(0.9, 1.1));
                 self.dispatch("mxnEnemy:damaged");
             }
         })

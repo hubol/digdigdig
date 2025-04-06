@@ -1,9 +1,11 @@
 import { Graphics } from "pixi.js";
 import { Lvl } from "../../assets/generated/levels/generated-level-data";
+import { Mzk } from "../../assets/music";
 import { EscapeTickerAndExecute } from "../../lib/game-engine/asshat-ticker";
 import { interpv, interpvr } from "../../lib/game-engine/routines/interp";
 import { sleep, sleepf } from "../../lib/game-engine/routines/sleep";
 import { container } from "../../lib/pixi/container";
+import { Jukebox } from "../core/igua-audio";
 import { renderer } from "../current-pixi-renderer";
 import { Key, layers, scene, sceneStack } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
@@ -13,6 +15,8 @@ import { setPlayerCharacterArgs } from "../objects/obj-player";
 import { scnWorld } from "./scn-world";
 
 export function scnChooseCharacter() {
+    Jukebox.play(Mzk.Title).warm(Mzk.World);
+
     const lvl = Lvl.CharacterChooser();
     objCharacterChooser().at(lvl.PlayerMarker).show();
     lvl.TextGroup.children.forEach(x => x.mixin(mxnBoilPivot).invisible());

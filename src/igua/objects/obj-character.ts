@@ -1,4 +1,5 @@
 import { Graphics, Sprite } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { Tx } from "../../assets/textures";
 import { approachLinear, nlerp } from "../../lib/math/number";
 import { RgbInt } from "../../lib/math/number-alias-types";
@@ -212,5 +213,13 @@ export function objCharacter(args: ObjCharacterArgs) {
         .merge({ controls, objects })
         .step(self => {
             self.mxnShadow.controls.size = controls.upsideDownUnit > 0.5 ? "small" : "normal";
-        }, -1);
+        }, -1)
+        .coro(function* (self) {
+            while (true) {
+                yield () => controls.upsideDownUnit > 0.5;
+                self.play(Sfx.PlayerEnterDrillMode.rate(0.9, 1.1));
+                yield () => controls.upsideDownUnit < 0.5;
+                self.play(Sfx.PlayerExitDrillMode.rate(0.9, 1.1));
+            }
+        });
 }

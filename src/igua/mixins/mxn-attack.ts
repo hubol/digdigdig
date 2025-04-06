@@ -1,4 +1,5 @@
 import { DisplayObject } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { playerObj } from "../objects/obj-player";
 import { progress } from "../objects/progress";
 
@@ -30,7 +31,8 @@ export function mxnAttack(obj: DisplayObject, args: MxnAttackArgs) {
                 args.feetHurtBoxObj.collides(playerObj.objects.feetVulnerableBoxObj)
                 && args.bodyHurtBoxObj.collides(playerObj.objects.bodyVulnerableBoxObj)
             ) {
-                // TODO death and stuff
+                playerObj.play(Sfx.PlayerTakeDamage.rate(0.9, 1.1));
+
                 progress.life = Math.max(0, progress.life - args.damage);
                 progress.firsts.everTookDamage = true;
 

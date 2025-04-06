@@ -21,8 +21,8 @@
           "name": "Marker",
           "id": 0,
           "_eid": "73148747",
-          "x": 2064,
-          "y": 992,
+          "x": 1256,
+          "y": 696,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -75,7 +75,7 @@
           "id": 5,
           "_eid": "73148747",
           "x": 1256,
-          "y": 696,
+          "y": 712,
           "originX": 8,
           "originY": 8,
           "tint": "#ffff00",
@@ -3798,7 +3798,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2256,
@@ -3810,7 +3811,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"

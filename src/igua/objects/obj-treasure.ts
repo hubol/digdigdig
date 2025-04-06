@@ -1,4 +1,5 @@
 import { Sprite, Texture } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { Tx } from "../../assets/textures";
 import { factor, interpv, interpvr } from "../../lib/game-engine/routines/interp";
 import { sleep } from "../../lib/game-engine/routines/sleep";
@@ -162,7 +163,9 @@ export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple
 
     yield interpvr(obj).factor(factor.sine).to(target).over(1000);
     layers.overlay.objects.treasureMessageObj.methods.show(getMessage(treasure));
-    yield sleep(2000);
+    yield sleep(250);
+    Sfx.PlayerExplainTreasure.rate(0.9, 1.1).play();
+    yield sleep(1750);
     layers.overlay.objects.treasureMessageObj.methods.clear();
     applyTreasureToProgress(kind);
     obj.destroy();

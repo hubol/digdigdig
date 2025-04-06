@@ -1,5 +1,6 @@
 import { Container, Graphics, Sprite, SpriteMaskFilter, Texture } from "pixi.js";
 import { objText } from "../../../assets/fonts";
+import { Sfx } from "../../../assets/sounds";
 import { Tx } from "../../../assets/textures";
 import { interp, interpv } from "../../../lib/game-engine/routines/interp";
 import { sleepf } from "../../../lib/game-engine/routines/sleep";
@@ -60,6 +61,7 @@ function objReadingBook() {
         .coro(function* (obj) {
             while (true) {
                 yield () => shown;
+                Sfx.ShowMessage.rate(0.9, 1.1).play();
                 obj.visible = true;
                 yield interpv(obj).steps(3).to(242, 50).over(300);
                 yield () => !shown;

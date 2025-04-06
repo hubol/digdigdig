@@ -1,4 +1,5 @@
 import { Graphics } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { KeyCode } from "../../lib/browser/key-listener";
 import { Instances } from "../../lib/game-engine/instances";
 import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
@@ -65,6 +66,7 @@ function objPlayer() {
             })
             .show();
 
+        Sfx.PlayerRespawn.play();
         yield interpv(obj).factor(factor.sine).to(consts.startPosition).over(5000);
         rotateObj.destroy();
         yield sleep(300);
@@ -109,12 +111,16 @@ function objPlayer() {
         lineObj = null;
     }
 
+    const drillSound = Sfx.PlayerDrill.gain(0).loop(true).playInstance();
+
     const obj = objCharacter(playerCharacterArgs)
         .merge({ state, methods })
         .step(self => {
             self.controls.isNude = progress.upgrades.nude;
 
             if (state.isDead) {
+                // Just in case
+                drillSound.linearRamp("gain", 0, 0.2);
                 return;
             }
 
@@ -176,7 +182,13 @@ function objPlayer() {
             }
 
             if (!v.isZero && isInNormalMode) {
+                const previous = self.controls.pedometer;
                 self.controls.pedometer += 0.1;
+
+                const divisor = Math.PI / 2;
+                if (Math.floor(previous / divisor) !== Math.floor(self.controls.pedometer / divisor)) {
+                    self.play(Sfx.PlayerStep0.rate(0.9, 1.1));
+                }
             }
             else {
                 self.controls.pedometer = 0;
@@ -242,6 +254,16 @@ function objPlayer() {
             }
             else if (isInNormalMode) {
                 progress.energy = Math.min(progress.energy + 1, progress.energyMaximum);
+            }
+
+            if (attemptingToDrill) {
+                drillSound.linearRamp("gain", 1, 0.5);
+                const rate = 2 - (progress.energy / progress.energyMaximum);
+                drillSound.linearRamp("rate", rate, 0.05);
+            }
+            else {
+                drillSound.linearRamp("gain", 0, 0.5);
+                drillSound.linearRamp("rate", 1, 0.5);
             }
         })
         .coro(function* (self) {
@@ -336,6 +358,7 @@ function objDrawnLine() {
             });
 
             obj.coro(function* () {
+                obj.play(Sfx.PlayerLineCorrectionStep0.rate(0.9, 1.1));
                 yield interp(finishState, "factor").steps(4).to(1).over(300 * progress.holeCreationDeltaTime);
                 const solidObj = new Graphics()
                     .beginFill(0xffffff)
@@ -345,8 +368,10 @@ function objDrawnLine() {
                     .add(radius, radius)
                     .tinted(0)
                     .show(obj);
+                obj.play(Sfx.PlayerLineCorrectionStep1.rate(0.9, 1.1));
                 yield interpv(solidObj.scale).to(-1, -1).over(300 * progress.holeCreationDeltaTime);
                 gfx.destroy();
+                obj.play(Sfx.PlayerCreateHole.rate(0.9, 1.1));
                 CtxHoles.value.digHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
                 solidObj.tinted(tint);
                 for (let i = 0; i < 4; i++) {

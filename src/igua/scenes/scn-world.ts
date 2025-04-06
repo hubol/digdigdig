@@ -1,6 +1,9 @@
 import { DisplayObject, Sprite } from "pixi.js";
 import { Lvl } from "../../assets/generated/levels/generated-level-data";
+import { Mzk } from "../../assets/music";
+import { Sfx } from "../../assets/sounds";
 import { holdf } from "../../lib/game-engine/routines/hold";
+import { Jukebox } from "../core/igua-audio";
 import { scene } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
 import { mxnBoilScaleXY } from "../mixins/mxn-boil-scale-xy";
@@ -13,6 +16,8 @@ import { transitionToScene } from "./scn-choose-character";
 import { scnFinalWorld } from "./scn-final-world";
 
 export function scnWorld() {
+    Jukebox.play(Mzk.World);
+
     const lvl = Lvl.World();
     createPlayerObj().at(lvl.PlayerStartMarker);
 
@@ -25,6 +30,7 @@ export function scnWorld() {
     // Northwest goon blocking tic-tac-toe
     lvl.NorthwestWallDecal.mixin(mxnBoilScaleXY);
     lvl.NorthwesternGoon.handles("mxnEnemy:died", () => {
+        Sfx.BlockageRemoved.play();
         lvl.NorthwestWallDecal.destroy();
         lvl.NorthwestWall.destroy();
     });
@@ -109,5 +115,6 @@ function setupFinalStep(decalObj: Sprite, blockObj: DisplayObject, regionObj: Di
         yield holdf(() => playerObj.objects.feetHitboxObj.collides(regionObj), 30);
         blockObj.destroy();
         decalObj.destroy();
+        Sfx.BlockageRemoved.play();
     });
 }

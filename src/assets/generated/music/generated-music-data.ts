@@ -2,5 +2,6 @@
 // This file is generated
 
 export const GeneratedMusicData = {
-   "Placeholder": { ogg: require("./ogg/placeholder.ogg") }
+   "Title": { ogg: require("./ogg/title.ogg") },
+   "World": { ogg: require("./ogg/world.ogg") }
 }
