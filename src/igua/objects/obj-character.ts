@@ -160,15 +160,18 @@ export function objCharacter(args: ObjCharacterArgs) {
     const bodyVulnerableBoxObj = new Graphics().beginFill(0xff0000).drawRect(-25, -82, 50, 70).invisible();
     const feetVulnerableBoxObj = new Graphics().beginFill(0x00ff00).drawRect(-30, -20, 60, 25).invisible();
 
+    const mapRgbFilter = new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff);
+
     const objects = {
         bodyVulnerableBoxObj,
         feetVulnerableBoxObj,
         feetHitboxObj,
         hatTipObj,
+        mapRgbFilter,
     };
 
     const innerObj = container(lowerBodyObj, headObj)
-        .filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff))
+        .filtered(mapRgbFilter)
         .pivoted(50, 140)
         .step(self => {
             self.pivot.y = controls.upsideDownUnit >= 1 ? 16 : 140;

@@ -31,6 +31,13 @@ export class MapRgbFilter extends Filter {
         };
         super(undefined, fragment, uniforms);
     }
+
+    update(red = 0, green = 0, blue = 0, white = 0xffffff) {
+        this.uniforms.red = getPixiColorAsGlslVec3(red);
+        this.uniforms.green = getPixiColorAsGlslVec3(green);
+        this.uniforms.blue = getPixiColorAsGlslVec3(blue);
+        this.uniforms.white = getPixiColorAsGlslVec3(white);
+    }
 }
 
 function getPixiColorAsGlslVec3(color: number) {

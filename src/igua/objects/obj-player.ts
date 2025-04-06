@@ -43,6 +43,7 @@ function objPlayer() {
     function* coroDie() {
         yield () => !state.isBusy;
         maybeFinishLine();
+        obj.objects.mapRgbFilter.update(0x202020, 0x909090, 0xd0d0d0);
         state.isBusy = true;
         state.isDead = true;
 
@@ -71,6 +72,11 @@ function objPlayer() {
 
         progress.life = progress.lifeMaximum;
 
+        obj.objects.mapRgbFilter.update(
+            playerCharacterArgs.tint0,
+            playerCharacterArgs.tint1,
+            playerCharacterArgs.tint2,
+        );
         state.isBusy = false;
         state.isDead = false;
     }
