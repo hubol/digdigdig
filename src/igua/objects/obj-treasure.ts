@@ -14,7 +14,7 @@ import { playerObj } from "./obj-player";
 import { Progress, progress } from "./progress";
 
 const treasures = {
-    "GoldIdol": { tx: Tx.Treasures.GoldenIdol, value: 100 },
+    "GoldIdol": { tx: Tx.Treasures.GoldenIdol, value: 100, description: "Looks miserable.\nWorth money." },
     "GoldenIdolHappy": {
         tx: Tx.Treasures.GoldenIdolHappy,
         value: 100,
