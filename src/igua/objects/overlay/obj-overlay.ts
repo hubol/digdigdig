@@ -2,6 +2,7 @@ import { Container, Graphics, Sprite, SpriteMaskFilter, Texture } from "pixi.js"
 import { objText } from "../../../assets/fonts";
 import { Tx } from "../../../assets/textures";
 import { interp, interpv } from "../../../lib/game-engine/routines/interp";
+import { sleepf } from "../../../lib/game-engine/routines/sleep";
 import { RgbInt } from "../../../lib/math/number-alias-types";
 import { container } from "../../../lib/pixi/container";
 import { mxnBoilPivot } from "../../mixins/mxn-boil-pivot";
@@ -118,6 +119,18 @@ function objLife() {
         getMaximum: () => progress.lifeMaximum,
         printValue: "always",
     })
+        .coro(function* (self) {
+            while (true) {
+                const previous = progress.life;
+                yield () => progress.life < previous;
+                for (let i = 4; i >= 0; i -= 1) {
+                    for (let j = -1; j <= 1; j += 2) {
+                        self.pivot.y = i * j;
+                        yield sleepf(3);
+                    }
+                }
+            }
+        })
         .at(158, 5);
 }
 

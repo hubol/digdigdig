@@ -178,6 +178,18 @@ function objPlayer() {
                 progress.energy = Math.min(progress.energy + 1, progress.energyMaximum);
             }
         })
+        .coro(function* (self) {
+            while (true) {
+                const previous = progress.life;
+                yield () => progress.life < previous;
+                for (let i = 0; i < 3; i++) {
+                    self.visible = false;
+                    yield sleepf(5);
+                    self.visible = true;
+                    yield sleepf(8);
+                }
+            }
+        })
         .show(scene.perspectiveStage);
 }
 
