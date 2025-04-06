@@ -23,7 +23,7 @@ export function objGoonPencilBurst(count: number, damage: number, speed: "defaul
                 const rad = i * deltaRadians;
                 const unit = vnew(Math.cos(rad), -Math.sin(rad));
                 return objGoonPencil(damage, windupTimeMs, speed, attackGroup)
-                    .merge({ unit }).at(self).add(unit, 24).show(scene.perspectiveStage);
+                    .merge({ unit }).at(self).add(unit, 24);
             });
 
             yield sleep(windupTimeMs + Rng.int(0, 250));
@@ -42,7 +42,7 @@ export function objGoonPencilBurst(count: number, damage: number, speed: "defaul
         });
 }
 
-function objGoonPencil(damage: number, windupTimeMs: number, speed: "default" | "fast", group: {}) {
+export function objGoonPencil(damage: number, windupTimeMs: number, speed: "default" | "fast", group = {}) {
     const bodyHurtBoxObj = new Graphics().beginFill(0xff0000).drawRect(-12, -60, 24, 38).invisible();
     const feetHurtBoxObj = new Graphics().beginFill(0x00ff00).drawRect(-15, -8, 30, 16).invisible();
 
@@ -68,5 +68,6 @@ function objGoonPencil(damage: number, windupTimeMs: number, speed: "default" | 
                 sprite.angle = 0;
                 yield interp(sprite, "angle").steps(8).to(360).over(speed === "default" ? 400 : 200);
             }
-        });
+        }, -1)
+        .show(scene.perspectiveStage);
 }

@@ -6,6 +6,7 @@ import { mxnNpc } from "../mixins/mxn-npc";
 import { objBather } from "../objects/obj-bather";
 import { objEvilSpawner } from "../objects/obj-evil-spawner";
 import { createPlayerObj } from "../objects/obj-player";
+import { objSpider } from "../objects/obj-spider";
 
 export function scnWorld() {
     const lvl = Lvl.World();
@@ -69,4 +70,9 @@ export function scnWorld() {
 
     // Southeastern goon
     lvl.SoutheasternGoon.handles("mxnEnemy:died", () => lvl.SoutheasternGoonPrize.dispatch("objTreasurePrize:reward"));
+
+    // Spiders
+    [lvl.SpiderMarker0, lvl.SpiderMarker1, lvl.SpiderMarker2, lvl.SpiderMarker3].forEach(markerObj =>
+        console.log(objSpider().at(markerObj))
+    );
 }

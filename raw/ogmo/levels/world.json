@@ -21,8 +21,8 @@
           "name": "Marker",
           "id": 0,
           "_eid": "73148747",
-          "x": 1600,
-          "y": 1296,
+          "x": 1048,
+          "y": 1232,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -111,6 +111,60 @@
           "originX": 8,
           "originY": 8,
           "values": {"kind": "SilverMedal", "name": "SoutheasternGoonPrize"}
+        },
+        {
+          "name": "Marker",
+          "id": 9,
+          "_eid": "73148747",
+          "x": 592,
+          "y": 1176,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#ff0000",
+          "values": {"name": "SpiderMarker0", "depth": 0}
+        },
+        {
+          "name": "Marker",
+          "id": 10,
+          "_eid": "73148747",
+          "x": 688,
+          "y": 1272,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#ff0000",
+          "values": {"name": "SpiderMarker1", "depth": 0}
+        },
+        {
+          "name": "Marker",
+          "id": 11,
+          "_eid": "73148747",
+          "x": 824,
+          "y": 1208,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#ff0000",
+          "values": {"name": "SpiderMarker2", "depth": 0}
+        },
+        {
+          "name": "Marker",
+          "id": 12,
+          "_eid": "73148747",
+          "x": 952,
+          "y": 1296,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#ff0000",
+          "values": {"name": "SpiderMarker3", "depth": 0}
+        },
+        {
+          "name": "TreasurePrize",
+          "id": 13,
+          "_eid": "93096814",
+          "x": 760,
+          "y": 1248,
+          "originX": 8,
+          "originY": 8,
+          "values": {"kind": "SilverMedal", "name": "SpiderPrize"}
         }
       ]
     },

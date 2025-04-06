@@ -621,7 +621,7 @@ export const Lvl = {
     CharactersBatherTub: d(Tx.Characters.BatherTub, { x: 2344, y: 536, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 1, tint: 0xffffff }, "PerspectiveDecals"),
     FishingRodInUse: d(Tx.Misc.FishingRodInUse, { x: 676, y: 710, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 1.1, tint: 0xffffff }, "PerspectiveDecals"),
     BatherRegion: e(r["Region"], { x: 2200, y: 336, width: 280, height: 144, values: { name: "BatherRegion", depth: 0 }, tint: 0x00ff00 }, "RegionEntities"),
-    PlayerStartMarker: e(r["Marker"], { x: 1600, y: 1296, values: { name: "PlayerStartMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    PlayerStartMarker: e(r["Marker"], { x: 1048, y: 1232, values: { name: "PlayerStartMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
     NorthernGoonPrize: e(r["TreasurePrize"], { x: 1240, y: 168, values: { kind: "DrillUpgradeSpeed", name: "NorthernGoonPrize" } }, "MarkerEntities"),
     TicTacToePrize: e(r["TreasurePrize"], { x: 408, y: 80, values: { kind: "DrillUpgradeRadius", name: "TicTacToePrize" } }, "MarkerEntities"),
     EvilSpawnerMarker: e(r["Marker"], { x: 792, y: 64, values: { name: "EvilSpawnerMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
@@ -630,6 +630,11 @@ export const Lvl = {
     FishermanCompleteMarker: e(r["Marker"], { x: 600, y: 712, values: { name: "FishermanCompleteMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
     NortheasternGoonPrize: e(r["TreasurePrize"], { x: 2280, y: 152, values: { kind: "Soap", name: "NortheasternGoonPrize" } }, "MarkerEntities"),
     SoutheasternGoonPrize: e(r["TreasurePrize"], { x: 1736, y: 1280, values: { kind: "SilverMedal", name: "SoutheasternGoonPrize" } }, "MarkerEntities"),
+    SpiderMarker0: e(r["Marker"], { x: 592, y: 1176, values: { name: "SpiderMarker0", depth: 0 }, tint: 0xff0000 }, "MarkerEntities"),
+    SpiderMarker1: e(r["Marker"], { x: 688, y: 1272, values: { name: "SpiderMarker1", depth: 0 }, tint: 0xff0000 }, "MarkerEntities"),
+    SpiderMarker2: e(r["Marker"], { x: 824, y: 1208, values: { name: "SpiderMarker2", depth: 0 }, tint: 0xff0000 }, "MarkerEntities"),
+    SpiderMarker3: e(r["Marker"], { x: 952, y: 1296, values: { name: "SpiderMarker3", depth: 0 }, tint: 0xff0000 }, "MarkerEntities"),
+    SpiderPrize: e(r["TreasurePrize"], { x: 760, y: 1248, values: { kind: "SilverMedal", name: "SpiderPrize" } }, "MarkerEntities"),
   })),
 };
 
