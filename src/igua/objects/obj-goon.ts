@@ -28,9 +28,9 @@ interface ObjGoonArgs {
 }
 
 const GoonRanks = [
-    { health: 30, energy: 500, spellAttackDamage: 10 },
-    { health: 30, energy: 500, spellAttackDamage: 20 },
-    { health: 50, energy: 500, spellAttackDamage: 30 },
+    { health: 30, energy: 500, spellAttackDamage: 10, timeRate: 1 },
+    { health: 30, energy: 500, spellAttackDamage: 20, timeRate: 1 },
+    { health: 70, energy: 500, spellAttackDamage: 30, timeRate: 0.75 },
 ];
 
 export function objGoon(goonArgs: ObjGoonArgs) {
@@ -144,12 +144,12 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                 state.energy -= consts.energyPerSpell;
 
                 state.speed.at(0, 0);
-                yield interpv(sprite).factor(factor.sine).to(0, -32).over(275);
-                yield interpv(sprite).to(0, 0).over(200);
+                yield interpv(sprite).factor(factor.sine).to(0, -32).over(275 * rank.timeRate);
+                yield interpv(sprite).to(0, 0).over(200 * rank.timeRate);
 
                 while (true) {
                     yield* Coro.race([
-                        interp(state, "chargeUnit").to(1).over(500),
+                        interp(state, "chargeUnit").to(1).over(500 * rank.timeRate),
                         () => state.remainingPainCount > 0,
                     ]);
 
@@ -158,9 +158,9 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                     }
                     yield () => state.remainingPainCount <= 0;
                 }
-                objGoonSpell(rank.spellAttackDamage).at(self).filtered(filter);
-                yield sleep(150);
-                yield interp(state, "chargeUnit").to(0).over(350);
+                objGoonSpell(rank.spellAttackDamage, rank.timeRate).at(self).filtered(filter);
+                yield sleep(150 * rank.timeRate);
+                yield interp(state, "chargeUnit").to(0).over(350 * rank.timeRate);
 
                 state.canRecoverEnergy = true;
             }

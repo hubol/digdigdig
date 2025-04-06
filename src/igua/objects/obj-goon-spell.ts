@@ -14,7 +14,7 @@ import { objIndexedSprite } from "./utils/obj-indexed-sprite";
 const txs = Tx.Enemy.GoonSpell.split({ width: 80 });
 const v = vnew();
 
-export function objGoonSpell(damage: number) {
+export function objGoonSpell(damage: number, timeRate: number) {
     const sprite = objIndexedSprite(txs);
     const bodyHurtBoxObj = new Graphics().beginFill(0xff0000).drawRect(-20, -8, 30, 38).at(37, 30).invisible();
     const feetHurtBoxObj = new Graphics().beginFill(0xff0000).drawRect(-15, -8, 30, 16).at(37, 95).invisible();
@@ -29,16 +29,16 @@ export function objGoonSpell(damage: number) {
         .mixin(mxnAttack, { damage, bodyHurtBoxObj, feetHurtBoxObj })
         .coro(function* (self) {
             self.mxnShadow.controls.size = "small";
-            yield interp(sprite, "textureIndex").to(2).over(200);
+            yield interp(sprite, "textureIndex").to(2).over(200 * timeRate);
             sprite.coro(function* () {
                 while (true) {
                     yield interp(sprite, "textureIndex").to(5).over(Rng.int(200, 400));
                     yield interp(sprite, "textureIndex").to(2).over(Rng.int(200, 400));
                 }
             });
-            v.at(playerObj).add(self, -1).normalize().scale(400);
-            yield interpv(self).factor(factor.sine).translate(v).over(4000);
-            yield interpv(sprite.scale).steps(2).to(0, 0).over(250);
+            v.at(playerObj).add(self, -1).normalize().scale(400 * timeRate);
+            yield interpv(self).factor(factor.sine).translate(v).over(4000 * timeRate);
+            yield interpv(sprite.scale).steps(2).to(0, 0).over(250 * timeRate);
             self.destroy();
         })
         .show(scene.perspectiveStage);
