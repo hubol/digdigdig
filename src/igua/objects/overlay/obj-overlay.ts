@@ -11,7 +11,9 @@ import { progress } from "../progress";
 export function objOverlay() {
     const readingBookObj = objReadingBook();
     const energyObj = objEnergy().step(self => self.visible = progress.firsts.everDrilled && !readingBookObj.visible);
-    const lifeObj = objLife().step(self => self.visible = progress.firsts.everTookDamage && !readingBookObj.visible);
+    const lifeObj = objLife().step(self =>
+        self.visible = (progress.firsts.everTookDamage || progress.upgrades.life > 0) && !readingBookObj.visible
+    );
     const moneyObj = objMoney().step(self => self.visible = progress.money > 0 && !readingBookObj.visible);
     const treasureMessageObj = objTreasureMessage().invisible();
 
@@ -103,6 +105,7 @@ function objEnergy() {
         txTitle: Tx.Hud.Energy,
         getValue: () => progress.energy,
         getMaximum: () => progress.energyMaximum,
+        printValue: "at_maximum",
     })
         .at(5, 5);
 }
@@ -113,6 +116,7 @@ function objLife() {
         txTitle: Tx.Hud.Life,
         getValue: () => progress.life,
         getMaximum: () => progress.lifeMaximum,
+        printValue: "always",
     })
         .at(158, 5);
 }
@@ -123,6 +127,7 @@ function objMoney() {
         txTitle: Tx.Hud.Money,
         getValue: () => progress.money,
         getMaximum: () => progress.moneyMaximum,
+        printValue: "always",
     })
         .at(328, 5);
 }
@@ -134,6 +139,7 @@ interface ObjBarArgs {
     tint: RgbInt;
     getValue(): number;
     getMaximum(): number;
+    printValue: "always" | "at_maximum";
 }
 
 function objBar(args: ObjBarArgs) {
@@ -146,22 +152,45 @@ function objBar(args: ObjBarArgs) {
         barMaskObj.flipV();
     }
 
+    const fillGfx = new Graphics();
+    const textMaskGfx = new Graphics();
+
+    const gfxs = [fillGfx, textMaskGfx];
+
+    const bgTextObj = objText.Medium("", { tint: args.tint }).at(3, 4);
+    const fgTextObj = objText.Medium("", { tint: 0xffffff }).masked(textMaskGfx).at(bgTextObj);
+
     objBarCallsCount += 1;
 
     return container(
         Sprite.from(args.txTitle).tinted(args.tint).at(48 - args.txTitle.width, 0),
         container(
             barMaskObj,
+            textMaskGfx,
             new Graphics().beginFill(0xffffff).drawRect(0, 0, Tx.Hud.EnergyBar.width, Tx.Hud.EnergyBar.height),
-            new Graphics().step(self =>
-                self.clear().beginFill(args.tint).drawRect(
-                    0,
-                    0,
-                    getWidth(Tx.Hud.EnergyBar.width, args.getValue() / args.getMaximum()),
-                    Tx.Hud.EnergyBar.height,
-                )
-            ),
+            bgTextObj,
+            fillGfx,
+            fgTextObj,
         )
+            .step(() => {
+                const value = args.getValue();
+                const maximum = args.getMaximum();
+
+                for (const gfx of gfxs) {
+                    gfx.clear().beginFill(args.tint).drawRect(
+                        0,
+                        0,
+                        getWidth(Tx.Hud.EnergyBar.width, value / maximum),
+                        Tx.Hud.EnergyBar.height,
+                    );
+                }
+
+                bgTextObj.text = "" + Math.round(value);
+                fgTextObj.text = bgTextObj.text;
+
+                bgTextObj.visible = args.printValue === "always" || value >= maximum;
+                fgTextObj.visible = bgTextObj.visible;
+            })
             .at(54, 3)
             .filtered(new SpriteMaskFilter(barMaskObj)),
     );

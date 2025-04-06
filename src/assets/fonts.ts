@@ -27,6 +27,9 @@ export const objText = {
     Medium(text = "", style: Style = {}) {
         return new BitmapText(text, { fontName: fntErotixLight.font, ...style });
     },
+    MediumBold(text = "", style: Style = {}) {
+        return new BitmapText(text, { fontName: fntErotix.font, ...style });
+    },
     MediumBoldIrregular(text = "", style: Style = {}) {
         return new IrregularBitmapText(text, { fontName: fntErotix.font, ...style });
     },
