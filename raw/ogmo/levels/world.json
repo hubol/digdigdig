@@ -368,6 +368,32 @@
           "originY": 0,
           "tint": "#000000",
           "values": {"name": "", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 22,
+          "_eid": "93117141",
+          "x": 136,
+          "y": 1184,
+          "width": 168,
+          "height": 152,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 23,
+          "_eid": "93117141",
+          "x": 304,
+          "y": 1256,
+          "width": 72,
+          "height": 80,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "", "visible": true}
         }
       ]
     },
@@ -1483,7 +1509,8 @@
           "texture": "foliage/bush 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1777,
@@ -1495,7 +1522,8 @@
           "texture": "foliage/grass 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1734,
@@ -1507,7 +1535,8 @@
           "texture": "foliage/grass 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1715,
@@ -1519,7 +1548,8 @@
           "texture": "foliage/grass 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1767,
@@ -1765,7 +1795,7 @@
           "originY": 0,
           "flippedX": true,
           "flippedY": true,
-          "tint": "#ffffff",
+          "tint": "#653b99",
           "values": {"name": ""}
         },
         {
@@ -3168,7 +3198,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1841,
@@ -3180,7 +3211,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1886,
@@ -3192,7 +3224,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1744,
@@ -3204,7 +3237,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1862,
@@ -3216,7 +3250,8 @@
           "texture": "hints/worthless.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1858,
@@ -3228,6 +3263,19 @@
           "texture": "hints/arrow medium.png",
           "originX": 0.5,
           "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 0,
+          "y": 1120,
+          "scaleX": 16,
+          "scaleY": 10,
+          "rotation": 0,
+          "tint": "#8d66be",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
           "values": {"name": ""}
         }
       ],
@@ -3281,6 +3329,126 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 424,
+          "y": 1168,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 347,
+          "y": 1231,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 424,
+          "y": 1299,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 335,
+          "y": 1349,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 178,
+          "y": 1357,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 63,
+          "y": 1321,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 88,
+          "y": 1247,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 83,
+          "y": 1165,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 208,
+          "y": 1163,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 318,
+          "y": 1172,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/nothing here.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -3444,6 +3612,16 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "", "kind": "Tea"}
+        },
+        {
+          "name": "Treasure",
+          "id": 15,
+          "_eid": "90732369",
+          "x": 232,
+          "y": 1264,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "InvisibleUnderwear"}
         }
       ]
     }

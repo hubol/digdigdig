@@ -55,6 +55,11 @@ const treasures = {
             p.life = p.lifeMaximum;
         },
     },
+    "InvisibleUnderwear": {
+        tx: Tx.Treasures.InvisibleUnderwear,
+        description: "I want to wear them.",
+        progress: p => p.upgrades.nude = true,
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {
