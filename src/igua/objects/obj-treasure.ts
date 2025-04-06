@@ -15,6 +15,11 @@ import { Progress, progress } from "./progress";
 
 const treasures = {
     "GoldIdol": { tx: Tx.Treasures.GoldenIdol, value: 100 },
+    "GoldenIdolHappy": {
+        tx: Tx.Treasures.GoldenIdolHappy,
+        value: 100,
+        description: "Appears to be happy.\nWorth money.",
+    },
     "Bone": { tx: Tx.Treasures.Bone, description: "Unfamiliar with this." },
     "Skull": { tx: Tx.Treasures.Skull, description: "Who left this here?" },
     "RingWithGreenStone": {
@@ -22,22 +27,22 @@ const treasures = {
         description: "Green stone is worth money.",
         value: 100,
     },
-    "DrillUpgrade0": {
+    "DrillUpgradeEnergy": {
         tx: Tx.Treasures.DrillUpgrade0,
         description: "Max EN. UP",
         progress: p => p.upgrades.drill.energy += 1,
     },
-    "DrillUpgrade1": {
+    "DrillUpgradeRadius": {
         tx: Tx.Treasures.DrillUpgrade1,
         description: "Max Hole Radius UP",
         progress: p => p.upgrades.drill.radius += 1,
     },
-    "DrillUpgrade2": {
+    "DrillUpgradeSpeed": {
         tx: Tx.Treasures.DrillUpgrade2,
         description: "Drill Speed UP",
         progress: p => p.upgrades.drill.speed += 1,
     },
-    "DrillUpgrade3": {
+    "DrillUpgradeAttack": {
         tx: Tx.Treasures.DrillUpgrade3,
         description: "Drill Attack Power UP",
         progress: p => p.upgrades.drill.attack += 1,
@@ -51,7 +56,7 @@ interface Treasure {
     progress?: (progress: Progress) => void;
 }
 
-type TreasureKind = keyof typeof treasures;
+export type TreasureKind = keyof typeof treasures;
 
 function createSprite(treasure: Treasure) {
     return Sprite.from(treasure.tx).anchored(0.5, 0.5);

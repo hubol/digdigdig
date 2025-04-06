@@ -67,7 +67,13 @@
         {"x": 858, "y": 933, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
         {"x": 630, "y": 1016, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
         {"x": 742, "y": 1018, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
-        {"x": 857, "y": 1019, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null}
+        {"x": 857, "y": 1019, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 1410, "y": 257, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1073, "y": 232, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1133, "y": 91, "scaleX": -1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1373, "y": 71, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1449, "y": 146, "scaleX": -1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 1.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1045, "y": 72, "scaleX": -1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null}
       ],
       "folder": "../textures"
     },
@@ -89,7 +95,7 @@
           "y": 176,
           "originX": 40,
           "originY": 97,
-          "values": {"name": ""}
+          "values": {"name": "NorthernGoon"}
         }
       ]
     },
@@ -1694,7 +1700,7 @@
           "originY": 0,
           "flippedX": false,
           "flippedY": false,
-          "tint": "#ffffff",
+          "tint": "#a8483e",
           "values": {"name": ""}
         },
         {
@@ -2839,6 +2845,19 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1000,
+          "y": 0,
+          "scaleX": 16,
+          "scaleY": 9,
+          "rotation": 0,
+          "tint": "#ce7954",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -2854,32 +2873,6 @@
       "gridCellsY": 175,
       "decals": [
         {
-          "x": 1136,
-          "y": 680,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "treasures/bone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1786,
-          "y": 656,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "treasures/heart 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
           "x": 1260,
           "y": 785,
           "scaleX": 1,
@@ -2891,6 +2884,30 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1440,
+          "y": 634,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/wasd.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1438,
+          "y": 637,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#b05447",
+          "texture": "hints/cross.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -3024,6 +3041,26 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "", "kind": "RingWithGreenStone"}
+        },
+        {
+          "name": "Treasure",
+          "id": 12,
+          "_eid": "90732369",
+          "x": 1448,
+          "y": 152,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "GoldenIdolHappy"}
+        },
+        {
+          "name": "Treasure",
+          "id": 13,
+          "_eid": "90732369",
+          "x": 1784,
+          "y": 656,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "DrillUpgradeAttack"}
         }
       ]
     }
