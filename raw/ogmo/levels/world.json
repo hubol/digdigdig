@@ -2183,6 +2183,18 @@
       "gridCellsY": 175,
       "decals": [
         {
+          "x": 491,
+          "y": 558,
+          "scaleX": 16,
+          "scaleY": 9,
+          "rotation": 0,
+          "tint": "#98ad46",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""}
+        },
+        {
           "x": 1521,
           "y": 837,
           "scaleX": 15.2,
@@ -3558,6 +3570,318 @@
           "originX": 0,
           "originY": 0,
           "values": {"name": ""}
+        },
+        {
+          "x": 731,
+          "y": 708,
+          "scaleX": 0.9,
+          "scaleY": 0.9,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "patch/lumpy square 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1000,
+          "y": 288,
+          "scaleX": 18,
+          "scaleY": 8,
+          "rotation": 0,
+          "tint": "#b0c16e",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1000,
+          "y": 288,
+          "scaleX": 18,
+          "scaleY": 3,
+          "rotation": 0,
+          "tint": "#be9d61",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1197,
+          "y": 383,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#be9d61",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1413,
+          "y": 385,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#be9d61",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1089,
+          "y": 544,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#98ad46",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1414,
+          "y": 542,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#98ad46",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1088,
+          "y": 512,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1119,
+          "y": 473,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1224,
+          "y": 608,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#be6b48",
+          "texture": "stone/brick walkway 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1282,
+          "y": 483,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#be9d61",
+          "texture": "character shadow.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1264,
+          "y": 488,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#be6b48",
+          "texture": "stone/brick walkway 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1146,
+          "y": 331,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#ce7954",
+          "texture": "character shadow.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1160,
+          "y": 320,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#be6b48",
+          "texture": "stone/brick walkway 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1206,
+          "y": 412,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#be9d61",
+          "texture": "character shadow.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1208,
+          "y": 400,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#be6b48",
+          "texture": "stone/brick walkway 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1268,
+          "y": 435,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#dc8764",
+          "texture": "shapes/light small 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1183,
+          "y": 387,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#dc8764",
+          "texture": "shapes/light small 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1167,
+          "y": 314,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#dc8764",
+          "texture": "shapes/light small 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1240,
+          "y": 580,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#dc8764",
+          "texture": "shapes/light small 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1224,
+          "y": 654,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#dc8764",
+          "texture": "shapes/light small 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1118,
+          "y": 385,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1164,
+          "y": 420,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1404,
+          "y": 500,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1433,
+          "y": 522,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1460,
+          "y": 498,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#e6d05d",
+          "texture": "foliage/grass 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -3857,6 +4181,18 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1249,
+          "y": 422,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/filler 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -4040,6 +4376,16 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "", "kind": "FishingPole"}
+        },
+        {
+          "name": "Treasure",
+          "id": 17,
+          "_eid": "90732369",
+          "x": 1405,
+          "y": 329,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "RingWithGreenStone"}
         }
       ]
     }
