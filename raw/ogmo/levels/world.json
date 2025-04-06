@@ -21,8 +21,8 @@
           "name": "Marker",
           "id": 0,
           "_eid": "73148747",
-          "x": 2152,
-          "y": 480,
+          "x": 2136,
+          "y": 464,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -792,6 +792,16 @@
           "originX": 37,
           "originY": 128,
           "values": {"name": "FishermanCharacter"}
+        },
+        {
+          "name": "Goon",
+          "id": 4,
+          "_eid": "89869392",
+          "x": 2280,
+          "y": 184,
+          "originX": 40,
+          "originY": 97,
+          "values": {"name": "NortheasternGoon", "rank": 3}
         }
       ]
     },

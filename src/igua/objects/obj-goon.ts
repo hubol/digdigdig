@@ -16,22 +16,43 @@ import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnShadow } from "../mixins/mxn-shadow";
 import { objFxRelease } from "./fx/obj-fx-release";
 import { objBlock } from "./obj-block";
+import { objGoonPencilBurst } from "./obj-goon-pencil-burst";
 import { objGoonSpell } from "./obj-goon-spell";
 import { generateObjCharacterArgs } from "./obj-npc";
 import { playerObj } from "./obj-player";
 
 const [txIdle, txWalk, ...txsCharge] = Tx.Enemy.Goon.split({ width: 92 });
+const txsStretch = Tx.Enemy.GoonStretch.split({ width: 92 });
 const txHurt = Tx.Enemy.GoonHurt;
 
 interface ObjGoonArgs {
     rank: number;
 }
 
-const GoonRanks = [
-    { health: 30, energy: 500, spellAttackDamage: 10, timeRate: 1 },
-    { health: 30, energy: 500, spellAttackDamage: 20, timeRate: 1 },
-    { health: 70, energy: 500, spellAttackDamage: 30, timeRate: 0.75 },
+type GoonMove = "spell" | "burst";
+
+const GoonRanks: GoonRank[] = [
+    { health: 30, energy: 500, spellAttackDamage: 10, spellTimeRate: 1, moves: ["spell"], noticeFactor: 1 },
+    { health: 30, energy: 500, spellAttackDamage: 20, spellTimeRate: 1, moves: ["spell"], noticeFactor: 1 },
+    { health: 70, energy: 500, spellAttackDamage: 30, spellTimeRate: 0.75, moves: ["spell"], noticeFactor: 1 },
+    {
+        health: 70,
+        energy: 500,
+        spellAttackDamage: 30,
+        spellTimeRate: 0.75,
+        moves: ["spell", "burst"],
+        noticeFactor: 1.5,
+    },
 ];
+
+interface GoonRank {
+    health: number;
+    energy: number;
+    spellAttackDamage: number;
+    spellTimeRate: number;
+    moves: GoonMove[];
+    noticeFactor: number;
+}
 
 export function objGoon(goonArgs: ObjGoonArgs) {
     const rank = GoonRanks[goonArgs.rank] ?? GoonRanks[0];
@@ -44,6 +65,7 @@ export function objGoon(goonArgs: ObjGoonArgs) {
         speed: vnew(),
         pedometer: 0,
         chargeUnit: 0,
+        stretchUnit: 0,
         remainingPainCount: 0,
         lastAcceptablePosition: vnew(),
         canRecoverEnergy: true,
@@ -53,7 +75,7 @@ export function objGoon(goonArgs: ObjGoonArgs) {
 
     const consts = {
         minimumEnergyToEngage: 100,
-        energyPerSpell: 250,
+        energyPerMove: 250,
     };
 
     function* coroIdle() {
@@ -66,8 +88,10 @@ export function objGoon(goonArgs: ObjGoonArgs) {
     }
 
     function noticePlayer(position: VectorSimple, facing: PolarInt) {
-        const minDistanceToNotice = Math.sign(playerObj.x - position.x) === facing ? 400 : 100;
-        return Math.abs(playerObj.x - position.x) < minDistanceToNotice && Math.abs(playerObj.y - position.y) < 100
+        const minDistanceToNotice = (Math.sign(playerObj.x - position.x) === facing ? 400 : (100 * rank.noticeFactor))
+            * rank.noticeFactor;
+        return Math.abs(playerObj.x - position.x) < minDistanceToNotice
+            && Math.abs(playerObj.y - position.y) < 100 * rank.noticeFactor
             && state.energy > consts.minimumEnergyToEngage;
     }
 
@@ -110,10 +134,19 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                 sprite.texture = txHurt;
                 state.remainingPainCount -= 1;
             }
-            else if (state.chargeUnit <= 0) {
+            else if (state.chargeUnit <= 0 && state.stretchUnit <= 0) {
                 sprite.texture = state.pedometer === 0 ? txIdle : (state.pedometer % 2 < 1 ? txWalk : txIdle);
             }
-            else {
+            // This all looks like shit..........
+            // But it's the last 10 hours....
+            else if (state.stretchUnit > 0) {
+                const txIndex = Math.max(
+                    0,
+                    Math.min(txsStretch.length - 1, Math.round(state.stretchUnit * txsStretch.length)),
+                );
+                sprite.texture = txsStretch[txIndex];
+            }
+            else if (state.chargeUnit > 0) {
                 const txIndex = Math.max(
                     0,
                     Math.min(txsCharge.length - 1, Math.round(state.chargeUnit * txsCharge.length)),
@@ -141,26 +174,42 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                 self.scale.x = -Math.sign(playerObj.x - self.x) || 1;
 
                 state.canRecoverEnergy = false;
-                state.energy -= consts.energyPerSpell;
+                state.energy -= consts.energyPerMove;
 
                 state.speed.at(0, 0);
-                yield interpv(sprite).factor(factor.sine).to(0, -32).over(275 * rank.timeRate);
-                yield interpv(sprite).to(0, 0).over(200 * rank.timeRate);
+                yield interpv(sprite).factor(factor.sine).to(0, -32).over(275 * rank.spellTimeRate);
+                yield interpv(sprite).to(0, 0).over(200 * rank.spellTimeRate);
+
+                const move = Rng.choose(...rank.moves);
 
                 while (true) {
+                    state.chargeUnit = 0;
+                    state.stretchUnit = 0;
+
                     yield* Coro.race([
-                        interp(state, "chargeUnit").to(1).over(500 * rank.timeRate),
+                        interp(state, move === "spell" ? "chargeUnit" : "stretchUnit").to(1).over(
+                            500 * rank.spellTimeRate,
+                        ),
                         () => state.remainingPainCount > 0,
                     ]);
 
-                    if (state.chargeUnit >= 1) {
+                    if (state.chargeUnit >= 1 || state.stretchUnit >= 1) {
                         break;
                     }
                     yield () => state.remainingPainCount <= 0;
                 }
-                objGoonSpell(rank.spellAttackDamage, rank.timeRate).at(self).filtered(filter);
-                yield sleep(150 * rank.timeRate);
-                yield interp(state, "chargeUnit").to(0).over(350 * rank.timeRate);
+
+                if (move === "spell") {
+                    objGoonSpell(rank.spellAttackDamage, rank.spellTimeRate).at(self).filtered(filter);
+                    yield sleep(150 * rank.spellTimeRate);
+                    yield interp(state, "chargeUnit").to(0).over(350 * rank.spellTimeRate);
+                }
+                else if (move === "burst") {
+                    const burstObj = objGoonPencilBurst(8, rank.spellAttackDamage - 10, Rng.choose("default", "fast"))
+                        .at(self).show();
+                    yield () => burstObj.destroyed;
+                    yield interp(state, "stretchUnit").to(0).over(350 * rank.spellTimeRate);
+                }
 
                 state.canRecoverEnergy = true;
             }

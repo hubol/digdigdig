@@ -54,7 +54,7 @@ export function scnWorld() {
     lvl.FishermanCharacter.mixin(mxnNpc, function* (api) {
         api.setMessage("I want to try fishing.");
         yield* api.receiveTreasureFromPlayer("FishingPole");
-        yield* api.givePlayerTreasure("DrillUpgradeAttack");
+        yield* api.givePlayerTreasure("Tea");
         api.setMessage("Thanks mothafucka");
         lvl.FishingRodInUse.visible = true;
         lvl.FishermanCharacter.at(lvl.FishermanCompleteMarker);
