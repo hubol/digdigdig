@@ -158,8 +158,8 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                     yield () => state.remainingPainCount <= 0;
                 }
                 objGoonSpell(rank.spellAttackDamage).at(self).filtered(filter);
-                yield sleep(500);
-                state.chargeUnit = 0;
+                yield sleep(150);
+                yield interp(state, "chargeUnit").to(0).over(350);
 
                 state.canRecoverEnergy = true;
             }
