@@ -96,6 +96,16 @@
           "originX": 40,
           "originY": 97,
           "values": {"name": "NorthernGoon"}
+        },
+        {
+          "name": "Goon",
+          "id": 1,
+          "_eid": "89869392",
+          "x": 1752,
+          "y": 1312,
+          "originX": 40,
+          "originY": 97,
+          "values": {"name": "SoutheasternGoon"}
         }
       ]
     },
@@ -117,7 +127,17 @@
           "y": 784,
           "originX": 56,
           "originY": 34,
-          "values": {"message": "Use Space to start digging. Draw a square!", "name": ""}
+          "values": {"message": "Use Space to start drilling. Draw a square!", "name": ""}
+        },
+        {
+          "name": "Book",
+          "id": 1,
+          "_eid": "84364576",
+          "x": 1104,
+          "y": 488,
+          "originX": 56,
+          "originY": 34,
+          "values": {"message": "Drill squares onto goons to defeat them.", "name": ""}
         }
       ]
     },
@@ -1742,6 +1762,32 @@
       "gridCellsY": 175,
       "decals": [
         {
+          "x": 1021,
+          "y": 1109,
+          "scaleX": 30.8,
+          "scaleY": 10.7,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 495,
+          "y": 1118,
+          "scaleX": 30.8,
+          "scaleY": 10.7,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
           "x": 757,
           "y": 608,
           "scaleX": 1,
@@ -2856,6 +2902,123 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 567,
+          "y": 1162,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 765,
+          "y": 1161,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1155,
+          "y": 1161,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1355,
+          "y": 1163,
+          "scaleX": -1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1007,
+          "y": 1163,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#464f44",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 671,
+          "y": 1163,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#464f44",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1639,
+          "y": 1204,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#464f44",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1571,
+          "y": 1158,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#464f44",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1705,
+          "y": 1152,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#464f44",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
         }

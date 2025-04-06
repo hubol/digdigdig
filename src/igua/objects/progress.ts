@@ -1,5 +1,6 @@
 function createInitialProgress() {
     const upgrades = {
+        life: 0,
         drill: {
             energy: 0,
             attack: 0,
@@ -15,8 +16,10 @@ function createInitialProgress() {
         },
         energyBlockedSteps: 0,
         energyBlockedStepsMaximum: 30,
-        life: 100,
-        lifeMaximum: 100,
+        life: 30,
+        get lifeMaximum() {
+            return 30 + upgrades.life * 70;
+        },
         money: 0,
         moneyMaximum: 1000, // TODO set to something that makes sense
         get attackPower() {

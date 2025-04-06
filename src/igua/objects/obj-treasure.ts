@@ -47,6 +47,14 @@ const treasures = {
         description: "Drill Attack Power UP",
         progress: p => p.upgrades.drill.attack += 1,
     },
+    "Tea": {
+        tx: Tx.Treasures.Tea,
+        description: "Scented water raises Max LI.",
+        progress: p => {
+            p.upgrades.life += 1;
+            p.life = p.lifeMaximum;
+        },
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {
