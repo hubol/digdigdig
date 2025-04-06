@@ -30,6 +30,7 @@ interface ObjGoonArgs {
 const GoonRanks = [
     { health: 30, energy: 500, spellAttackDamage: 10 },
     { health: 30, energy: 500, spellAttackDamage: 20 },
+    { health: 50, energy: 500, spellAttackDamage: 30 },
 ];
 
 export function objGoon(goonArgs: ObjGoonArgs) {

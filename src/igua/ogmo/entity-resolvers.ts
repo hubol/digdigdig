@@ -7,6 +7,7 @@ import { objDigSpot } from "../objects/obj-dig-spot";
 import { objGoon } from "../objects/obj-goon";
 import { objSolidSlope } from "../objects/obj-terrain";
 import { objTreasure } from "../objects/obj-treasure";
+import { objTreasurePrize } from "../objects/obj-treasure-prize";
 import { objMarker } from "../objects/utils/obj-marker";
 import { OgmoFactory } from "./factory";
 
@@ -19,6 +20,7 @@ export const OgmoEntityResolvers = {
     Acre: (e) => objAcre({ x: e.x, y: e.y }).pivoted(250, 140).at(250, 140),
     Goon: (e) => objGoon({ rank: e.values.rank }),
     Treasure: (e) => objTreasure(e.values.kind),
+    TreasurePrize: (e) => objTreasurePrize(e.values.kind),
     DigSpot: objDigSpot,
 } satisfies {
     [TName in OgmoProject.Entities.Names]: (e: OgmoFactory.Entity<TName>) => unknown;

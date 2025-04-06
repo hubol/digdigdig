@@ -27,6 +27,26 @@
           "originY": 8,
           "tint": "#00ff00",
           "values": {"name": "PlayerStartMarker", "depth": 0}
+        },
+        {
+          "name": "TreasurePrize",
+          "id": 1,
+          "_eid": "93096814",
+          "x": 1240,
+          "y": 168,
+          "originX": 8,
+          "originY": 8,
+          "values": {"kind": "DrillUpgradeSpeed", "name": "NorthernGoonPrize"}
+        },
+        {
+          "name": "TreasurePrize",
+          "id": 2,
+          "_eid": "93096814",
+          "x": 408,
+          "y": 80,
+          "originX": 8,
+          "originY": 8,
+          "values": {"kind": "DrillUpgradeRadius", "name": "TicTacToePrize"}
         }
       ]
     },
@@ -106,6 +126,16 @@
           "originX": 40,
           "originY": 97,
           "values": {"name": "SoutheasternGoon", "rank": 0}
+        },
+        {
+          "name": "Goon",
+          "id": 2,
+          "_eid": "89869392",
+          "x": 248,
+          "y": 464,
+          "originX": 40,
+          "originY": 97,
+          "values": {"name": "NorthwesternGoon", "rank": 2}
         }
       ]
     },
@@ -498,6 +528,19 @@
           "y": 1256,
           "width": 72,
           "height": 80,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 24,
+          "_eid": "93117141",
+          "x": 472,
+          "y": -96,
+          "width": 80,
+          "height": 656,
           "originX": 0,
           "originY": 0,
           "tint": "#000000",
@@ -1695,7 +1738,99 @@
           "texture": "hints/tictactoe.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 515,
+          "y": -35,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 515,
+          "y": 53,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 515,
+          "y": 145,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 515,
+          "y": 237,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 515,
+          "y": 325,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 515,
+          "y": 417,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 516,
+          "y": 505,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -1980,7 +2115,7 @@
           "originY": 0,
           "flippedX": true,
           "flippedY": false,
-          "tint": "#ffffff",
+          "tint": "#ff4d00",
           "values": {"name": ""}
         },
         {
@@ -3409,6 +3544,19 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 442,
+          "y": -19,
+          "scaleX": 2.8,
+          "scaleY": 9.7,
+          "rotation": 0,
+          "tint": "#ff4d00",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
           "values": {"name": ""}
         }
       ],
@@ -3603,7 +3751,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 334,
@@ -3615,7 +3764,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 152,
@@ -3627,7 +3777,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 159,
@@ -3639,7 +3790,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 249,
@@ -3651,7 +3803,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 341,
@@ -3663,7 +3816,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 252,
@@ -3675,7 +3829,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 156,
@@ -3687,7 +3842,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 343,
@@ -3699,7 +3855,8 @@
           "texture": "hints/cross 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
