@@ -42,6 +42,17 @@
       "entities": []
     },
     {
+      "name": "PerspectiveEntities",
+      "_eid": "89874966",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 35,
+      "entities": []
+    },
+    {
       "name": "DiggableEntities",
       "_eid": "93086020",
       "offsetX": 0,

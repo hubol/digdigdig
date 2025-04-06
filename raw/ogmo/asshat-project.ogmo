@@ -17,7 +17,7 @@
   "compactExport": false,
   "externalScript": "asshat-project.js",
   "playCommand": "",
-  "entityTags": ["Terrain", "Marker", "Region", "Acre", "Solid"],
+  "entityTags": ["Terrain", "Marker", "Region", "Acre", "Solid", "Perspective"],
   "layers": [
     {
       "definition": "entity",
@@ -33,6 +33,14 @@
       "gridSize": {"x": 8, "y": 8},
       "exportID": "01831167",
       "requiredTags": ["Region"],
+      "excludedTags": []
+    },
+    {
+      "definition": "entity",
+      "name": "PerspectiveEntities",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "89874966",
+      "requiredTags": ["Perspective"],
       "excludedTags": []
     },
     {
@@ -369,6 +377,50 @@
       "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
       "texture": "preview-images/acre.png",
       "textureImage": "data:image/png;base64,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"
+    },
+    {
+      "exportID": "89869392",
+      "name": "Goon",
+      "limit": -1,
+      "size": {"x": 82, "y": 97},
+      "origin": {"x": 40, "y": 97},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "flipOnlyScales": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "hasUid": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": ["Perspective"],
+      "values": [
+        {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
+      ],
+      "isRegion": false,
+      "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
+      "texture": "preview-images/goon.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABhCAYAAABFwvaYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANCSURBVHhe7ZvLmtsgDEbtrtpH7BP2EdudO2Rggi9cJH4JBnQ28TexjThIYJLJvg3Asf08/OGNffs3RIwlugSZE3eFKjK+t+YgqDVEkRfgiEi1Iy1VXKSWwEAvkT/8qwjaEnNwYqEgNkq9JebalxisIUZfomOlGNBtwktbuoRqKYlCxwkbFU5gEpkYUxMTKgbRxSaHtMRaUJkJETlKOfekS0ZqZaNm1ncrbS1qZCIqqlmklfUnTSI5EkdZZNBMX9pamEhP6xRlIkGYyIiWrFQXOesqbxkJYnqRWhUwtUjNaaSLyBnnySaRLbuU2WTaYgOied/bI7NqK4ETG7fKWBfNOMcFxEXOLC/QMucXL1xBYAw0I1eT9wRV6O1kk/iGItMefzJQkupk3LIxTSk7v940iXWkhL7+WC3x+OsPCOy//ME8PMnckxI50nIghSJia4inXiRaogMhcrC4YqF3kRLBxnACHzGmD2KR58cf6YAdGm1QAcT0FjliBx1acTHaiav5XdqZG+37bW4lcxzRDEIpJR8XIobAKZYYRomH8radTSMhEU0kiPOqrTUfMUpbhYbVWz8jmcGOjEvGs8gJO6lFeosYQJVW6yBplHhDjGWRVygdkshwCaGAOOkiR2GUSvG8Hia/rcwAVapApXxtF769zM6c9l0ImR/PVP7odT9/ND+PG9gWobFIxyoyH0UGOEKvIgMSQkfK/uzOxm19/GE1Wh1KDVgPnCeOqKoslczMp3v3zEiWSEcvmZKDw8VJ/Hxl0irTUSsAcQ8pmkTWSgzkRFwJYmqu6SkxCAyQRVIlxlCE5hglC2NIIlskxnCF9hYYaBKJkpgiJXfE7Hui6iRpiSNRK+5K8auGlSS2kLW/qkROViYvWD0TqTJvJ1spv6HIPJ1oEu+QV22TmKZG5usEk1imJNNEEkkJtX+iIpJKOhPJ4EmmiWRylWkiQZhIECYShIkEYSJBFLc+RX6nfmsB4I//uhjVRrifAGtlpOCgW2mDMJEgTCQIEwnCRIIwkSBMJIj1RAo9S66ZkU4mWOjapQ2UyRcpMKpdAPWBtonXFof+0KJEw4ca5Qt7Zp22SAdTZr60e0rsheszo99rLzYwtu0/Q01LvOtt66gAAAAASUVORK5CYII="
     }
   ],
   "tilesets": []
