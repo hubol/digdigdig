@@ -6,6 +6,8 @@ function createInitialProgress() {
         energyBlockedStepsMaximum: 30,
         life: 100,
         lifeMaximum: 100,
+        money: 0,
+        moneyMaximum: 1000, // TODO set to something that makes sense
         attackPower: 10,
         firsts: {
             everDrilled: false,

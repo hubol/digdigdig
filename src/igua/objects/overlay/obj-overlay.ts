@@ -11,12 +11,13 @@ export function objOverlay() {
     const readingBookObj = objReadingBook();
     const energyObj = objEnergy().step(self => self.visible = progress.firsts.everDrilled && !readingBookObj.visible);
     const lifeObj = objLife().step(self => self.visible = progress.firsts.everTookDamage && !readingBookObj.visible);
+    const moneyObj = objMoney().step(self => self.visible = progress.money > 0 && !readingBookObj.visible);
 
     const objects = {
         readingBookObj,
     };
 
-    return container(energyObj, lifeObj, readingBookObj).merge({ objects });
+    return container(energyObj, lifeObj, moneyObj, readingBookObj).merge({ objects });
 }
 
 function objReadingBook() {
@@ -106,6 +107,29 @@ function objLife() {
             .filtered(new SpriteMaskFilter(barMaskObj)),
     )
         .at(158, 5);
+}
+
+function objMoney() {
+    const barMaskObj = Sprite.from(Tx.Hud.EnergyBar).flipV();
+
+    return container(
+        Sprite.from(Tx.Hud.Money).tinted(0xffc400).at(2, 0),
+        container(
+            barMaskObj,
+            new Graphics().beginFill(0xffffff).drawRect(0, 0, Tx.Hud.EnergyBar.width, Tx.Hud.EnergyBar.height),
+            new Graphics().step(self =>
+                self.clear().beginFill(0xffc400).drawRect(
+                    0,
+                    0,
+                    getWidth(Tx.Hud.EnergyBar.width, progress.money / progress.moneyMaximum),
+                    Tx.Hud.EnergyBar.height,
+                )
+            ),
+        )
+            .at(54, 3)
+            .filtered(new SpriteMaskFilter(barMaskObj)),
+    )
+        .at(328, 5);
 }
 
 function getWidth(width: number, unit: number) {

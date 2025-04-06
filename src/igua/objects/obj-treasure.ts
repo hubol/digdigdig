@@ -7,7 +7,7 @@ import { VectorSimple } from "../../lib/math/vector-type";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnStaticAffectedByHoles } from "./obj-ground-stage";
 import { playerObj } from "./obj-player";
-import { Progress } from "./progress";
+import { Progress, progress } from "./progress";
 
 const treasures = {
     "GoldIdol": { tx: Tx.Treasures.GoldenIdol, value: 100 },
@@ -53,6 +53,13 @@ export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple
     yield interpvr(obj).factor(factor.sine).to([0, -100].add(playerObj)).over(1000);
     // TODO message
     yield sleep(1000);
-    // TODO update progress
+    applyTreasureToProgress(treasure);
     obj.destroy();
+}
+
+function applyTreasureToProgress(treasure: Treasure) {
+    if (treasure.value) {
+        progress.money += treasure.value;
+    }
+    treasure.progress?.(progress);
 }

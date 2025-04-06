@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 58 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 59 }];
 
 interface TxData {
   id: string;
@@ -55,7 +55,7 @@ function txs<T>(tx: (data: TxData) => T) {
     },
     Hints: {
       Acre: tx({ id: "Hints.Acre", atlas: 0, x: 3420, y: 216, width: 500, height: 280 }),
-      ArrowPerspective0: tx({ id: "Hints.ArrowPerspective0", atlas: 0, x: 4014, y: 44, width: 18, height: 23 }),
+      ArrowPerspective0: tx({ id: "Hints.ArrowPerspective0", atlas: 0, x: 4061, y: 44, width: 18, height: 23 }),
       Arrow: tx({ id: "Hints.Arrow", atlas: 0, x: 3218, y: 354, width: 24, height: 17 }),
       Book: tx({ id: "Hints.Book", atlas: 0, x: 3921, y: 377, width: 113, height: 68 }),
       LookEast: tx({ id: "Hints.LookEast", atlas: 0, x: 3862, y: 68, width: 69, height: 44 }),
@@ -69,6 +69,7 @@ function txs<T>(tx: (data: TxData) => T) {
       EnergyBar: tx({ id: "Hud.EnergyBar", atlas: 0, x: 2236, y: 275, width: 109, height: 16 }),
       Energy: tx({ id: "Hud.Energy", atlas: 0, x: 3965, y: 44, width: 48, height: 22 }),
       Life: tx({ id: "Hud.Life", atlas: 0, x: 4066, y: 0, width: 30, height: 22 }),
+      Money: tx({ id: "Hud.Money", atlas: 0, x: 4014, y: 44, width: 46, height: 21 }),
     },
     Misc: {
       LightPost: tx({ id: "Misc.LightPost", atlas: 0, x: 3303, y: 293, width: 63, height: 196 }),
