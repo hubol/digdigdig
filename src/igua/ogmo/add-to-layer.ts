@@ -27,6 +27,11 @@ export function ogmoAddToLayer(obj: DisplayObject, layerName: string) {
         obj.show(scene.groundStage);
     }
     else if (layerName === "BuriedDecals") {
+        obj.zIndex = -10;
+        obj.show(scene.buriedStage);
+    }
+    else if (layerName === "BuriedEntities") {
+        obj.zIndex = -20;
         obj.show(scene.buriedStage);
     }
     else if (layerName === "ParallaxDecals") {

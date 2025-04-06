@@ -1,4 +1,5 @@
 import { Graphics } from "pixi.js";
+import { KeyCode } from "../../lib/browser/key-listener";
 import { Instances } from "../../lib/game-engine/instances";
 import { interp, interpv } from "../../lib/game-engine/routines/interp";
 import { sleepf } from "../../lib/game-engine/routines/sleep";
@@ -30,13 +31,31 @@ function objPlayer() {
     let expectJustWentDownToDrill = true;
     const lastGoodPosition = vnew(0, 0);
 
+    // TODO Deep-merge would be nice here
+    // const controls = {
+    //     isBusy: false,
+    // }
+
+    const state = {
+        isBusy: false,
+    };
+
+    function justWentDown(code: KeyCode) {
+        return !state.isBusy && Key.justWentDown(code);
+    }
+
+    function isDown(code: KeyCode) {
+        return !state.isBusy && Key.isDown(code);
+    }
+
     return objCharacter(playerCharacterArgs)
+        .merge({ state })
         .step(self => {
             if (!self.objects.feetHitboxObj.collidesOne(Instances(objBlock))) {
                 lastGoodPosition.at(self);
             }
 
-            const attemptingToDrill = (Key.justWentDown("Space") || (!expectJustWentDownToDrill && Key.isDown("Space")))
+            const attemptingToDrill = (justWentDown("Space") || (!expectJustWentDownToDrill && isDown("Space")))
                 && progress.energy > 0;
 
             if (attemptingToDrill) {
@@ -63,16 +82,16 @@ function objPlayer() {
 
             v.at(0, 0);
 
-            if (Key.isDown("ArrowUp")) {
+            if (isDown("ArrowUp")) {
                 v.add(0, -1);
             }
-            if (Key.isDown("ArrowDown")) {
+            if (isDown("ArrowDown")) {
                 v.add(0, 1);
             }
-            if (Key.isDown("ArrowLeft")) {
+            if (isDown("ArrowLeft")) {
                 v.add(-1, 0);
             }
-            if (Key.isDown("ArrowRight")) {
+            if (isDown("ArrowRight")) {
                 v.add(1, 0);
             }
 

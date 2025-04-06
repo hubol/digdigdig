@@ -12,7 +12,7 @@ export function mxnAttack(obj: DisplayObject, args: MxnAttackArgs) {
     let damagedPlayer = false;
 
     return obj.step(() => {
-        if (damagedPlayer) {
+        if (damagedPlayer || playerObj.state.isBusy) {
             return;
         }
 

@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 57 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 58 }];
 
 interface TxData {
   id: string;
@@ -24,7 +24,7 @@ function txs<T>(tx: (data: TxData) => T) {
       Title: tx({ id: "Choose.Title", atlas: 0, x: 3684, y: 0, width: 280, height: 67 }),
     },
     Dig: {
-      Hole: tx({ id: "Dig.Hole", atlas: 0, x: 3367, y: 341, width: 49, height: 47 }),
+      Hole: tx({ id: "Dig.Hole", atlas: 0, x: 3367, y: 406, width: 49, height: 47 }),
     },
     Effects: {
       Release0: tx({ id: "Effects.Release0", atlas: 0, x: 0, y: 0, width: 2682, height: 179 }),
@@ -38,9 +38,9 @@ function txs<T>(tx: (data: TxData) => T) {
       Bush0: tx({ id: "Foliage.Bush0", atlas: 0, x: 3303, y: 497, width: 254, height: 125 }),
       Flower0: tx({ id: "Foliage.Flower0", atlas: 0, x: 4055, y: 252, width: 36, height: 24 }),
       Grass0: tx({ id: "Foliage.Grass0", atlas: 0, x: 3965, y: 0, width: 100, height: 43 }),
-      Grass1: tx({ id: "Foliage.Grass1", atlas: 0, x: 3367, y: 389, width: 47, height: 25 }),
+      Grass1: tx({ id: "Foliage.Grass1", atlas: 0, x: 3367, y: 454, width: 47, height: 25 }),
       Grass2: tx({ id: "Foliage.Grass2", atlas: 0, x: 2346, y: 275, width: 101, height: 14 }),
-      Leaves0: tx({ id: "Foliage.Leaves0", atlas: 0, x: 3367, y: 293, width: 51, height: 47 }),
+      Leaves0: tx({ id: "Foliage.Leaves0", atlas: 0, x: 3367, y: 358, width: 51, height: 47 }),
       PineTree0: tx({ id: "Foliage.PineTree0", atlas: 0, x: 3921, y: 252, width: 65, height: 124 }),
       Trunk0: tx({ id: "Foliage.Trunk0", atlas: 0, x: 3290, y: 501, width: 11, height: 84 }),
     },
@@ -83,7 +83,7 @@ function txs<T>(tx: (data: TxData) => T) {
       LightSmall0: tx({ id: "Shapes.LightSmall0", atlas: 0, x: 2529, y: 233, width: 19, height: 7 }),
       LightSmall1: tx({ id: "Shapes.LightSmall1", atlas: 0, x: 4089, y: 416, width: 7, height: 9 }),
       Square32: tx({ id: "Shapes.Square32", atlas: 0, x: 3862, y: 113, width: 32, height: 32 }),
-      VSmall0: tx({ id: "Shapes.VSmall0", atlas: 0, x: 3243, y: 354, width: 19, height: 13 }),
+      VSmall0: tx({ id: "Shapes.VSmall0", atlas: 0, x: 3367, y: 480, width: 19, height: 13 }),
     },
     Stone: {
       BrickWalkway0: tx({ id: "Stone.BrickWalkway0", atlas: 0, x: 2553, y: 215, width: 126, height: 45 }),
@@ -94,6 +94,7 @@ function txs<T>(tx: (data: TxData) => T) {
     },
     Treasures: {
       Bone0: tx({ id: "Treasures.Bone0", atlas: 0, x: 3921, y: 446, width: 98, height: 76 }),
+      GoldenIdol: tx({ id: "Treasures.GoldenIdol", atlas: 0, x: 3367, y: 293, width: 50, height: 64 }),
       Heart0: tx({ id: "Treasures.Heart0", atlas: 0, x: 4035, y: 373, width: 55, height: 42 }),
     },
   };

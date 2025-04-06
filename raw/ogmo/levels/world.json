@@ -51,179 +51,23 @@
       "gridCellsX": 314,
       "gridCellsY": 175,
       "decals": [
-        {
-          "x": 1059,
-          "y": 804,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/rock 1.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {"x": 1448, "y": 1140, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "misc/light post.png", "originX": 0.5, "originY": 1},
-        {"x": 1051, "y": 868, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "misc/light post.png", "originX": 0.5, "originY": 1},
-        {"x": 1051, "y": 875, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#689952", "texture": "foliage/grass 1.png", "originX": 0.5, "originY": 1},
-        {"x": 1449, "y": 1148, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#689952", "texture": "foliage/grass 1.png", "originX": 0.5, "originY": 1},
-        {
-          "x": 1100,
-          "y": 937,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1214,
-          "y": 937,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1329,
-          "y": 936,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1101,
-          "y": 1019,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1213,
-          "y": 1021,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 1328,
-          "y": 1022,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 629,
-          "y": 934,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 743,
-          "y": 934,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 858,
-          "y": 933,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 630,
-          "y": 1016,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 742,
-          "y": 1018,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        },
-        {
-          "x": 857,
-          "y": 1019,
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "texture": "stone/headstone 0.png",
-          "originX": 0.5,
-          "originY": 0.5,
-          "values": {"name": ""},
-          "groupName": null
-        }
+        {"x": 1059, "y": 804, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/rock 1.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 1448, "y": 1140, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "misc/light post.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1051, "y": 868, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "misc/light post.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1051, "y": 875, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#689952", "texture": "foliage/grass 1.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1449, "y": 1148, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#689952", "texture": "foliage/grass 1.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 1100, "y": 937, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 1214, "y": 937, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 1329, "y": 936, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 1101, "y": 1019, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 1213, "y": 1021, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 1328, "y": 1022, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 629, "y": 934, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 743, "y": 934, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 858, "y": 933, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 630, "y": 1016, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 742, "y": 1018, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null},
+        {"x": 857, "y": 1019, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "stone/headstone 0.png", "originX": 0.5, "originY": 0.5, "groupName": null}
       ],
       "folder": "../textures"
     },
@@ -298,8 +142,8 @@
           "name": "Block",
           "id": 7,
           "_eid": "93117141",
-          "x": 1576,
-          "y": 96,
+          "x": 1592,
+          "y": 88,
           "width": 88,
           "height": 1096,
           "originX": 0,
@@ -489,7 +333,7 @@
       "gridCellsY": 175,
       "decals": [
         {
-          "x": 1611,
+          "x": 1635,
           "y": 149,
           "scaleX": 1,
           "scaleY": 1,
@@ -502,7 +346,7 @@
           "groupName": null
         },
         {
-          "x": 1611,
+          "x": 1635,
           "y": 237,
           "scaleX": 1,
           "scaleY": 1,
@@ -515,7 +359,7 @@
           "groupName": null
         },
         {
-          "x": 1611,
+          "x": 1635,
           "y": 329,
           "scaleX": 1,
           "scaleY": 1,
@@ -736,7 +580,7 @@
           "groupName": null
         },
         {
-          "x": 1567,
+          "x": 1591,
           "y": 804,
           "scaleX": 1,
           "scaleY": 1,
@@ -749,7 +593,7 @@
           "groupName": null
         },
         {
-          "x": 1623,
+          "x": 1647,
           "y": 806,
           "scaleX": 1,
           "scaleY": 1,
@@ -762,7 +606,7 @@
           "groupName": null
         },
         {
-          "x": 1591,
+          "x": 1615,
           "y": 791,
           "scaleX": -1,
           "scaleY": 1,
@@ -1009,7 +853,7 @@
           "groupName": "WaterLineGroup"
         },
         {
-          "x": 1611,
+          "x": 1635,
           "y": 421,
           "scaleX": 1,
           "scaleY": 1,
@@ -1022,7 +866,7 @@
           "groupName": null
         },
         {
-          "x": 1611,
+          "x": 1635,
           "y": 509,
           "scaleX": 1,
           "scaleY": 1,
@@ -1035,7 +879,7 @@
           "groupName": null
         },
         {
-          "x": 1611,
+          "x": 1635,
           "y": 601,
           "scaleX": 1,
           "scaleY": 1,
@@ -1048,7 +892,7 @@
           "groupName": null
         },
         {
-          "x": 1612,
+          "x": 1636,
           "y": 689,
           "scaleX": 1,
           "scaleY": 1,
@@ -1061,7 +905,7 @@
           "groupName": null
         },
         {
-          "x": 1612,
+          "x": 1636,
           "y": 777,
           "scaleX": 1,
           "scaleY": 1,
@@ -1074,7 +918,7 @@
           "groupName": null
         },
         {
-          "x": 1612,
+          "x": 1636,
           "y": 869,
           "scaleX": 1,
           "scaleY": 1,
@@ -1087,7 +931,7 @@
           "groupName": null
         },
         {
-          "x": 1613,
+          "x": 1637,
           "y": 961,
           "scaleX": 1,
           "scaleY": 1,
@@ -1100,7 +944,7 @@
           "groupName": null
         },
         {
-          "x": 1613,
+          "x": 1637,
           "y": 1053,
           "scaleX": 1,
           "scaleY": 1,
@@ -1113,7 +957,7 @@
           "groupName": null
         },
         {
-          "x": 1616,
+          "x": 1640,
           "y": 1144,
           "scaleX": 1,
           "scaleY": 1,
@@ -1126,7 +970,7 @@
           "groupName": null
         },
         {
-          "x": 1629,
+          "x": 1653,
           "y": 807,
           "scaleX": 1,
           "scaleY": 1,
@@ -1139,7 +983,7 @@
           "groupName": null
         },
         {
-          "x": 1593,
+          "x": 1617,
           "y": 748,
           "scaleX": 1,
           "scaleY": 1,
@@ -1152,7 +996,7 @@
           "groupName": null
         },
         {
-          "x": 1600,
+          "x": 1624,
           "y": 734,
           "scaleX": 1,
           "scaleY": 1,
@@ -1165,7 +1009,7 @@
           "groupName": null
         },
         {
-          "x": 1622,
+          "x": 1646,
           "y": 796,
           "scaleX": 1,
           "scaleY": 1,
@@ -1187,7 +1031,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1238,
@@ -1199,7 +1044,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1372,
@@ -1211,7 +1057,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1442,
@@ -1223,7 +1070,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1469,
@@ -1235,7 +1083,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 703,
@@ -1247,7 +1096,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 834,
@@ -1259,7 +1109,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 968,
@@ -1271,7 +1122,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 571,
@@ -1283,7 +1135,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1459,
@@ -1295,7 +1148,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1450,
@@ -1307,7 +1161,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1485,
@@ -1319,7 +1174,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1426,
@@ -1331,7 +1187,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1405,
@@ -1343,7 +1200,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1353,
@@ -1355,7 +1213,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1268,
@@ -1367,7 +1226,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1216,
@@ -1379,7 +1239,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1197,
@@ -1391,7 +1252,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1113,
@@ -1403,7 +1265,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1064,
@@ -1415,7 +1278,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1002,
@@ -1427,7 +1291,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 974,
@@ -1439,7 +1304,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 889,
@@ -1451,7 +1317,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 840,
@@ -1463,7 +1330,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 734,
@@ -1475,7 +1343,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 601,
@@ -1487,7 +1356,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 550,
@@ -1499,10 +1369,11 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
-          "x": 1560,
+          "x": 1584,
           "y": 1055,
           "scaleX": 1,
           "scaleY": 1,
@@ -1511,7 +1382,8 @@
           "texture": "hints/arrow perspective 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -2527,8 +2399,8 @@
           "groupName": null
         },
         {
-          "x": 1676,
-          "y": 616,
+          "x": 1699,
+          "y": 628,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 90,
@@ -2540,8 +2412,8 @@
           "groupName": null
         },
         {
-          "x": 1674,
-          "y": 724,
+          "x": 1697,
+          "y": 736,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 90,
@@ -2553,8 +2425,8 @@
           "groupName": null
         },
         {
-          "x": 1680,
-          "y": 832,
+          "x": 1703,
+          "y": 844,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 90,
@@ -2566,8 +2438,8 @@
           "groupName": null
         },
         {
-          "x": 1541,
-          "y": 601,
+          "x": 1564,
+          "y": 613,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 90,
@@ -2579,8 +2451,8 @@
           "groupName": null
         },
         {
-          "x": 1543,
-          "y": 711,
+          "x": 1566,
+          "y": 723,
           "scaleX": -1,
           "scaleY": 1,
           "rotation": 90,
@@ -2592,8 +2464,8 @@
           "groupName": null
         },
         {
-          "x": 1546,
-          "y": 815,
+          "x": 1569,
+          "y": 827,
           "scaleX": 1,
           "scaleY": 1,
           "rotation": 90,
@@ -2640,7 +2512,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 490,
@@ -2821,7 +2694,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 581,
@@ -2833,7 +2707,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 986,
@@ -2845,7 +2720,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1272,
@@ -2857,7 +2733,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1149,
@@ -2869,7 +2746,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 710,
@@ -2881,7 +2759,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1466,
@@ -2893,7 +2772,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1449,
@@ -2902,6 +2782,55 @@
           "scaleY": 1,
           "rotation": 90,
           "tint": "#464f44",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1496,
+          "y": 904,
+          "scaleX": 5.4,
+          "scaleY": 6.9,
+          "rotation": 0,
+          "tint": "#98ad46",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1568,
+          "y": 936,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#7e8f3e",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1568,
+          "y": 1020,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#7e8f3e",
+          "texture": "foliage/grass 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1569,
+          "y": 1104,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 90,
+          "tint": "#7e8f3e",
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
@@ -2961,6 +2890,28 @@
         }
       ],
       "folder": "../textures"
+    },
+    {
+      "name": "BuriedEntities",
+      "_eid": "90730210",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 314,
+      "gridCellsY": 175,
+      "entities": [
+        {
+          "name": "Treasure",
+          "id": 0,
+          "_eid": "90732369",
+          "x": 1544,
+          "y": 1064,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "GoldIdol"}
+        }
+      ]
     }
   ]
 }

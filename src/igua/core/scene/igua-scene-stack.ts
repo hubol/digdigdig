@@ -28,7 +28,7 @@ function createIguaScene(layers: IguaLayers, source: Function, meta: IguaSceneMe
 
     const perspectiveStage = objPerspectiveStage().named("Perspective Stage").zIndexed(ZIndex.PerspectiveStage);
     const groundStage = objGroundStage().named("Ground Stage");
-    const buriedStage = new Container().named("Buried Stage");
+    const buriedStage = new Container().named("Buried Stage").autoSorted();
     const deepestStage = objDeepestStage().named("Deepest Stage");
 
     const stage = new Container().named("Stage");

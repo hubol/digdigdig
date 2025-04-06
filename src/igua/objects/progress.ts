@@ -15,3 +15,5 @@ function createInitialProgress() {
 }
 
 export let progress = createInitialProgress();
+
+export type Progress = typeof progress;
