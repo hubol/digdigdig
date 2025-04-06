@@ -43,10 +43,12 @@ export function objGoon() {
     };
 
     function* coroIdle() {
-        yield sleep(Rng.int(1000, 3000));
-        state.speed.at(Rng.vunit()).scale(1.5);
-        yield sleep(Rng.int(1000, 3000));
-        state.speed.at(0, 0);
+        while (true) {
+            yield sleep(Rng.int(1000, 3000));
+            state.speed.at(Rng.vunit()).scale(1.5);
+            yield sleep(Rng.int(1000, 3000));
+            state.speed.at(0, 0);
+        }
     }
 
     function noticePlayer(position: VectorSimple, facing: PolarInt) {
