@@ -12,12 +12,14 @@ export function objOverlay() {
     const energyObj = objEnergy().step(self => self.visible = progress.firsts.everDrilled && !readingBookObj.visible);
     const lifeObj = objLife().step(self => self.visible = progress.firsts.everTookDamage && !readingBookObj.visible);
     const moneyObj = objMoney().step(self => self.visible = progress.money > 0 && !readingBookObj.visible);
+    const treasureMessageObj = objTreasureMessage().invisible();
 
     const objects = {
         readingBookObj,
+        treasureMessageObj,
     };
 
-    return container(energyObj, lifeObj, moneyObj, readingBookObj).merge({ objects });
+    return container(energyObj, lifeObj, moneyObj, readingBookObj, treasureMessageObj).merge({ objects });
 }
 
 function objReadingBook() {
@@ -61,6 +63,37 @@ function objReadingBook() {
                 obj.visible = false;
             }
         });
+}
+
+const [txTreasureMessageBackground, txTreasureMessageQuestionMarks] = Tx.Hud.TreasureMessage.split({ count: 2 });
+
+function objTreasureMessage() {
+    const textObj = objText.LargeNusty("", { tint: 0xffffff, align: "center", maxWidth: 420 }).mixin(mxnBoilSeed)
+        .anchored(
+            0.5,
+            0.5,
+        );
+
+    /**
+     * Note: Completely different API from objReadingBook
+     */
+    const methods = {
+        show(message: string) {
+            textObj.text = message;
+            obj.visible = true;
+        },
+        clear() {
+            obj.visible = false;
+        },
+    };
+
+    const obj = container(
+        Sprite.from(txTreasureMessageBackground),
+        Sprite.from(txTreasureMessageQuestionMarks).mixin(mxnBoilPivot),
+        textObj.at(231, 25),
+    ).at(12, 216);
+
+    return obj.merge({ methods });
 }
 
 function objEnergy() {

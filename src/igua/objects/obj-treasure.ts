@@ -4,6 +4,7 @@ import { factor, interpv, interpvr } from "../../lib/game-engine/routines/interp
 import { sleep } from "../../lib/game-engine/routines/sleep";
 import { Integer } from "../../lib/math/number-alias-types";
 import { VectorSimple } from "../../lib/math/vector-type";
+import { layers } from "../globals";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnStaticAffectedByHoles } from "./obj-ground-stage";
 import { playerObj } from "./obj-player";
@@ -51,10 +52,21 @@ export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple
     // TODO vfx
     yield sleep(500);
     yield interpvr(obj).factor(factor.sine).to([0, -100].add(playerObj)).over(1000);
-    // TODO message
-    yield sleep(1000);
+    layers.overlay.objects.treasureMessageObj.methods.show(getMessage(treasure));
+    yield sleep(2000);
+    layers.overlay.objects.treasureMessageObj.methods.clear();
     applyTreasureToProgress(treasure);
     obj.destroy();
+}
+
+function getMessage(treasure: Treasure) {
+    if (treasure.description) {
+        return treasure.description;
+    }
+    if (treasure.value) {
+        return "Worth money.";
+    }
+    return "Unknown purpose";
 }
 
 function applyTreasureToProgress(treasure: Treasure) {
