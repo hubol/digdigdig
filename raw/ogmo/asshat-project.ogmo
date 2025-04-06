@@ -44,7 +44,7 @@
       "includeImageSequence": true,
       "scaleable": true,
       "rotatable": true,
-      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true},
+      "tintable": {"enabled": true, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true},
       "values": [
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
       ]
@@ -487,12 +487,12 @@
           "name": "kind",
           "definition": "Enum",
           "display": 1,
-          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond"],
+          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond", "GiftCard"],
           "defaults": 0
         }
       ],
       "isRegion": false,
-      "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true}
+      "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true}
     },
     {
       "exportID": "92953509",
@@ -577,13 +577,13 @@
           "name": "kind",
           "definition": "Enum",
           "display": 0,
-          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond"],
+          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond", "GiftCard"],
           "defaults": 0
         },
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}
       ],
       "isRegion": false,
-      "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": "", "useDefaultTint": true}
+      "tintable": {"enabled": false, "defaultTint": "#ffffff", "rgbLevelValueName": null, "useDefaultTint": true}
     },
     {
       "exportID": "94529683",

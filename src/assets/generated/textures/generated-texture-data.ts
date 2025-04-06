@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 98 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 101 }];
 
 interface TxData {
   id: string;
@@ -72,6 +72,7 @@ function txs<T>(tx: (data: TxData) => T) {
       Book: tx({ id: "Hints.Book", atlas: 0, x: 3975, y: 507, width: 113, height: 68 }),
       ConcentricCircles: tx({ id: "Hints.ConcentricCircles", atlas: 0, x: 2201, y: 423, width: 420, height: 418 }),
       Cross1: tx({ id: "Hints.Cross1", atlas: 0, x: 641, y: 688, width: 35, height: 29 }),
+      Cross2: tx({ id: "Hints.Cross2", atlas: 0, x: 3469, y: 662, width: 21, height: 19 }),
       Cross: tx({ id: "Hints.Cross", atlas: 0, x: 870, y: 579, width: 60, height: 53 }),
       Filler0: tx({ id: "Hints.Filler0", atlas: 0, x: 2973, y: 267, width: 500, height: 280 }),
       LookEast: tx({ id: "Hints.LookEast", atlas: 0, x: 0, y: 813, width: 69, height: 44 }),
@@ -91,7 +92,7 @@ function txs<T>(tx: (data: TxData) => T) {
       EnergyBar: tx({ id: "Hud.EnergyBar", atlas: 0, x: 3975, y: 576, width: 109, height: 16 }),
       Energy: tx({ id: "Hud.Energy", atlas: 0, x: 742, y: 644, width: 48, height: 22 }),
       Life: tx({ id: "Hud.Life", atlas: 0, x: 4066, y: 1047, width: 30, height: 22 }),
-      Money: tx({ id: "Hud.Money", atlas: 0, x: 2317, y: 180, width: 46, height: 21 }),
+      Money: tx({ id: "Hud.Money", atlas: 0, x: 2371, y: 180, width: 46, height: 21 }),
       TreasureMessage: tx({ id: "Hud.TreasureMessage", atlas: 0, x: 2683, y: 151, width: 926, height: 50 }),
     },
     Misc: {
@@ -107,6 +108,7 @@ function txs<T>(tx: (data: TxData) => T) {
     },
     Shapes: {
       Confetti64: tx({ id: "Shapes.Confetti64", atlas: 0, x: 742, y: 579, width: 64, height: 64 }),
+      Ellipse0: tx({ id: "Shapes.Ellipse0", atlas: 0, x: 2317, y: 180, width: 53, height: 14 }),
       LightSmall0: tx({ id: "Shapes.LightSmall0", atlas: 0, x: 3985, y: 142, width: 19, height: 7 }),
       LightSmall1: tx({ id: "Shapes.LightSmall1", atlas: 0, x: 2965, y: 372, width: 7, height: 9 }),
       Spurt: tx({ id: "Shapes.Spurt", atlas: 0, x: 2965, y: 548, width: 246, height: 327 }),
@@ -131,6 +133,7 @@ function txs<T>(tx: (data: TxData) => T) {
       DrillUpgrade2: tx({ id: "Treasures.DrillUpgrade2", atlas: 0, x: 641, y: 564, width: 100, height: 58 }),
       DrillUpgrade3: tx({ id: "Treasures.DrillUpgrade3", atlas: 0, x: 843, y: 520, width: 100, height: 58 }),
       FishingPole: tx({ id: "Treasures.FishingPole", atlas: 0, x: 3921, y: 1047, width: 144, height: 34 }),
+      GiftCard: tx({ id: "Treasures.GiftCard", atlas: 0, x: 412, y: 668, width: 28, height: 16 }),
       GoldenIdolHappy: tx({ id: "Treasures.GoldenIdolHappy", atlas: 0, x: 4014, y: 593, width: 82, height: 90 }),
       GoldenIdol: tx({ id: "Treasures.GoldenIdol", atlas: 0, x: 641, y: 623, width: 50, height: 64 }),
       Heart0: tx({ id: "Treasures.Heart0", atlas: 0, x: 870, y: 633, width: 55, height: 42 }),

@@ -81,6 +81,11 @@ const treasures = {
         description: "Appears expensive.",
         value: 200,
     },
+    "GiftCard": {
+        tx: Tx.Treasures.GiftCard,
+        description: "Might have a couple bucks left on it.",
+        value: 50,
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {

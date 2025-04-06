@@ -21,8 +21,8 @@
           "name": "Marker",
           "id": 0,
           "_eid": "73148747",
-          "x": 912,
-          "y": 752,
+          "x": 2152,
+          "y": 480,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -106,16 +106,16 @@
       "entities": [
         {
           "name": "Region",
-          "id": 0,
+          "id": 1,
           "_eid": "11908607",
-          "x": 535,
-          "y": 762,
-          "width": 120,
-          "height": 72,
+          "x": 2200,
+          "y": 336,
+          "width": 280,
+          "height": 144,
           "originX": 0,
           "originY": 0,
           "tint": "#00ff00",
-          "values": {"name": "FishermanRegion", "depth": 0}
+          "values": {"name": "BatherRegion", "depth": 0}
         }
       ]
     },
@@ -3416,6 +3416,84 @@
           "rotation": 0,
           "tint": "#6b8792",
           "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1553,
+          "y": 24,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#a8483e",
+          "texture": "shapes/ellipse 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1600,
+          "y": 44,
+          "scaleX": -1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#a8483e",
+          "texture": "shapes/ellipse 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1557,
+          "y": 63,
+          "scaleX": 1,
+          "scaleY": -1,
+          "rotation": 0,
+          "tint": "#a8483e",
+          "texture": "shapes/ellipse 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1645,
+          "y": 23,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#a8483e",
+          "texture": "shapes/ellipse 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1158,
+          "y": 648,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#7e8f3e",
+          "texture": "hints/cross 2.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 930,
+          "y": 502,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#98ad46",
+          "texture": "hints/cross 2.png",
           "originX": 0.5,
           "originY": 0.5,
           "values": {"name": ""},
@@ -7376,6 +7454,26 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "", "kind": "Diamond"}
+        },
+        {
+          "name": "Treasure",
+          "id": 20,
+          "_eid": "90732369",
+          "x": 1158,
+          "y": 647,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "GiftCard"}
+        },
+        {
+          "name": "Treasure",
+          "id": 21,
+          "_eid": "90732369",
+          "x": 930,
+          "y": 502,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "GiftCard"}
         }
       ]
     }

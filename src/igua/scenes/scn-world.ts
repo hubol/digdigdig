@@ -45,6 +45,9 @@ export function scnWorld() {
 
     // Bather
     objBather().at(lvl.BatherMarker).show(scene.perspectiveStage);
+    lvl.BatherRegion.mixin(mxnNpc, function* (api) {
+        api.setMessage("Those goons to the north stole my soap.");
+    });
 
     // Fisherman
     lvl.FishingRodInUse.mixin(mxnBoilPivot).visible = false;

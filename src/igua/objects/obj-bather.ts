@@ -9,6 +9,16 @@ const txs = Tx.Characters.Bather.split({
 
 export function objBather() {
     const sprites = txs.map(tx => Sprite.from(tx).mixin(mxnBoilPivot));
+    sprites.last.visible = false;
 
-    return container(...sprites).pivoted(153, 200);
+    const state = {
+        get hasSoap() {
+            return sprites.last.visible;
+        },
+        set hasSoap(value) {
+            sprites.last.visible = value;
+        },
+    };
+
+    return container(...sprites).merge({ state }).pivoted(153, 200);
 }
