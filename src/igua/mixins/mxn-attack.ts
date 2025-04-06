@@ -25,6 +25,10 @@ export function mxnAttack(obj: DisplayObject, args: MxnAttackArgs) {
             progress.firsts.everTookDamage = true;
 
             damagedPlayer = true;
+
+            if (progress.life <= 0) {
+                playerObj.methods.die();
+            }
         }
     });
 }

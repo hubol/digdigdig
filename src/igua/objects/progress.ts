@@ -14,6 +14,7 @@ function createInitialProgress() {
     };
 
     return {
+        deaths: 0,
         energy: 100,
         get energyMaximum() {
             return 100 + upgrades.drill.energy * 50;

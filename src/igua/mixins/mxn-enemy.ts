@@ -1,4 +1,5 @@
 import { DisplayObject } from "pixi.js";
+import { sleepf } from "../../lib/game-engine/routines/sleep";
 import { areRectanglesOverlapping } from "../../lib/math/rectangle";
 import { vlerp } from "../../lib/math/vector";
 import { objDamage } from "../objects/obj-damage";
@@ -43,6 +44,14 @@ export function mxnEnemy(obj: DisplayObject, args: MxnEnemyArgs) {
             }
             else {
                 self.dispatch("mxnEnemy:damaged");
+            }
+        })
+        .coro(function* () {
+            while (true) {
+                const deaths = progress.deaths;
+                yield () => progress.deaths !== deaths;
+                state.health = args.healthMaximum;
+                yield sleepf(1);
             }
         });
 }

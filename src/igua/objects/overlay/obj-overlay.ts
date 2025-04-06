@@ -123,6 +123,9 @@ function objLife() {
             while (true) {
                 const previous = progress.life;
                 yield () => progress.life < previous;
+                if (progress.life > previous) {
+                    continue;
+                }
                 for (let i = 4; i >= 0; i -= 1) {
                     for (let j = -1; j <= 1; j += 2) {
                         self.pivot.y = i * j;

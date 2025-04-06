@@ -1,8 +1,8 @@
 import { Graphics } from "pixi.js";
 import { KeyCode } from "../../lib/browser/key-listener";
 import { Instances } from "../../lib/game-engine/instances";
-import { interp, interpv } from "../../lib/game-engine/routines/interp";
-import { sleepf } from "../../lib/game-engine/routines/sleep";
+import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
+import { sleep, sleepf } from "../../lib/game-engine/routines/sleep";
 import { approachLinear, nlerp } from "../../lib/math/number";
 import { RgbInt } from "../../lib/math/number-alias-types";
 import { distance, vlerp } from "../../lib/math/vector";
@@ -36,8 +36,54 @@ function objPlayer() {
     //     isBusy: false,
     // }
 
+    const consts = {
+        startPosition: vnew(),
+    };
+
+    function* coroDie() {
+        yield () => !state.isBusy;
+        maybeFinishLine();
+        state.isBusy = true;
+        state.isDead = true;
+
+        yield interp(obj.controls, "upsideDownUnit").to(1).over(300);
+
+        const rotateObj = container()
+            .coro(function* () {
+                const t = 300;
+                while (true) {
+                    obj.controls.facingDirection = "north";
+                    yield sleep(t);
+                    obj.controls.facingDirection = "east";
+                    yield sleep(t);
+                    obj.controls.facingDirection = "south";
+                    yield sleep(t);
+                    obj.controls.facingDirection = "west";
+                    yield sleep(t);
+                }
+            })
+            .show();
+
+        yield interpv(obj).factor(factor.sine).to(consts.startPosition).over(5000);
+        rotateObj.destroy();
+        yield sleep(300);
+        obj.controls.facingDirection = "south";
+
+        progress.life = progress.lifeMaximum;
+
+        state.isBusy = false;
+        state.isDead = false;
+    }
+
+    const methods = {
+        die() {
+            obj.coro(coroDie);
+        },
+    };
+
     const state = {
         isBusy: false,
+        isDead: false,
     };
 
     function justWentDown(code: KeyCode) {
@@ -48,10 +94,22 @@ function objPlayer() {
         return !state.isBusy && Key.isDown(code);
     }
 
-    return objCharacter(playerCharacterArgs)
-        .merge({ state })
+    function maybeFinishLine() {
+        if (!lineObj) {
+            return;
+        }
+        lineObj.methods.finish(obj.mxnShadow.state.tint, progress.maxHoleRadius);
+        lineObj = null;
+    }
+
+    const obj = objCharacter(playerCharacterArgs)
+        .merge({ state, methods })
         .step(self => {
             self.controls.isNude = progress.upgrades.nude;
+
+            if (state.isDead) {
+                return;
+            }
 
             if (!self.objects.feetHitboxObj.collidesOne(Instances(objBlock))) {
                 lastGoodPosition.at(self);
@@ -77,9 +135,8 @@ function objPlayer() {
             const isInNormalMode = self.controls.upsideDownUnit <= 0;
             const isInDrillMode = self.controls.upsideDownUnit >= 1;
 
-            if (isInNormalMode && lineObj) {
-                lineObj.methods.finish(self.mxnShadow.state.tint, progress.maxHoleRadius);
-                lineObj = null;
+            if (isInNormalMode) {
+                maybeFinishLine();
             }
 
             v.at(0, 0);
@@ -183,7 +240,10 @@ function objPlayer() {
         .coro(function* (self) {
             while (true) {
                 const previous = progress.life;
-                yield () => progress.life < previous;
+                yield () => progress.life !== previous;
+                if (progress.life > previous) {
+                    continue;
+                }
                 for (let i = 0; i < 3; i++) {
                     self.visible = false;
                     yield sleepf(5);
@@ -192,7 +252,12 @@ function objPlayer() {
                 }
             }
         })
+        .coro(function* (self) {
+            consts.startPosition.at(self);
+        })
         .show(scene.perspectiveStage);
+
+    return obj;
 }
 
 export type ObjPlayer = ReturnType<typeof objPlayer>;

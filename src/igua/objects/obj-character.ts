@@ -54,6 +54,10 @@ export function objCharacter(args: ObjCharacterArgs) {
             targetX = (Math.sign(self.x) || Rng.intp()) * 74;
         }
 
+        if (Math.abs(self.x) > 70 && targetX !== 0) {
+            self.x = Math.sign(targetX) * Math.abs(self.x);
+        }
+
         if (Rng.float() > 0.5) {
             self.x = approachLinear(self.x, targetX, 1 + Math.abs(self.x - targetX) * 0.3);
         }

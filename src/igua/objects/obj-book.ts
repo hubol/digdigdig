@@ -24,7 +24,11 @@ export function objBook(message: string) {
                 const after = corruptedMessage.substring(index + 1);
                 corruptedMessage = (before + after).trim();
             }
-            if (self.collides(playerObj.objects.feetHitboxObj) && corruptedMessage.length > 0) {
+            if (
+                self.collides(playerObj.objects.feetHitboxObj)
+                && corruptedMessage.length > 0
+                && !playerObj.state.isBusy
+            ) {
                 layers.overlay.objects.readingBookObj.methods.show(corruptedMessage);
             }
         });
