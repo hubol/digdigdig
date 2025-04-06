@@ -92,16 +92,21 @@ interface Treasure {
 
 export type TreasureKind = keyof typeof treasures;
 
-function createSprite(treasure: Treasure) {
+function createTreasureSprite(treasure: Treasure) {
     return Sprite.from(treasure.tx).anchored(0.5, 0.5);
+}
+
+export function createTreasureSpriteFromKind(kind: TreasureKind) {
+    kind = kind in treasures ? kind : "GoldIdol";
+    return createTreasureSprite(treasures[kind]);
 }
 
 export function objTreasure(kind: TreasureKind) {
     kind = kind in treasures ? kind : "GoldIdol";
     const treasure: Treasure = treasures[kind];
 
-    const sprite = createSprite(treasure);
-    const spriteMask = createSprite(treasure);
+    const sprite = createTreasureSprite(treasure);
+    const spriteMask = createTreasureSprite(treasure);
     const mysteryObj = container(Sprite.from(Tx.Dig.Mystery).anchored(0.5, 0.5).mixin(mxnBoilPivot)).filtered(
         alphaMaskFilter(spriteMask),
     );
@@ -133,7 +138,7 @@ export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple
     kind = kind in treasures ? kind : "GoldIdol";
     const treasure: Treasure = treasures[kind];
 
-    const obj = createSprite(treasure).at(origin).show();
+    const obj = createTreasureSprite(treasure).at(origin).show();
     // TODO vfx
     yield sleep(500);
 

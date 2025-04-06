@@ -5,6 +5,7 @@ import { RgbInt } from "../../lib/math/number-alias-types";
 import { Rng } from "../../lib/math/rng";
 import { container } from "../../lib/pixi/container";
 import { MapRgbFilter } from "../../lib/pixi/filters/map-rgb-filter";
+import { mxnPossiblyNpc } from "../mixins/mxn-npc";
 import { mxnShadow } from "../mixins/mxn-shadow";
 
 const [
@@ -159,6 +160,7 @@ export function objCharacter(args: ObjCharacterArgs) {
     const feetHitboxObj = new Graphics().beginFill(0xff0000).drawRect(-15, -3, 30, 8).invisible();
     const bodyVulnerableBoxObj = new Graphics().beginFill(0xff0000).drawRect(-25, -82, 50, 70).invisible();
     const feetVulnerableBoxObj = new Graphics().beginFill(0x00ff00).drawRect(-30, -20, 60, 25).invisible();
+    const npcTalkBoxObj = new Graphics().beginFill(0x00ff00).drawRect(-60, -70, 120, 75).invisible();
 
     const mapRgbFilter = new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff);
 
@@ -168,6 +170,7 @@ export function objCharacter(args: ObjCharacterArgs) {
         feetHitboxObj,
         hatTipObj,
         mapRgbFilter,
+        npcTalkBoxObj,
     };
 
     const innerObj = container(lowerBodyObj, headObj)
@@ -203,8 +206,9 @@ export function objCharacter(args: ObjCharacterArgs) {
             }
         }, -1);
 
-    return container(innerObj, bodyVulnerableBoxObj, feetVulnerableBoxObj, feetHitboxObj)
+    return container(innerObj, bodyVulnerableBoxObj, feetVulnerableBoxObj, feetHitboxObj, npcTalkBoxObj)
         .mixin(mxnShadow, { hitboxObj: feetHitboxObj })
+        .mixin(mxnPossiblyNpc, npcTalkBoxObj)
         .merge({ controls, objects })
         .step(self => {
             self.mxnShadow.controls.size = controls.upsideDownUnit > 0.5 ? "small" : "normal";

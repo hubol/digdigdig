@@ -2,6 +2,7 @@ import { Lvl } from "../../assets/generated/levels/generated-level-data";
 import { scene } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
 import { mxnBoilScaleXY } from "../mixins/mxn-boil-scale-xy";
+import { mxnNpc } from "../mixins/mxn-npc";
 import { objBather } from "../objects/obj-bather";
 import { objEvilSpawner } from "../objects/obj-evil-spawner";
 import { createPlayerObj } from "../objects/obj-player";
@@ -44,4 +45,16 @@ export function scnWorld() {
 
     // Bather
     objBather().at(lvl.BatherMarker).show(scene.perspectiveStage);
+
+    // Fisherman
+    lvl.FishingRodInUse.mixin(mxnBoilPivot).visible = false;
+    lvl.FishermanCharacter.mixin(mxnNpc, function* (api) {
+        api.setMessage("I want to try fishing.");
+        yield* api.receiveTreasureFromPlayer("FishingPole");
+        yield* api.givePlayerTreasure("DrillUpgradeAttack");
+        api.setMessage("Thanks mothafucka");
+        lvl.FishingRodInUse.visible = true;
+        lvl.FishermanCharacter.at(lvl.FishermanCompleteMarker);
+        lvl.FishermanCharacter.controls.facingDirection = "east";
+    });
 }

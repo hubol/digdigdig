@@ -1,11 +1,7 @@
 import { cyclic } from "../../lib/math/number";
-import { Integer } from "../../lib/math/number-alias-types";
 import { PseudoRng, Rng } from "../../lib/math/rng";
 import { AdjustColor } from "../../lib/pixi/adjust-color";
 import { ObjCharacterArgs } from "./obj-character";
-
-export function objNpc() {
-}
 
 const prng = new PseudoRng();
 
