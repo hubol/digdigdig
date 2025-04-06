@@ -1,7 +1,8 @@
-import { Container, Graphics, Sprite, SpriteMaskFilter } from "pixi.js";
+import { Container, Graphics, Sprite, SpriteMaskFilter, Texture } from "pixi.js";
 import { objText } from "../../../assets/fonts";
 import { Tx } from "../../../assets/textures";
 import { interp, interpv } from "../../../lib/game-engine/routines/interp";
+import { RgbInt } from "../../../lib/math/number-alias-types";
 import { container } from "../../../lib/pixi/container";
 import { mxnBoilPivot } from "../../mixins/mxn-boil-pivot";
 import { mxnBoilSeed } from "../../mixins/mxn-boil-seed";
@@ -97,72 +98,73 @@ function objTreasureMessage() {
 }
 
 function objEnergy() {
-    const barMaskObj = Sprite.from(Tx.Hud.EnergyBar);
-
-    return container(
-        Sprite.from(Tx.Hud.Energy).tinted(0),
-        container(
-            barMaskObj,
-            new Graphics().beginFill(0xffffff).drawRect(0, 0, Tx.Hud.EnergyBar.width, Tx.Hud.EnergyBar.height),
-            new Graphics().step(self =>
-                self.clear().beginFill(0).drawRect(
-                    0,
-                    0,
-                    getWidth(Tx.Hud.EnergyBar.width, progress.energy / progress.energyMaximum),
-                    Tx.Hud.EnergyBar.height,
-                )
-            ),
-        )
-            .at(54, 3)
-            .filtered(new SpriteMaskFilter(barMaskObj)),
-    )
+    return objBar({
+        tint: 0x000000,
+        txTitle: Tx.Hud.Energy,
+        getValue: () => progress.energy,
+        getMaximum: () => progress.energyMaximum,
+    })
         .at(5, 5);
 }
 
 function objLife() {
-    const barMaskObj = Sprite.from(Tx.Hud.EnergyBar).flipH();
-
-    return container(
-        Sprite.from(Tx.Hud.Life).tinted(0xff0000).at(18, 0),
-        container(
-            barMaskObj,
-            new Graphics().beginFill(0xffffff).drawRect(0, 0, Tx.Hud.EnergyBar.width, Tx.Hud.EnergyBar.height),
-            new Graphics().step(self =>
-                self.clear().beginFill(0xff0000).drawRect(
-                    0,
-                    0,
-                    getWidth(Tx.Hud.EnergyBar.width, progress.life / progress.lifeMaximum),
-                    Tx.Hud.EnergyBar.height,
-                )
-            ),
-        )
-            .at(54, 3)
-            .filtered(new SpriteMaskFilter(barMaskObj)),
-    )
+    return objBar({
+        tint: 0xff0000,
+        txTitle: Tx.Hud.Life,
+        getValue: () => progress.life,
+        getMaximum: () => progress.lifeMaximum,
+    })
         .at(158, 5);
 }
 
 function objMoney() {
-    const barMaskObj = Sprite.from(Tx.Hud.EnergyBar).flipV();
+    return objBar({
+        tint: 0xffc400,
+        txTitle: Tx.Hud.Money,
+        getValue: () => progress.money,
+        getMaximum: () => progress.moneyMaximum,
+    })
+        .at(328, 5);
+}
+
+let objBarCallsCount = 0;
+
+interface ObjBarArgs {
+    txTitle: Texture;
+    tint: RgbInt;
+    getValue(): number;
+    getMaximum(): number;
+}
+
+function objBar(args: ObjBarArgs) {
+    const barMaskObj = Sprite.from(Tx.Hud.EnergyBar);
+
+    if (objBarCallsCount % 3 === 1) {
+        barMaskObj.flipH();
+    }
+    else if (objBarCallsCount % 3 === 2) {
+        barMaskObj.flipV();
+    }
+
+    objBarCallsCount += 1;
 
     return container(
-        Sprite.from(Tx.Hud.Money).tinted(0xffc400).at(2, 0),
+        Sprite.from(args.txTitle).tinted(args.tint).at(48 - args.txTitle.width, 0),
         container(
             barMaskObj,
             new Graphics().beginFill(0xffffff).drawRect(0, 0, Tx.Hud.EnergyBar.width, Tx.Hud.EnergyBar.height),
             new Graphics().step(self =>
-                self.clear().beginFill(0xffc400).drawRect(
+                self.clear().beginFill(args.tint).drawRect(
                     0,
                     0,
-                    getWidth(Tx.Hud.EnergyBar.width, progress.money / progress.moneyMaximum),
+                    getWidth(Tx.Hud.EnergyBar.width, args.getValue() / args.getMaximum()),
                     Tx.Hud.EnergyBar.height,
                 )
             ),
         )
             .at(54, 3)
             .filtered(new SpriteMaskFilter(barMaskObj)),
-    )
-        .at(328, 5);
+    );
 }
 
 function getWidth(width: number, unit: number) {
