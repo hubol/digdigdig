@@ -14,7 +14,7 @@ export function objFxRelease() {
     return objIndexedSprite(txs)
         .anchored(0.5, 1)
         .coro(function* (self) {
-            yield interp(self, "textureIndex").to(txs.length).over(Rng.intc(750, 850));
+            yield interp(self, "textureIndex").to(txs.length).over(800);
             self.destroy();
         })
         .show(scene.perspectiveStage);

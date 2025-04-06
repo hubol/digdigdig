@@ -21,6 +21,7 @@ export function mxnEnemy(obj: DisplayObject, args: MxnEnemyArgs) {
     return obj
         .mixin(mxnHoleListener)
         .merge({ mxnEnemy: { state } })
+        .dispatches<"mxnEnemy:damaged">()
         .dispatches<"mxnEnemy:died">()
         .handles("mxnHoleListener:hole_created", (self, holeRect) => {
             if (!areRectanglesOverlapping(args.vulnerableBoxObj.getWorldBounds(), holeRect)) {
@@ -39,6 +40,9 @@ export function mxnEnemy(obj: DisplayObject, args: MxnEnemyArgs) {
             if (state.health <= 0) {
                 self.dispatch("mxnEnemy:died");
                 self.destroy();
+            }
+            else {
+                self.dispatch("mxnEnemy:damaged");
             }
         });
 }

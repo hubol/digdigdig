@@ -4,7 +4,7 @@ import { Instances } from "../../lib/game-engine/instances";
 import { Coro } from "../../lib/game-engine/routines/coro";
 import { holdf } from "../../lib/game-engine/routines/hold";
 import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
-import { sleep } from "../../lib/game-engine/routines/sleep";
+import { sleep, sleepf } from "../../lib/game-engine/routines/sleep";
 import { PolarInt } from "../../lib/math/number-alias-types";
 import { Rng } from "../../lib/math/rng";
 import { VectorSimple, vnew } from "../../lib/math/vector-type";
@@ -21,7 +21,7 @@ import { generateObjCharacterArgs } from "./obj-npc";
 import { playerObj } from "./obj-player";
 
 const [txIdle, txWalk, ...txsCharge] = Tx.Enemy.Goon.split({ width: 92 });
-const v = vnew();
+const txHurt = Tx.Enemy.GoonHurt;
 
 interface ObjGoonArgs {
     rank: number;
@@ -43,6 +43,7 @@ export function objGoon(goonArgs: ObjGoonArgs) {
         speed: vnew(),
         pedometer: 0,
         chargeUnit: 0,
+        remainingPainCount: 0,
         lastAcceptablePosition: vnew(),
         canRecoverEnergy: true,
         energy: rank.energy,
@@ -85,11 +86,16 @@ export function objGoon(goonArgs: ObjGoonArgs) {
             }
 
             state.pedometer += state.speed.vlength * 0.05;
-            self.add(state.speed);
+
+            if (state.remainingPainCount <= 0) {
+                self.add(state.speed);
+            }
 
             if (
                 self.mxnInhabitsAcre.methods.isInsideAcre()
                 && self.y >= self.mxnInhabitsAcre.consts.minY + 60
+                && self.x >= self.mxnInhabitsAcre.consts.minX + 60
+                && self.x <= self.mxnInhabitsAcre.consts.maxX - 60
                 && !vulnerableBoxObj.collidesOne(Instances(objBlock))
             ) {
                 state.lastAcceptablePosition.at(self);
@@ -99,7 +105,11 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                 state.speed.scale(-1);
             }
 
-            if (state.chargeUnit <= 0) {
+            if (state.remainingPainCount > 0) {
+                sprite.texture = txHurt;
+                state.remainingPainCount -= 1;
+            }
+            else if (state.chargeUnit <= 0) {
                 sprite.texture = state.pedometer === 0 ? txIdle : (state.pedometer % 2 < 1 ? txWalk : txIdle);
             }
             else {
@@ -136,13 +146,18 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                 yield interpv(sprite).factor(factor.sine).to(0, -32).over(275);
                 yield interpv(sprite).to(0, 0).over(200);
 
-                yield* Coro.all([
-                    interp(state, "chargeUnit").to(1).over(500),
-                    Coro.chain([
-                        sleep(400),
-                        () => (objGoonSpell(rank.spellAttackDamage).at(self).filtered(filter), true),
-                    ]),
-                ]);
+                while (true) {
+                    yield* Coro.race([
+                        interp(state, "chargeUnit").to(1).over(500),
+                        () => state.remainingPainCount > 0,
+                    ]);
+
+                    if (state.chargeUnit >= 1) {
+                        break;
+                    }
+                    yield () => state.remainingPainCount <= 0;
+                }
+                objGoonSpell(rank.spellAttackDamage).at(self).filtered(filter);
                 yield sleep(500);
                 state.chargeUnit = 0;
 
@@ -150,5 +165,6 @@ export function objGoon(goonArgs: ObjGoonArgs) {
             }
         })
         .handles("mxnEnemy:died", (self) => objFxRelease().at(self).tinted(args.tint0))
+        .handles("mxnEnemy:damaged", () => state.remainingPainCount = 20)
         .show(scene.perspectiveStage);
 }
