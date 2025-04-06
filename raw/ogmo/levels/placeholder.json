@@ -89,6 +89,18 @@
       ]
     },
     {
+      "name": "PerspectiveDecals",
+      "_eid": "90023176",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 64,
+      "gridCellsY": 35,
+      "decals": [],
+      "folder": "../textures"
+    },
+    {
       "name": "PerspectiveEntities",
       "_eid": "89874966",
       "offsetX": 0,
