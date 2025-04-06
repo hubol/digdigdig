@@ -71,6 +71,7 @@ function objPlayer() {
         obj.controls.facingDirection = "south";
 
         progress.life = progress.lifeMaximum;
+        progress.deaths += 1;
 
         obj.objects.mapRgbFilter.update(
             playerCharacterArgs.tint0,
