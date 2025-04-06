@@ -148,6 +148,114 @@
           "originX": 56,
           "originY": 34,
           "values": {"message": "Worthless things should be destroyed.", "name": ""}
+        },
+        {
+          "name": "DigSpot",
+          "id": 3,
+          "_eid": "92953509",
+          "x": 128,
+          "y": 56,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot00"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 4,
+          "_eid": "92953509",
+          "x": 224,
+          "y": 56,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot10"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 5,
+          "_eid": "92953509",
+          "x": 312,
+          "y": 56,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot20"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 6,
+          "_eid": "92953509",
+          "x": 136,
+          "y": 136,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot01"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 7,
+          "_eid": "92953509",
+          "x": 224,
+          "y": 136,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot11"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 8,
+          "_eid": "92953509",
+          "x": 320,
+          "y": 136,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot21"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 9,
+          "_eid": "92953509",
+          "x": 136,
+          "y": 208,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot02"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 10,
+          "_eid": "92953509",
+          "x": 224,
+          "y": 208,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot12"}
+        },
+        {
+          "name": "DigSpot",
+          "id": 11,
+          "_eid": "92953509",
+          "x": 320,
+          "y": 208,
+          "width": 48,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": "TicTacToeSpot22"}
         }
       ]
     },
@@ -1576,6 +1684,18 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 248,
+          "y": 152,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ff4d00",
+          "texture": "hints/tictactoe.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -3278,6 +3398,18 @@
           "originY": 0,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": -8,
+          "y": -16,
+          "scaleX": 16,
+          "scaleY": 9.5,
+          "rotation": 0,
+          "tint": "#ffc75b",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
@@ -3460,6 +3592,114 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 245,
+          "y": 74,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 334,
+          "y": 73,
+          "scaleX": -1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 152,
+          "y": 74,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 159,
+          "y": 154,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 249,
+          "y": 154,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 180,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 341,
+          "y": 155,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 252,
+          "y": 230,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 180,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 156,
+          "y": 230,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 180,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 343,
+          "y": 230,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 180,
+          "tint": "#775234",
+          "texture": "hints/cross 1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"

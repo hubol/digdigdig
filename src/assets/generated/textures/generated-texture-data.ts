@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 83 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 84 }];
 
 interface TxData {
   id: string;
@@ -65,6 +65,7 @@ function txs<T>(tx: (data: TxData) => T) {
       ArrowPerspective0: tx({ id: "Hints.ArrowPerspective0", atlas: 0, x: 366, y: 425, width: 18, height: 23 }),
       Arrow: tx({ id: "Hints.Arrow", atlas: 0, x: 2948, y: 357, width: 24, height: 17 }),
       Book: tx({ id: "Hints.Book", atlas: 0, x: 3595, y: 738, width: 113, height: 68 }),
+      Cross1: tx({ id: "Hints.Cross1", atlas: 0, x: 3810, y: 790, width: 35, height: 29 }),
       Cross: tx({ id: "Hints.Cross", atlas: 0, x: 70, y: 452, width: 60, height: 53 }),
       LookEast: tx({ id: "Hints.LookEast", atlas: 0, x: 0, y: 451, width: 69, height: 44 }),
       Move: tx({ id: "Hints.Move", atlas: 0, x: 3461, y: 707, width: 75, height: 27 }),
@@ -96,7 +97,7 @@ function txs<T>(tx: (data: TxData) => T) {
       LightSmall0: tx({ id: "Shapes.LightSmall0", atlas: 0, x: 366, y: 449, width: 19, height: 7 }),
       LightSmall1: tx({ id: "Shapes.LightSmall1", atlas: 0, x: 4089, y: 466, width: 7, height: 9 }),
       Square32: tx({ id: "Shapes.Square32", atlas: 0, x: 3410, y: 448, width: 32, height: 32 }),
-      VSmall0: tx({ id: "Shapes.VSmall0", atlas: 0, x: 2364, y: 180, width: 19, height: 13 }),
+      VSmall0: tx({ id: "Shapes.VSmall0", atlas: 0, x: 3810, y: 820, width: 19, height: 13 }),
     },
     Stone: {
       BrickWalkway0: tx({ id: "Stone.BrickWalkway0", atlas: 0, x: 3283, y: 776, width: 126, height: 45 }),
