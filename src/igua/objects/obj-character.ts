@@ -144,7 +144,7 @@ export function objCharacter(args: ObjCharacterArgs) {
 
     let nextUpsideDownSpinDirection = Rng.intp();
 
-    const feetHitboxObj = new Graphics().beginFill(0xff0000).drawRect(20, 132, 60, 8).invisible();
+    const feetHitboxObj = new Graphics().beginFill(0xff0000).drawRect(-15, -3, 30, 8).invisible();
     const bodyVulnerableBoxObj = new Graphics().beginFill(0xff0000).drawRect(-25, -82, 50, 70).invisible();
     const feetVulnerableBoxObj = new Graphics().beginFill(0x00ff00).drawRect(-30, -20, 60, 25).invisible();
 
@@ -155,13 +155,12 @@ export function objCharacter(args: ObjCharacterArgs) {
         hatTipObj,
     };
 
-    const innerObj = container(lowerBodyObj, headObj, feetHitboxObj)
+    const innerObj = container(lowerBodyObj, headObj)
         .filtered(new MapRgbFilter(args.tint0, args.tint1, args.tint2, 0xffffff))
         .pivoted(50, 140)
         .step(self => {
             self.pivot.y = controls.upsideDownUnit >= 1 ? 16 : 140;
             self.angle = controls.upsideDownUnit >= 1 ? 180 : 0;
-            feetHitboxObj.y = controls.upsideDownUnit >= 1 ? -117 : 0;
 
             headObj.offsetY = 0;
             lowerBodyObj.offsetY = 0;
@@ -189,7 +188,7 @@ export function objCharacter(args: ObjCharacterArgs) {
             }
         }, -1);
 
-    return container(innerObj, bodyVulnerableBoxObj, feetVulnerableBoxObj)
+    return container(innerObj, bodyVulnerableBoxObj, feetVulnerableBoxObj, feetHitboxObj)
         .mixin(mxnShadow, { hitboxObj: feetHitboxObj })
         .merge({ controls, objects })
         .step(self => {
