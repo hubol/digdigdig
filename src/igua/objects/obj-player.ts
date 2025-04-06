@@ -76,7 +76,7 @@ function objPlayer() {
             const isInDrillMode = self.controls.upsideDownUnit >= 1;
 
             if (isInNormalMode && lineObj) {
-                lineObj.methods.finish(self.mxnShadow.state.tint);
+                lineObj.methods.finish(self.mxnShadow.state.tint, progress.maxHoleRadius);
                 lineObj = null;
             }
 
@@ -101,7 +101,7 @@ function objPlayer() {
                 }
                 let speed = 1;
                 if (isInDrillMode) {
-                    speed = 3.67;
+                    speed = progress.drillingMovementSpeed;
                 }
                 else if (isInNormalMode) {
                     speed = 2;
@@ -222,7 +222,7 @@ function objDrawnLine() {
 
             gfx.lineTo(previewPosition.x, previewPosition.y);
         },
-        finish(tint: RgbInt, maxRadius = 32) {
+        finish(tint: RgbInt, maxRadius: number) {
             const analysis = analyzePositions(positions);
             const origin = analysis.origin;
             const radius = Math.min(analysis.radius, maxRadius);
@@ -250,7 +250,7 @@ function objDrawnLine() {
             });
 
             obj.coro(function* () {
-                yield interp(finishState, "factor").steps(4).to(1).over(300);
+                yield interp(finishState, "factor").steps(4).to(1).over(300 * progress.holeCreationDeltaTime);
                 const solidObj = new Graphics()
                     .beginFill(0xffffff)
                     .drawRect(0, 0, radius * 2, radius * 2)
@@ -259,7 +259,7 @@ function objDrawnLine() {
                     .add(radius, radius)
                     .tinted(0)
                     .show(obj);
-                yield interpv(solidObj.scale).to(-1, -1).over(300);
+                yield interpv(solidObj.scale).to(-1, -1).over(300 * progress.holeCreationDeltaTime);
                 gfx.destroy();
                 CtxHoles.value.digHole(origin.x - radius, origin.y - radius, radius * 2, radius * 2);
                 solidObj.tinted(tint);

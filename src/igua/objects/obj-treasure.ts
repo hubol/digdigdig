@@ -22,6 +22,26 @@ const treasures = {
         description: "Green stone is worth money.",
         value: 100,
     },
+    "DrillUpgrade0": {
+        tx: Tx.Treasures.DrillUpgrade0,
+        description: "Max EN. UP",
+        progress: p => p.upgrades.drill.energy += 1,
+    },
+    "DrillUpgrade1": {
+        tx: Tx.Treasures.DrillUpgrade1,
+        description: "Max Hole Radius UP",
+        progress: p => p.upgrades.drill.radius += 1,
+    },
+    "DrillUpgrade2": {
+        tx: Tx.Treasures.DrillUpgrade2,
+        description: "Drill Speed UP",
+        progress: p => p.upgrades.drill.speed += 1,
+    },
+    "DrillUpgrade3": {
+        tx: Tx.Treasures.DrillUpgrade3,
+        description: "Drill Attack Power UP",
+        progress: p => p.upgrades.drill.attack += 1,
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {
