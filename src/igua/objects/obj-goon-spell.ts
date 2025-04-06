@@ -36,7 +36,7 @@ export function objGoonSpell(damage: number, timeRate: number) {
                     yield interp(sprite, "textureIndex").to(2).over(Rng.int(200, 400));
                 }
             });
-            v.at(playerObj).add(self, -1).normalize().scale(400 * timeRate);
+            v.at(playerObj).add(self, -1).normalize().scale(400);
             yield interpv(self).factor(factor.sine).translate(v).over(4000 * timeRate);
             yield interpv(sprite.scale).steps(2).to(0, 0).over(250 * timeRate);
             self.destroy();
