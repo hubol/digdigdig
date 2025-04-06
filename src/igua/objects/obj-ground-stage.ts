@@ -134,6 +134,8 @@ export const CtxHoles = new SceneLocal(() => {
     return object;
 });
 
+const sorterFn = (a: number, b: number): number => a - b;
+
 export function mxnStaticAffectedByHoles(obj: DisplayObject, coverageTargetObj = obj) {
     const state = {
         coverageUnit: 0,
@@ -188,8 +190,8 @@ export function mxnStaticAffectedByHoles(obj: DisplayObject, coverageTargetObj =
                 };
             });
 
-        const xCoords = [...new Set(overlappingRectangles.flatMap(rect => [rect.x0, rect.x1]))].sort();
-        const yCoords = [...new Set(overlappingRectangles.flatMap(rect => [rect.y0, rect.y1]))].sort();
+        const xCoords = [...new Set(overlappingRectangles.flatMap(rect => [rect.x0, rect.x1]))].sort(sorterFn);
+        const yCoords = [...new Set(overlappingRectangles.flatMap(rect => [rect.y0, rect.y1]))].sort(sorterFn);
 
         const usedCells: boolean[][] = [];
 
