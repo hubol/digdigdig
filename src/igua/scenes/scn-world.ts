@@ -66,4 +66,7 @@ export function scnWorld() {
         lvl.FishermanCharacter.at(lvl.FishermanCompleteMarker);
         lvl.FishermanCharacter.controls.facingDirection = "east";
     });
+
+    // Southeastern goon
+    lvl.SoutheasternGoon.handles("mxnEnemy:died", () => lvl.SoutheasternGoonPrize.dispatch("objTreasurePrize:reward"));
 }

@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 104 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 105 }];
 
 interface TxData {
   id: string;
@@ -48,7 +48,7 @@ function txs<T>(tx: (data: TxData) => T) {
       Bush0: tx({ id: "Foliage.Bush0", atlas: 0, x: 0, y: 520, width: 254, height: 125 }),
       DeadBush0: tx({ id: "Foliage.DeadBush0", atlas: 0, x: 615, y: 831, width: 34, height: 51 }),
       DeadBush1: tx({ id: "Foliage.DeadBush1", atlas: 0, x: 3421, y: 412, width: 26, height: 42 }),
-      Flower0: tx({ id: "Foliage.Flower0", atlas: 0, x: 911, y: 616, width: 36, height: 24 }),
+      Flower0: tx({ id: "Foliage.Flower0", atlas: 0, x: 208, y: 668, width: 36, height: 24 }),
       Grass0: tx({ id: "Foliage.Grass0", atlas: 0, x: 312, y: 798, width: 100, height: 43 }),
       Grass1: tx({ id: "Foliage.Grass1", atlas: 0, x: 1302, y: 520, width: 47, height: 25 }),
       Grass2: tx({ id: "Foliage.Grass2", atlas: 0, x: 2346, y: 180, width: 101, height: 14 }),
@@ -141,6 +141,7 @@ function txs<T>(tx: (data: TxData) => T) {
       Heart0: tx({ id: "Treasures.Heart0", atlas: 0, x: 4039, y: 189, width: 55, height: 42 }),
       InvisibleUnderwear: tx({ id: "Treasures.InvisibleUnderwear", atlas: 0, x: 1140, y: 520, width: 60, height: 36 }),
       RingWithGreenStone: tx({ id: "Treasures.RingWithGreenStone", atlas: 0, x: 63, y: 990, width: 34, height: 34 }),
+      SilverMedal: tx({ id: "Treasures.SilverMedal", atlas: 0, x: 911, y: 616, width: 40, height: 66 }),
       Skull: tx({ id: "Treasures.Skull", atlas: 0, x: 4005, y: 817, width: 74, height: 46 }),
       Soap: tx({ id: "Treasures.Soap", atlas: 0, x: 164, y: 932, width: 32, height: 40 }),
       Tea: tx({ id: "Treasures.Tea", atlas: 0, x: 1253, y: 520, width: 48, height: 38 }),

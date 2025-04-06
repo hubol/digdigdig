@@ -21,8 +21,8 @@
           "name": "Marker",
           "id": 0,
           "_eid": "73148747",
-          "x": 2136,
-          "y": 464,
+          "x": 1600,
+          "y": 1296,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -101,6 +101,16 @@
           "originX": 8,
           "originY": 8,
           "values": {"kind": "Soap", "name": "NortheasternGoonPrize"}
+        },
+        {
+          "name": "TreasurePrize",
+          "id": 8,
+          "_eid": "93096814",
+          "x": 1736,
+          "y": 1280,
+          "originX": 8,
+          "originY": 8,
+          "values": {"kind": "SilverMedal", "name": "SoutheasternGoonPrize"}
         }
       ]
     },

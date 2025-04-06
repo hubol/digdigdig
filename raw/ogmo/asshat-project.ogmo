@@ -487,7 +487,7 @@
           "name": "kind",
           "definition": "Enum",
           "display": 1,
-          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond", "GiftCard", "Soap"],
+          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond", "GiftCard", "Soap", "SilverMedal"],
           "defaults": 0
         }
       ],
@@ -577,7 +577,7 @@
           "name": "kind",
           "definition": "Enum",
           "display": 0,
-          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond", "GiftCard", "Soap"],
+          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole", "Diamond", "GiftCard", "Soap", "SilverMedal"],
           "defaults": 0
         },
         {"name": "name", "definition": "String", "display": 0, "defaults": "", "maxLength": 0, "trimWhitespace": true}

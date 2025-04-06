@@ -90,6 +90,11 @@ const treasures = {
         tx: Tx.Treasures.Soap,
         description: "The hot giant wants this for some reason",
     },
+    "SilverMedal": {
+        tx: Tx.Treasures.SilverMedal,
+        description: "Valuable.",
+        value: 100,
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {
