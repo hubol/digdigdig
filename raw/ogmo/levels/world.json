@@ -21,8 +21,8 @@
           "name": "Marker",
           "id": 0,
           "_eid": "73148747",
-          "x": 1248,
-          "y": 696,
+          "x": 2152,
+          "y": 480,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -58,6 +58,28 @@
           "originY": 8,
           "tint": "#00ff00",
           "values": {"name": "EvilSpawnerMarker", "depth": 0}
+        },
+        {
+          "name": "Marker",
+          "id": 4,
+          "_eid": "73148747",
+          "x": 2344,
+          "y": 530,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#00ff00",
+          "values": {"name": "BatherMarker", "depth": 0}
+        },
+        {
+          "name": "Marker",
+          "id": 5,
+          "_eid": "73148747",
+          "x": 1256,
+          "y": 696,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#ffff00",
+          "values": {"name": "OldPlayerStartMarker", "depth": 0}
         }
       ]
     },
@@ -126,7 +148,8 @@
         {"x": 755, "y": 362, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
         {"x": 813, "y": 400, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
         {"x": 870, "y": 356, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
-        {"x": 928, "y": 395, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null}
+        {"x": 928, "y": 395, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#a8483e", "texture": "foliage/dead bush 0.png", "originX": 0.5, "originY": 1, "groupName": null},
+        {"x": 2344, "y": 536, "scaleX": 1, "scaleY": 1, "rotation": 0, "tint": "#ffffff", "texture": "characters/bather tub.png", "originX": 0.5, "originY": 1}
       ],
       "folder": "../textures"
     },
@@ -626,6 +649,32 @@
           "y": 1352,
           "width": 368,
           "height": 72,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 29,
+          "_eid": "93117141",
+          "x": 2232,
+          "y": 432,
+          "width": 232,
+          "height": 104,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 30,
+          "_eid": "93117141",
+          "x": 1949,
+          "y": -772,
+          "width": 88,
+          "height": 1096,
           "originX": 0,
           "originY": 0,
           "tint": "#000000",
@@ -1914,7 +1963,8 @@
           "texture": "enemy/enemy wall.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": "NorthwestWallDecal"}
+          "values": {"name": "NorthwestWallDecal"},
+          "groupName": null
         },
         {
           "x": 42,
@@ -2004,7 +2054,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 41,
@@ -2016,7 +2067,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 65,
@@ -2028,7 +2080,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 65,
@@ -2040,7 +2093,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 89,
@@ -2052,7 +2106,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 94,
@@ -2064,7 +2119,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 322,
@@ -2076,7 +2132,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 385,
@@ -2088,7 +2145,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 270,
@@ -2100,7 +2158,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 417,
@@ -2112,7 +2171,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 410,
@@ -2124,7 +2184,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 386,
@@ -2136,7 +2197,8 @@
           "texture": "shapes/zigzag 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2066,
@@ -2644,6 +2706,58 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1995,
+          "y": 13,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1995,
+          "y": 101,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1995,
+          "y": 193,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 1995,
+          "y": 285,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "texture": "stone/wall 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -3031,7 +3145,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": -7,
@@ -3043,7 +3158,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 501,
@@ -3055,7 +3171,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2000,
@@ -3067,7 +3184,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 568,
@@ -3079,7 +3197,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 491,
@@ -3091,7 +3210,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1521,
@@ -4377,7 +4497,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 731,
@@ -4389,7 +4510,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 568,
@@ -4401,7 +4523,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1197,
@@ -4413,7 +4536,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1413,
@@ -4425,7 +4549,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1089,
@@ -4437,7 +4562,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1414,
@@ -4449,7 +4575,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1088,
@@ -4461,7 +4588,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1119,
@@ -4473,7 +4601,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1224,
@@ -4485,7 +4614,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1282,
@@ -4497,7 +4627,8 @@
           "texture": "character shadow.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1264,
@@ -4509,7 +4640,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1146,
@@ -4521,7 +4653,8 @@
           "texture": "character shadow.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1160,
@@ -4533,7 +4666,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1206,
@@ -4545,7 +4679,8 @@
           "texture": "character shadow.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1208,
@@ -4557,7 +4692,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1268,
@@ -4569,7 +4705,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1183,
@@ -4581,7 +4718,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1167,
@@ -4593,7 +4731,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1240,
@@ -4605,7 +4744,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1224,
@@ -4617,7 +4757,8 @@
           "texture": "shapes/light small 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1118,
@@ -4629,7 +4770,8 @@
           "texture": "foliage/grass 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1164,
@@ -4641,7 +4783,8 @@
           "texture": "foliage/grass 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1404,
@@ -4653,7 +4796,8 @@
           "texture": "foliage/grass 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1433,
@@ -4665,7 +4809,8 @@
           "texture": "foliage/grass 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1460,
@@ -4677,7 +4822,8 @@
           "texture": "foliage/grass 1.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 48,
@@ -4689,7 +4835,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 16,
@@ -4701,7 +4848,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 433,
@@ -4713,7 +4861,8 @@
           "texture": "patch/shadow 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 85,
@@ -4725,7 +4874,8 @@
           "texture": "shapes/v small 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 97,
@@ -4737,7 +4887,8 @@
           "texture": "shapes/v small 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 126,
@@ -4749,7 +4900,8 @@
           "texture": "shapes/v small 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": -8,
@@ -4761,7 +4913,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 88,
@@ -4773,7 +4926,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 135,
@@ -4785,7 +4939,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 507,
@@ -4797,7 +4952,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 243,
@@ -4809,7 +4965,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 156,
@@ -4821,7 +4978,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 371,
@@ -4833,7 +4991,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 4,
@@ -4845,7 +5004,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 238,
@@ -4857,7 +5017,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 406,
@@ -4869,7 +5030,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 406,
@@ -4881,7 +5043,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 12,
@@ -4893,7 +5056,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": -40,
@@ -4905,7 +5069,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 309,
@@ -4917,7 +5082,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 110,
@@ -4929,7 +5095,8 @@
           "texture": "stone/brick walkway 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1629,
@@ -4941,7 +5108,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 571,
@@ -4953,7 +5121,8 @@
           "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 576,
@@ -4965,7 +5134,8 @@
           "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 544,
@@ -4977,7 +5147,8 @@
           "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 875,
@@ -4989,7 +5160,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 684,
@@ -5001,7 +5173,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 593,
@@ -5013,7 +5186,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 702,
@@ -5025,7 +5199,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 989,
@@ -5037,7 +5212,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1381,
@@ -5049,7 +5225,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1999,
@@ -5061,7 +5238,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2060,
@@ -5073,7 +5251,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2078,
@@ -5085,7 +5264,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2069,
@@ -5097,7 +5277,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2072,
@@ -5109,7 +5290,8 @@
           "texture": "shapes/spurt.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 428,
@@ -5121,7 +5303,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 504,
@@ -5133,7 +5316,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2240,
@@ -5145,7 +5329,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2258,
@@ -5157,7 +5342,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2260,
@@ -5169,7 +5355,8 @@
           "texture": "patch/lumpy square 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2080,
@@ -5181,7 +5368,8 @@
           "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2383,
@@ -5193,7 +5381,8 @@
           "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1970,
@@ -5205,7 +5394,8 @@
           "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1946,
@@ -5217,7 +5407,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1946,
@@ -5229,7 +5420,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2100,
@@ -5241,7 +5433,8 @@
           "texture": "foliage/grass 2.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 121,
@@ -5253,7 +5446,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 460,
@@ -5265,7 +5459,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 481,
@@ -5277,7 +5472,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 648,
@@ -5289,7 +5485,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 624,
@@ -5301,7 +5498,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 59,
@@ -5313,7 +5511,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 119,
@@ -5325,7 +5524,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 345,
@@ -5337,7 +5537,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 399,
@@ -5349,7 +5550,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 239,
@@ -5361,7 +5563,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 377,
@@ -5373,7 +5576,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 304,
@@ -5385,7 +5589,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 597,
@@ -5397,7 +5602,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 608,
@@ -5409,7 +5615,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1464,
@@ -5421,7 +5628,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1462,
@@ -5433,7 +5641,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1462,
@@ -5445,7 +5654,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1464,
@@ -5457,7 +5667,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1463,
@@ -5469,7 +5680,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1536,
@@ -5481,7 +5693,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1737,
@@ -5493,7 +5706,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1799,
@@ -5505,7 +5719,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1853,
@@ -5517,7 +5732,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1915,
@@ -5529,7 +5745,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2136,
@@ -5541,7 +5758,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2331,
@@ -5553,7 +5771,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2188,
@@ -5565,7 +5784,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2292,
@@ -5577,7 +5797,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2134,
@@ -5589,7 +5810,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2327,
@@ -5601,7 +5823,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2276,
@@ -5613,7 +5836,8 @@
           "texture": "shapes/confetti 64.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2376,
@@ -5625,7 +5849,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1808,
@@ -5637,7 +5862,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1792,
@@ -5649,7 +5875,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2402,
@@ -5661,7 +5888,8 @@
           "texture": "patch/blob 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 2197,
@@ -5671,6 +5899,43 @@
           "rotation": 180,
           "tint": "#be9d61",
           "texture": "patch/blob 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2347,
+          "y": 533,
+          "scaleX": 1,
+          "scaleY": 0.1,
+          "rotation": 0,
+          "tint": "#98ad46",
+          "texture": "patch/lumpy square 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1996,
+          "y": 135,
+          "scaleX": 0.65,
+          "scaleY": 3,
+          "rotation": 0,
+          "tint": "#a8483e",
+          "texture": "patch/lumpy square 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 1992,
+          "y": 314,
+          "scaleX": 4.5,
+          "scaleY": 2.6,
+          "rotation": 0,
+          "tint": "#be6b48",
+          "texture": "shapes/square32.png",
           "originX": 0.5,
           "originY": 0.5,
           "values": {"name": ""}
@@ -5984,7 +6249,8 @@
           "texture": "hints/filler 0.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 1542,
@@ -5996,7 +6262,8 @@
           "texture": "hints/timestamp.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 64,
@@ -6008,7 +6275,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 64,
@@ -6020,7 +6288,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 64,
@@ -6032,7 +6301,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 64,
@@ -6044,7 +6314,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 785,
@@ -6056,7 +6327,8 @@
           "texture": "hints/many arrows.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 649,
@@ -6068,7 +6340,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 785,
@@ -6080,7 +6353,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 903,
@@ -6092,7 +6366,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
