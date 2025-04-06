@@ -3,7 +3,7 @@ import { container } from "../../lib/pixi/container";
 import { mxnStaticAffectedByHoles } from "./obj-ground-stage";
 
 export function objDigSpot() {
-    const obj = new Graphics().beginFill(0xff0000).drawRect(0, 0, 1, 1).mixin(mxnStaticAffectedByHoles);
+    const obj = new Graphics().beginFill(0xff0000).drawRect(0, 0, 1, 1).mixin(mxnStaticAffectedByHoles).invisible();
 
     return obj.merge({
         get isDug() {
