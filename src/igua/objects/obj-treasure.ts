@@ -3,6 +3,7 @@ import { Tx } from "../../assets/textures";
 import { factor, interpv, interpvr } from "../../lib/game-engine/routines/interp";
 import { sleep } from "../../lib/game-engine/routines/sleep";
 import { Integer } from "../../lib/math/number-alias-types";
+import { VectorSimple } from "../../lib/math/vector-type";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnStaticAffectedByHoles } from "./obj-ground-stage";
 import { playerObj } from "./obj-player";
@@ -35,15 +36,23 @@ export function objTreasure(kind: TreasureKind) {
 
             playerObj.state.isBusy = true;
             self.visible = false;
-            const obj = Sprite.from(treasure.tx).anchored(0.5, 0.5).at(self).show();
-            // TODO vfx
-            yield sleep(500);
-            yield interpvr(obj).factor(factor.sine).to([0, -100].add(playerObj)).over(1000);
-            // TODO message
-            yield sleep(1000);
-            // TODO update progress
-            playerObj.state.isBusy = false;
-            obj.destroy();
+            yield* coroGivePlayerTreasure(kind, self);
             self.destroy();
+            playerObj.state.isBusy = false;
         });
+}
+
+/**
+ * Claim the `playerObj.state.isBusy` lock before calling
+ */
+export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple) {
+    const treasure: Treasure = treasures[kind] ?? treasures.GoldIdol;
+    const obj = Sprite.from(treasure.tx).anchored(0.5, 0.5).at(origin).show();
+    // TODO vfx
+    yield sleep(500);
+    yield interpvr(obj).factor(factor.sine).to([0, -100].add(playerObj)).over(1000);
+    // TODO message
+    yield sleep(1000);
+    // TODO update progress
+    obj.destroy();
 }
