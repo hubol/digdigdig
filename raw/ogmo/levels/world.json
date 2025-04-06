@@ -22,7 +22,7 @@
           "id": 0,
           "_eid": "73148747",
           "x": 1256,
-          "y": 696,
+          "y": 712,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -75,7 +75,7 @@
           "id": 5,
           "_eid": "73148747",
           "x": 1256,
-          "y": 712,
+          "y": 728,
           "originX": 8,
           "originY": 8,
           "tint": "#ffff00",
@@ -928,6 +928,16 @@
           "originX": 40,
           "originY": 97,
           "values": {"name": "NortheasternGoon", "rank": 3}
+        },
+        {
+          "name": "Character",
+          "id": 5,
+          "_eid": "94529683",
+          "x": 1224,
+          "y": 1304,
+          "originX": 37,
+          "originY": 128,
+          "values": {"name": "GraveyardGroundskeeper"}
         }
       ]
     },
@@ -7101,6 +7111,18 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 64,
+          "y": 736,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#9c6047",
+          "texture": "patch/blob 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"

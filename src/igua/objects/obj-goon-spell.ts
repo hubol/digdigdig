@@ -1,4 +1,5 @@
 import { Graphics } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { Tx } from "../../assets/textures";
 import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
 import { Rng } from "../../lib/math/rng";
@@ -37,6 +38,7 @@ export function objGoonSpell(damage: number, timeRate: number) {
                 }
             });
             v.at(playerObj).add(self, -1).normalize().scale(400);
+            self.play(Sfx.GoonSpellRelease.rate(0.9, 1.1));
             yield interpv(self).factor(factor.sine).translate(v).over(4000 * timeRate);
             yield interpv(sprite.scale).steps(2).to(0, 0).over(250 * timeRate);
             self.destroy();

@@ -10,11 +10,11 @@ interface MxnAttackArgs {
     group?: {};
 }
 
-export function mxnAttack(obj: DisplayObject, args: MxnAttackArgs) {
+export function mxnAttack(obj: DisplayObject, args: MxnAttackArgs, isActive = true) {
     let damagedPlayer = false;
 
     const state = {
-        isActive: true,
+        isActive,
     };
 
     return obj

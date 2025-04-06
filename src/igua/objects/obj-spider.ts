@@ -1,4 +1,5 @@
 import { Graphics, Sprite } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { Tx } from "../../assets/textures";
 import { Instances } from "../../lib/game-engine/instances";
 import { interp, interpv } from "../../lib/game-engine/routines/interp";
@@ -107,7 +108,9 @@ export function objSpider() {
 function objSpiderPencil() {
     return objGoonPencil(10, 1000, "default")
         .coro(function* (self) {
+            self.play(Sfx.SpiderReveal.rate(0.9, 1.1));
             yield sleep(1000);
+            self.play(Sfx.SpiderThrow.rate(0.9, 1.1));
             self.state.isLaunched = true;
             yield interpv(self).to(playerObj).over(2000);
             self.mxnAttack.state.isActive = false;

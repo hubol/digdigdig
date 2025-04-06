@@ -1,4 +1,5 @@
 import { Graphics, Sprite } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { Tx } from "../../assets/textures";
 import { Instances } from "../../lib/game-engine/instances";
 import { Coro } from "../../lib/game-engine/routines/coro";
@@ -185,10 +186,13 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                 state.energy -= consts.energyPerMove;
 
                 state.speed.at(0, 0);
+                self.play(Sfx.GoonNotice.rate(0.9, 1.1));
                 yield interpv(sprite).factor(factor.sine).to(0, -32).over(275 * rank.spellTimeRate);
                 yield interpv(sprite).to(0, 0).over(200 * rank.spellTimeRate);
 
                 const move = Rng.choose(...rank.moves);
+
+                self.play((move === "burst" ? Sfx.GoonStretch : Sfx.GoonSpellCharge).rate(0.9, 1.1));
 
                 while (true) {
                     state.chargeUnit = 0;
@@ -216,6 +220,9 @@ export function objGoon(goonArgs: ObjGoonArgs) {
                     const burstObj = objGoonPencilBurst(8, rank.spellAttackDamage - 10, Rng.choose("default", "fast"))
                         .at(self).show();
                     yield () => burstObj.destroyed;
+
+                    self.play(Sfx.GoonUnstretch.rate(0.9, 1.1));
+
                     yield interp(state, "stretchUnit").to(0).over(350 * rank.spellTimeRate);
                 }
 

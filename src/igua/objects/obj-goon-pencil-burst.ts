@@ -1,4 +1,5 @@
 import { Graphics, Sprite } from "pixi.js";
+import { Sfx } from "../../assets/sounds";
 import { Tx } from "../../assets/textures";
 import { Coro } from "../../lib/game-engine/routines/coro";
 import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
@@ -30,6 +31,8 @@ export function objGoonPencilBurst(count: number, damage: number, speed: "defaul
 
             const motionMs = speed === "default" ? 1500 : 1100;
 
+            Sfx.GoonPencilBurst.rate(0.9, 1.1).play();
+
             yield* Coro.all(pencilObjs.map(pencilObj => {
                 pencilObj.state.isLaunched = true;
                 return interpv(pencilObj).factor(factor.sine).translate(pencilObj.unit.scale(350)).over(motionMs);
@@ -56,11 +59,10 @@ export function objGoonPencil(damage: number, windupTimeMs: number, speed: "defa
 
     return container(sprite, bodyHurtBoxObj, feetHurtBoxObj)
         .merge({ state })
-        .mixin(mxnAttack, { damage, bodyHurtBoxObj, feetHurtBoxObj, group })
+        .mixin(mxnAttack, { damage, bodyHurtBoxObj, feetHurtBoxObj, group }, false)
         .mixin(mxnShadow, {})
         .coro(function* (self) {
             self.mxnShadow.controls.size = "small";
-            self.mxnAttack.state.isActive = false;
             yield interp(sprite, "angle").steps(8).to(360).over(windupTimeMs);
             yield () => state.isLaunched;
             self.mxnAttack.state.isActive = true;

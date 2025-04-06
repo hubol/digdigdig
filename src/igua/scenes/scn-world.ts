@@ -95,6 +95,12 @@ export function scnWorld() {
         [lvl.SpiderMarker0, lvl.SpiderMarker1, lvl.SpiderMarker2, lvl.SpiderMarker3].forEach(markerObj =>
             objSpider().at(markerObj).handles("mxnEnemy:died", incrementSpiderKill)
         );
+
+        lvl.GraveyardGroundskeeper.mixin(mxnNpc, function* (api) {
+            api.setMessage("Devils have taken over to the west.");
+            yield () => spiderKills >= 4;
+            api.setMessage("Thanks for taking care of the devils!");
+        });
     }
 
     // Final
