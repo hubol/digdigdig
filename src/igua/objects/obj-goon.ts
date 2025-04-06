@@ -1,5 +1,6 @@
 import { Graphics, Sprite } from "pixi.js";
 import { Tx } from "../../assets/textures";
+import { Instances } from "../../lib/game-engine/instances";
 import { Coro } from "../../lib/game-engine/routines/coro";
 import { holdf } from "../../lib/game-engine/routines/hold";
 import { factor, interp, interpv } from "../../lib/game-engine/routines/interp";
@@ -14,6 +15,7 @@ import { mxnEnemy } from "../mixins/mxn-enemy";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnShadow } from "../mixins/mxn-shadow";
 import { objFxRelease } from "./fx/obj-fx-release";
+import { objBlock } from "./obj-block";
 import { objGoonSpell } from "./obj-goon-spell";
 import { generateObjCharacterArgs } from "./obj-npc";
 import { playerObj } from "./obj-player";
@@ -31,7 +33,7 @@ export function objGoon() {
         speed: vnew(),
         pedometer: 0,
         chargeUnit: 0,
-        lastInsidePosition: vnew(),
+        lastAcceptablePosition: vnew(),
         canRecoverEnergy: true,
         energy: 500,
         energyMaximum: 500,
@@ -75,11 +77,15 @@ export function objGoon() {
             state.pedometer += state.speed.vlength * 0.05;
             self.add(state.speed);
 
-            if (self.mxnInhabitsAcre.methods.isInsideAcre() && self.y >= self.mxnInhabitsAcre.consts.minY + 40) {
-                state.lastInsidePosition.at(self);
+            if (
+                self.mxnInhabitsAcre.methods.isInsideAcre()
+                && self.y >= self.mxnInhabitsAcre.consts.minY + 60
+                && !vulnerableBoxObj.collidesOne(Instances(objBlock))
+            ) {
+                state.lastAcceptablePosition.at(self);
             }
             else {
-                self.at(state.lastInsidePosition);
+                self.at(state.lastAcceptablePosition);
                 state.speed.scale(-1);
             }
 
