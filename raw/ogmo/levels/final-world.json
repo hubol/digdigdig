@@ -4,7 +4,7 @@
   "height": 568,
   "offsetX": 0,
   "offsetY": 0,
-  "backgroundColor": "#408000",
+  "backgroundColor": "#001480",
   "values": {"Terrain Color": "#000000"},
   "layers": [
     {
@@ -22,7 +22,7 @@
           "id": 0,
           "_eid": "73148747",
           "x": 248,
-          "y": 424,
+          "y": 448,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -39,7 +39,21 @@
       "gridCellHeight": 8,
       "gridCellsX": 64,
       "gridCellsY": 71,
-      "entities": []
+      "entities": [
+        {
+          "name": "Region",
+          "id": 0,
+          "_eid": "11908607",
+          "x": 0,
+          "y": 280,
+          "width": 504,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#00ff00",
+          "values": {"name": "CreateWallHereRegion", "depth": 0}
+        }
+      ]
     },
     {
       "name": "PerspectiveDecals",
@@ -62,7 +76,18 @@
       "gridCellHeight": 8,
       "gridCellsX": 64,
       "gridCellsY": 71,
-      "entities": []
+      "entities": [
+        {
+          "name": "Goon",
+          "id": 0,
+          "_eid": "89869392",
+          "x": 240,
+          "y": 176,
+          "originX": 40,
+          "originY": 97,
+          "values": {"name": "FinalGoon", "rank": 4}
+        }
+      ]
     },
     {
       "name": "DiggableEntities",
@@ -118,7 +143,7 @@
           "originY": 0,
           "flippedX": false,
           "flippedY": false,
-          "tint": "#ffffff",
+          "tint": "#484848",
           "values": {"name": ""}
         },
         {
@@ -131,7 +156,7 @@
           "originY": 0,
           "flippedX": false,
           "flippedY": false,
-          "tint": "#ffffff",
+          "tint": "#484848",
           "values": {"name": ""}
         }
       ]
@@ -145,7 +170,20 @@
       "gridCellHeight": 8,
       "gridCellsX": 64,
       "gridCellsY": 71,
-      "decals": [],
+      "decals": [
+        {
+          "x": 0,
+          "y": 0,
+          "scaleX": 16,
+          "scaleY": 18,
+          "rotation": 0,
+          "tint": "#001480",
+          "texture": "shapes/square32.png",
+          "originX": 0,
+          "originY": 0,
+          "values": {"name": ""}
+        }
+      ],
       "folder": "../textures"
     },
     {

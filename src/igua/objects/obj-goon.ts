@@ -43,6 +43,14 @@ const GoonRanks: GoonRank[] = [
         moves: ["spell", "burst"],
         noticeFactor: 1.5,
     },
+    {
+        health: 150,
+        energy: 900,
+        spellAttackDamage: 30,
+        spellTimeRate: 0.5,
+        moves: ["spell", "burst"],
+        noticeFactor: 4,
+    },
 ];
 
 interface GoonRank {

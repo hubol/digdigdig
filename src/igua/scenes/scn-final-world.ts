@@ -1,5 +1,6 @@
 import { Lvl } from "../../assets/generated/levels/generated-level-data";
-import { createPlayerObj } from "../objects/obj-player";
+import { objBlock } from "../objects/obj-block";
+import { createPlayerObj, playerObj } from "../objects/obj-player";
 
 export function scnFinalWorld() {
     const lvl = Lvl.FinalWorld();
