@@ -69,6 +69,7 @@ export const Lvl = {
     Treasure_13: e(r["Treasure"], { x: 1784, y: 656, values: { name: "", kind: "DrillUpgradeAttack" } }, "BuriedEntities"),
     Treasure_14: e(r["Treasure"], { x: 1856, y: 976, values: { name: "", kind: "Tea" } }, "BuriedEntities"),
     Treasure_15: e(r["Treasure"], { x: 232, y: 1264, values: { name: "", kind: "InvisibleUnderwear" } }, "BuriedEntities"),
+    Treasure_16: e(r["Treasure"], { x: 1104, y: 888, values: { name: "", kind: "FishingPole" } }, "BuriedEntities"),
     HintsLookEast: d(Tx.Hints.LookEast, { x: 1260, y: 785, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x775234 }, "BuriedDecals"),
     HintsWasd: d(Tx.Hints.Wasd, { x: 1440, y: 634, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x775234 }, "BuriedDecals"),
     HintsCross: d(Tx.Hints.Cross, { x: 1438, y: 637, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xb05447 }, "BuriedDecals"),

@@ -3276,7 +3276,8 @@
           "texture": "shapes/square32.png",
           "originX": 0,
           "originY": 0,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -3340,7 +3341,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 347,
@@ -3352,7 +3354,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 424,
@@ -3364,7 +3367,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 335,
@@ -3376,7 +3380,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 178,
@@ -3388,7 +3393,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 63,
@@ -3400,7 +3406,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 88,
@@ -3412,7 +3419,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 83,
@@ -3424,7 +3432,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 208,
@@ -3436,7 +3445,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         },
         {
           "x": 318,
@@ -3448,7 +3458,8 @@
           "texture": "hints/nothing here.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"name": ""}
+          "values": {"name": ""},
+          "groupName": null
         }
       ],
       "folder": "../textures"
@@ -3622,6 +3633,16 @@
           "originX": 8,
           "originY": 8,
           "values": {"name": "", "kind": "InvisibleUnderwear"}
+        },
+        {
+          "name": "Treasure",
+          "id": 16,
+          "_eid": "90732369",
+          "x": 1104,
+          "y": 888,
+          "originX": 8,
+          "originY": 8,
+          "values": {"name": "", "kind": "FishingPole"}
         }
       ]
     }

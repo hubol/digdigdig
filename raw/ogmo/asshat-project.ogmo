@@ -485,7 +485,7 @@
           "name": "kind",
           "definition": "Enum",
           "display": 1,
-          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear"],
+          "choices": ["GoldIdol", "Bone", "Skull", "RingWithGreenStone", "DrillUpgradeEnergy", "DrillUpgradeRadius", "DrillUpgradeSpeed", "DrillUpgradeAttack", "GoldenIdolHappy", "Tea", "InvisibleUnderwear", "FishingPole"],
           "defaults": 0
         }
       ],

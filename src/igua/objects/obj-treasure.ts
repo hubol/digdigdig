@@ -6,7 +6,8 @@ import { Integer } from "../../lib/math/number-alias-types";
 import { VectorSimple } from "../../lib/math/vector-type";
 import { container } from "../../lib/pixi/container";
 import { alphaMaskFilter } from "../../lib/pixi/filters/alpha-mask-filter";
-import { layers } from "../globals";
+import { renderer } from "../current-pixi-renderer";
+import { layers, scene } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnStaticAffectedByHoles } from "./obj-ground-stage";
@@ -70,6 +71,10 @@ const treasures = {
             progress.upgrades.nude = true;
         },
     },
+    "FishingPole": {
+        tx: Tx.Treasures.FishingPole,
+        description: "Commonly used\nfor helping fish",
+    },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {
@@ -122,7 +127,12 @@ export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple
     const obj = createSprite(treasure).at(origin).show();
     // TODO vfx
     yield sleep(500);
-    yield interpvr(obj).factor(factor.sine).to([0, -100].add(playerObj)).over(1000);
+
+    const target = [0, -100].add(playerObj);
+    target.x = Math.max(scene.camera.x + 20, Math.min(scene.camera.x + renderer.width - 20, target.x));
+    target.y = Math.max(scene.camera.y + 40, Math.min(scene.camera.y + renderer.width - 20, target.y));
+
+    yield interpvr(obj).factor(factor.sine).to(target).over(1000);
     layers.overlay.objects.treasureMessageObj.methods.show(getMessage(treasure));
     yield sleep(2000);
     layers.overlay.objects.treasureMessageObj.methods.clear();
