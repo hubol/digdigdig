@@ -91,6 +91,16 @@
           "originY": 8,
           "tint": "#00ff00",
           "values": {"name": "FishermanCompleteMarker", "depth": 0}
+        },
+        {
+          "name": "TreasurePrize",
+          "id": 7,
+          "_eid": "93096814",
+          "x": 2280,
+          "y": 152,
+          "originX": 8,
+          "originY": 8,
+          "values": {"kind": "Soap", "name": "NortheasternGoonPrize"}
         }
       ]
     },

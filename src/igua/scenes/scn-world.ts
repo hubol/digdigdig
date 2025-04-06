@@ -44,10 +44,16 @@ export function scnWorld() {
     lvl.EvilSpawnerTreasure.handles("objTreasure:collected", () => evilSpawnerObj.destroy());
 
     // Bather
-    objBather().at(lvl.BatherMarker).show(scene.perspectiveStage);
+    const batherObj = objBather().at(lvl.BatherMarker).show(scene.perspectiveStage);
     lvl.BatherRegion.mixin(mxnNpc, function* (api) {
-        api.setMessage("Those goons to the north stole my soap.");
+        api.setMessage("The goon to the north stole my soap.");
+        yield* api.receiveTreasureFromPlayer("Soap");
+        batherObj.state.hasSoap = true;
+        yield* api.givePlayerTreasure("DrillUpgradeAttack");
+        api.setMessage("Thanks! Now it's bubble time.");
     });
+
+    lvl.NortheasternGoon.handles("mxnEnemy:died", () => lvl.NortheasternGoonPrize.dispatch("objTreasurePrize:reward"));
 
     // Fisherman
     lvl.FishingRodInUse.mixin(mxnBoilPivot).visible = false;

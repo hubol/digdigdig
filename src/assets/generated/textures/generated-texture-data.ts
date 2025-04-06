@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 103 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 104 }];
 
 interface TxData {
   id: string;
@@ -93,7 +93,7 @@ function txs<T>(tx: (data: TxData) => T) {
       Damage: tx({ id: "Hud.Damage", atlas: 0, x: 197, y: 883, width: 64, height: 64 }),
       EnergyBar: tx({ id: "Hud.EnergyBar", atlas: 0, x: 2236, y: 180, width: 109, height: 16 }),
       Energy: tx({ id: "Hud.Energy", atlas: 0, x: 1140, y: 557, width: 48, height: 22 }),
-      Life: tx({ id: "Hud.Life", atlas: 0, x: 3467, y: 757, width: 30, height: 22 }),
+      Life: tx({ id: "Hud.Life", atlas: 0, x: 3467, y: 790, width: 30, height: 22 }),
       Money: tx({ id: "Hud.Money", atlas: 0, x: 208, y: 646, width: 46, height: 21 }),
       TreasureMessage: tx({ id: "Hud.TreasureMessage", atlas: 0, x: 2683, y: 151, width: 926, height: 50 }),
     },
@@ -114,7 +114,7 @@ function txs<T>(tx: (data: TxData) => T) {
       LightSmall0: tx({ id: "Shapes.LightSmall0", atlas: 0, x: 476, y: 823, width: 19, height: 7 }),
       LightSmall1: tx({ id: "Shapes.LightSmall1", atlas: 0, x: 4039, y: 257, width: 7, height: 9 }),
       Spurt: tx({ id: "Shapes.Spurt", atlas: 0, x: 3501, y: 548, width: 246, height: 327 }),
-      Square32: tx({ id: "Shapes.Square32", atlas: 0, x: 164, y: 932, width: 32, height: 32 }),
+      Square32: tx({ id: "Shapes.Square32", atlas: 0, x: 3467, y: 757, width: 32, height: 32 }),
       VSmall0: tx({ id: "Shapes.VSmall0", atlas: 0, x: 3501, y: 533, width: 19, height: 13 }),
       Zigzag0: tx({ id: "Shapes.Zigzag0", atlas: 0, x: 778, y: 720, width: 37, height: 27 }),
     },
@@ -142,6 +142,7 @@ function txs<T>(tx: (data: TxData) => T) {
       InvisibleUnderwear: tx({ id: "Treasures.InvisibleUnderwear", atlas: 0, x: 1140, y: 520, width: 60, height: 36 }),
       RingWithGreenStone: tx({ id: "Treasures.RingWithGreenStone", atlas: 0, x: 63, y: 990, width: 34, height: 34 }),
       Skull: tx({ id: "Treasures.Skull", atlas: 0, x: 4005, y: 817, width: 74, height: 46 }),
+      Soap: tx({ id: "Treasures.Soap", atlas: 0, x: 164, y: 932, width: 32, height: 40 }),
       Tea: tx({ id: "Treasures.Tea", atlas: 0, x: 1253, y: 520, width: 48, height: 38 }),
     },
   };

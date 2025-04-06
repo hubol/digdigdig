@@ -628,6 +628,7 @@ export const Lvl = {
     BatherMarker: e(r["Marker"], { x: 2344, y: 530, values: { name: "BatherMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
     OldPlayerStartMarker: e(r["Marker"], { x: 1256, y: 696, values: { name: "OldPlayerStartMarker", depth: 0 }, tint: 0xffff00 }, "MarkerEntities"),
     FishermanCompleteMarker: e(r["Marker"], { x: 600, y: 712, values: { name: "FishermanCompleteMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
+    NortheasternGoonPrize: e(r["TreasurePrize"], { x: 2280, y: 152, values: { kind: "Soap", name: "NortheasternGoonPrize" } }, "MarkerEntities"),
   })),
 };
 
