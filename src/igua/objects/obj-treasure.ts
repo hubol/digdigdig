@@ -15,6 +15,8 @@ import { Progress, progress } from "./progress";
 
 const treasures = {
     "GoldIdol": { tx: Tx.Treasures.GoldenIdol, value: 100 },
+    "Bone": { tx: Tx.Treasures.Bone, description: "Unfamiliar with this." },
+    "Skull": { tx: Tx.Treasures.Skull, description: "Who left this here?" },
 } satisfies Record<string, Treasure>;
 
 interface Treasure {

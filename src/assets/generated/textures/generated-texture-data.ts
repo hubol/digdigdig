@@ -1,6 +1,6 @@
 // This file is generated
 
-const atlases = [{ url: require("./atlas0.png"), texturesCount: 61 }];
+const atlases = [{ url: require("./atlas0.png"), texturesCount: 63 }];
 
 interface TxData {
   id: string;
@@ -66,7 +66,7 @@ function txs<T>(tx: (data: TxData) => T) {
     Hud: {
       Book: tx({ id: "Hud.Book", atlas: 0, x: 2973, y: 267, width: 500, height: 110 }),
       DamageFresh: tx({ id: "Hud.DamageFresh", atlas: 0, x: 4029, y: 701, width: 64, height: 64 }),
-      Damage: tx({ id: "Hud.Damage", atlas: 0, x: 3811, y: 750, width: 64, height: 64 }),
+      Damage: tx({ id: "Hud.Damage", atlas: 0, x: 3886, y: 762, width: 64, height: 64 }),
       EnergyBar: tx({ id: "Hud.EnergyBar", atlas: 0, x: 3987, y: 443, width: 109, height: 16 }),
       Energy: tx({ id: "Hud.Energy", atlas: 0, x: 3987, y: 460, width: 48, height: 22 }),
       Life: tx({ id: "Hud.Life", atlas: 0, x: 3955, y: 156, width: 30, height: 22 }),
@@ -97,8 +97,10 @@ function txs<T>(tx: (data: TxData) => T) {
     },
     Treasures: {
       Bone0: tx({ id: "Treasures.Bone0", atlas: 0, x: 3417, y: 725, width: 98, height: 76 }),
+      Bone: tx({ id: "Treasures.Bone", atlas: 0, x: 3951, y: 762, width: 62, height: 60 }),
       GoldenIdol: tx({ id: "Treasures.GoldenIdol", atlas: 0, x: 4039, y: 460, width: 50, height: 64 }),
       Heart0: tx({ id: "Treasures.Heart0", atlas: 0, x: 4039, y: 525, width: 55, height: 42 }),
+      Skull: tx({ id: "Treasures.Skull", atlas: 0, x: 3811, y: 750, width: 74, height: 46 }),
     },
   };
 }
