@@ -1,11 +1,13 @@
+import { DisplayObject, Sprite } from "pixi.js";
 import { Lvl } from "../../assets/generated/levels/generated-level-data";
+import { holdf } from "../../lib/game-engine/routines/hold";
 import { scene } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
 import { mxnBoilScaleXY } from "../mixins/mxn-boil-scale-xy";
 import { mxnNpc } from "../mixins/mxn-npc";
 import { objBather } from "../objects/obj-bather";
 import { objEvilSpawner } from "../objects/obj-evil-spawner";
-import { createPlayerObj } from "../objects/obj-player";
+import { createPlayerObj, playerObj } from "../objects/obj-player";
 import { objSpider } from "../objects/obj-spider";
 
 export function scnWorld() {
@@ -86,4 +88,20 @@ export function scnWorld() {
             objSpider().at(markerObj).handles("mxnEnemy:died", incrementSpiderKill)
         );
     }
+
+    // Final
+    {
+        setupFinalStep(lvl.FinalDecal0, lvl.FinalBlock0, lvl.FinalStep0Region);
+        setupFinalStep(lvl.FinalDecal1, lvl.FinalBlock1, lvl.FinalStep1Region);
+        setupFinalStep(lvl.FinalDecal2, lvl.FinalBlock2, lvl.FinalStep2Region);
+    }
+}
+
+function setupFinalStep(decalObj: Sprite, blockObj: DisplayObject, regionObj: DisplayObject) {
+    decalObj.mixin(mxnBoilScaleXY);
+    regionObj.coro(function* () {
+        yield holdf(() => playerObj.objects.feetHitboxObj.collides(regionObj), 30);
+        blockObj.destroy();
+        decalObj.destroy();
+    });
 }

@@ -21,8 +21,8 @@
           "name": "Marker",
           "id": 0,
           "_eid": "73148747",
-          "x": 1048,
-          "y": 1232,
+          "x": 2064,
+          "y": 992,
           "originX": 8,
           "originY": 8,
           "tint": "#00ff00",
@@ -190,6 +190,58 @@
           "originY": 0,
           "tint": "#00ff00",
           "values": {"name": "BatherRegion", "depth": 0}
+        },
+        {
+          "name": "Region",
+          "id": 2,
+          "_eid": "11908607",
+          "x": 2056,
+          "y": 1304,
+          "width": 352,
+          "height": 48,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#00ff00",
+          "values": {"name": "FinalRegion", "depth": 0}
+        },
+        {
+          "name": "Region",
+          "id": 3,
+          "_eid": "11908607",
+          "x": 2056,
+          "y": 1112,
+          "width": 344,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#00ff00",
+          "values": {"name": "FinalStep0Region", "depth": 0}
+        },
+        {
+          "name": "Region",
+          "id": 4,
+          "_eid": "11908607",
+          "x": 2056,
+          "y": 1184,
+          "width": 344,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#00ff00",
+          "values": {"name": "FinalStep1Region", "depth": 0}
+        },
+        {
+          "name": "Region",
+          "id": 5,
+          "_eid": "11908607",
+          "x": 2056,
+          "y": 1240,
+          "width": 344,
+          "height": 32,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#00ff00",
+          "values": {"name": "FinalStep2Region", "depth": 0}
         }
       ]
     },
@@ -1036,6 +1088,16 @@
           "originX": 56,
           "originY": 34,
           "values": {"message": "Entering realm of the giants.", "name": ""}
+        },
+        {
+          "name": "Book",
+          "id": 13,
+          "_eid": "84364576",
+          "x": 2216,
+          "y": 1056,
+          "originX": 56,
+          "originY": 34,
+          "values": {"message": "If you proceed south, there is no turning back.", "name": ""}
         }
       ]
     },
@@ -1373,6 +1435,45 @@
           "originY": 0,
           "tint": "#000000",
           "values": {"name": "", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 31,
+          "_eid": "93117141",
+          "x": 2048,
+          "y": 1136,
+          "width": 368,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "FinalBlock0", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 32,
+          "_eid": "93117141",
+          "x": 2046,
+          "y": 1196,
+          "width": 368,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "FinalBlock1", "visible": true}
+        },
+        {
+          "name": "Block",
+          "id": 33,
+          "_eid": "93117141",
+          "x": 2046,
+          "y": 1260,
+          "width": 368,
+          "height": 40,
+          "originX": 0,
+          "originY": 0,
+          "tint": "#000000",
+          "values": {"name": "FinalBlock2", "visible": true}
         }
       ]
     },
@@ -1386,6 +1487,71 @@
       "gridCellsX": 314,
       "gridCellsY": 175,
       "decals": [
+        {
+          "x": 2466,
+          "y": 1012,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#689952",
+          "texture": "foliage/grass 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2423,
+          "y": 1050,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#689952",
+          "texture": "foliage/grass 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2479,
+          "y": 1044,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#689952",
+          "texture": "foliage/grass 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2456,
+          "y": 1002,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffc046",
+          "texture": "foliage/flower 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
+        {
+          "x": 2410,
+          "y": 1041,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffc046",
+          "texture": "foliage/flower 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""},
+          "groupName": null
+        },
         {
           "x": 1635,
           "y": 149,
@@ -3582,6 +3748,69 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 2245,
+          "y": 1161,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ad2121",
+          "texture": "enemy/enemy wall.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": "FinalDecal0"},
+          "groupName": null
+        },
+        {
+          "x": 2249,
+          "y": 1216,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ad8621",
+          "texture": "enemy/enemy wall.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": "FinalDecal1"},
+          "groupName": null
+        },
+        {
+          "x": 2247,
+          "y": 1276,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#21ad37",
+          "texture": "enemy/enemy wall.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": "FinalDecal2"},
+          "groupName": null
+        },
+        {
+          "x": 2185,
+          "y": 1036,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
+        },
+        {
+          "x": 2256,
+          "y": 1081,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#6f7e45",
+          "texture": "patch/shadow 0.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
