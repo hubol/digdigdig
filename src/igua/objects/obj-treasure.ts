@@ -102,6 +102,7 @@ export function objTreasure(kind: TreasureKind) {
     );
 
     return container(sprite, spriteMask, mysteryObj)
+        .dispatches<"objTreasure:collected">()
         .mixin(mxnStaticAffectedByHoles, sprite)
         .mixin(mxnInhabitsAcre)
         .coro(function* (self) {
@@ -109,6 +110,8 @@ export function objTreasure(kind: TreasureKind) {
                 self.mxnStaticAffectedByHoles.state.coverageUnit >= 0.75
                 && self.mxnInhabitsAcre.methods.isPlayerInsideAcre()
                 && !playerObj.state.isBusy;
+
+            self.dispatch("objTreasure:collected");
 
             playerObj.state.isBusy = true;
             self.visible = false;

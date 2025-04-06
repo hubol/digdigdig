@@ -47,6 +47,17 @@
           "originX": 8,
           "originY": 8,
           "values": {"kind": "DrillUpgradeRadius", "name": "TicTacToePrize"}
+        },
+        {
+          "name": "Marker",
+          "id": 3,
+          "_eid": "73148747",
+          "x": 792,
+          "y": 64,
+          "originX": 8,
+          "originY": 8,
+          "tint": "#00ff00",
+          "values": {"name": "EvilSpawnerMarker", "depth": 0}
         }
       ]
     },
@@ -6284,7 +6295,7 @@
           "y": 134,
           "originX": 8,
           "originY": 8,
-          "values": {"name": "", "kind": "DrillUpgradeEnergy"}
+          "values": {"name": "EvilSpawnerTreasure", "kind": "DrillUpgradeEnergy"}
         }
       ]
     }

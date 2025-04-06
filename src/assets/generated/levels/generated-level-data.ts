@@ -71,7 +71,7 @@ export const Lvl = {
     Treasure_15: e(r["Treasure"], { x: 232, y: 1264, values: { name: "", kind: "InvisibleUnderwear" } }, "BuriedEntities"),
     Treasure_16: e(r["Treasure"], { x: 1104, y: 888, values: { name: "", kind: "FishingPole" } }, "BuriedEntities"),
     Treasure_17: e(r["Treasure"], { x: 1405, y: 329, values: { name: "", kind: "RingWithGreenStone" } }, "BuriedEntities"),
-    Treasure_18: e(r["Treasure"], { x: 732, y: 134, values: { name: "", kind: "DrillUpgradeEnergy" } }, "BuriedEntities"),
+    EvilSpawnerTreasure: e(r["Treasure"], { x: 732, y: 134, values: { name: "EvilSpawnerTreasure", kind: "DrillUpgradeEnergy" } }, "BuriedEntities"),
     HintsLookEast: d(Tx.Hints.LookEast, { x: 1260, y: 785, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x775234 }, "BuriedDecals"),
     HintsWasd: d(Tx.Hints.Wasd, { x: 1440, y: 634, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x775234 }, "BuriedDecals"),
     HintsCross: d(Tx.Hints.Cross, { x: 1438, y: 637, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xb05447 }, "BuriedDecals"),
@@ -586,6 +586,7 @@ export const Lvl = {
     PlayerStartMarker: e(r["Marker"], { x: 1248, y: 696, values: { name: "PlayerStartMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
     NorthernGoonPrize: e(r["TreasurePrize"], { x: 1240, y: 168, values: { kind: "DrillUpgradeSpeed", name: "NorthernGoonPrize" } }, "MarkerEntities"),
     TicTacToePrize: e(r["TreasurePrize"], { x: 408, y: 80, values: { kind: "DrillUpgradeRadius", name: "TicTacToePrize" } }, "MarkerEntities"),
+    EvilSpawnerMarker: e(r["Marker"], { x: 792, y: 64, values: { name: "EvilSpawnerMarker", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
 };
 

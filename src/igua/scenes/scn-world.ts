@@ -2,6 +2,7 @@ import { Lvl } from "../../assets/generated/levels/generated-level-data";
 import { scene } from "../globals";
 import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
 import { mxnBoilScaleXY } from "../mixins/mxn-boil-scale-xy";
+import { objEvilSpawner } from "../objects/obj-evil-spawner";
 import { createPlayerObj } from "../objects/obj-player";
 
 export function scnWorld() {
@@ -35,4 +36,8 @@ export function scnWorld() {
 
         lvl.TicTacToePrize.dispatch("objTreasurePrize:reward");
     });
+
+    // Evil
+    const evilSpawnerObj = objEvilSpawner().at(lvl.EvilSpawnerMarker).show();
+    lvl.EvilSpawnerTreasure.handles("objTreasure:collected", () => evilSpawnerObj.destroy());
 }
