@@ -52,9 +52,10 @@ export const Lvl = {
     Marker_2: e(r["Marker"], { x: 280, y: 112, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
     Marker_3: e(r["Marker"], { x: 272, y: 64, values: { name: "", depth: 0 }, tint: 0x00ff00 }, "MarkerEntities"),
   })),
-  World: l({ width: 2500, height: 1400, backgroundTint: 0x408000 }, () => ({
+  World: l({ width: 2500, height: 1400, backgroundTint: 0x312410 }, () => ({
     TreasuresBone0: d(Tx.Treasures.Bone0, { x: 1136, y: 680, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "BuriedDecals"),
     TreasuresHeart0: d(Tx.Treasures.Heart0, { x: 1786, y: 656, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xffffff }, "BuriedDecals"),
+    HintsLookEast: d(Tx.Hints.LookEast, { x: 1260, y: 785, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x775234 }, "BuriedDecals"),
     PatchBlob0: d(Tx.Patch.Blob0, { x: 757, y: 608, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x98ad46 }, "GroundDecals"),
     ShapesSquare32: d(Tx.Shapes.Square32, { x: 1976, y: 680, scaleX: 4.1, scaleY: 10.1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0xad885c }, "GroundDecals"),
     PatchSplotch0: d(Tx.Patch.Splotch0, { x: 1067, y: 635, scaleX: 1, scaleY: 1, rotation: 0, originX: 0.5, originY: 0.5, tint: 0x98ad46 }, "GroundDecals"),

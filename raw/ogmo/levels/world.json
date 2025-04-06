@@ -5,7 +5,7 @@
   "offsetX": 0,
   "offsetY": 0,
   "values": {"Terrain Color": "#000000"},
-  "backgroundColor": "#408000",
+  "backgroundColor": "#312410",
   "layers": [
     {
       "name": "MarkerEntities",
@@ -1645,6 +1645,18 @@
           "originY": 0.5,
           "values": {"name": ""},
           "groupName": null
+        },
+        {
+          "x": 1260,
+          "y": 785,
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#775234",
+          "texture": "hints/look east.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"name": ""}
         }
       ],
       "folder": "../textures"
