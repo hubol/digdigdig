@@ -72,7 +72,18 @@ export function scnWorld() {
     lvl.SoutheasternGoon.handles("mxnEnemy:died", () => lvl.SoutheasternGoonPrize.dispatch("objTreasurePrize:reward"));
 
     // Spiders
-    [lvl.SpiderMarker0, lvl.SpiderMarker1, lvl.SpiderMarker2, lvl.SpiderMarker3].forEach(markerObj =>
-        console.log(objSpider().at(markerObj))
-    );
+    {
+        let spiderKills = 0;
+
+        function incrementSpiderKill() {
+            spiderKills++;
+            if (spiderKills >= 4) {
+                lvl.SpiderPrize.dispatch("objTreasurePrize:reward");
+            }
+        }
+
+        [lvl.SpiderMarker0, lvl.SpiderMarker1, lvl.SpiderMarker2, lvl.SpiderMarker3].forEach(markerObj =>
+            objSpider().at(markerObj).handles("mxnEnemy:died", incrementSpiderKill)
+        );
+    }
 }
