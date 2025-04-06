@@ -134,13 +134,13 @@ export const CtxHoles = new SceneLocal(() => {
     return object;
 });
 
-export function mxnStaticAffectedByHoles(obj: DisplayObject) {
+export function mxnStaticAffectedByHoles(obj: DisplayObject, coverageTargetObj = obj) {
     const state = {
         coverageUnit: 0,
     };
 
     function updateState(count: number) {
-        const bounds = obj.getWorldBounds();
+        const bounds = coverageTargetObj.getWorldBounds();
 
         // Let's try to skip
         if (count > 0 && count < CtxHoles.value.holeRectangles.length) {

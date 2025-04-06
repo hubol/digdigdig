@@ -4,7 +4,10 @@ import { factor, interpv, interpvr } from "../../lib/game-engine/routines/interp
 import { sleep } from "../../lib/game-engine/routines/sleep";
 import { Integer } from "../../lib/math/number-alias-types";
 import { VectorSimple } from "../../lib/math/vector-type";
+import { container } from "../../lib/pixi/container";
+import { alphaMaskFilter } from "../../lib/pixi/filters/alpha-mask-filter";
 import { layers } from "../globals";
+import { mxnBoilPivot } from "../mixins/mxn-boil-pivot";
 import { mxnInhabitsAcre } from "../mixins/mxn-inhabits-acre";
 import { mxnStaticAffectedByHoles } from "./obj-ground-stage";
 import { playerObj } from "./obj-player";
@@ -23,11 +26,21 @@ interface Treasure {
 
 type TreasureKind = keyof typeof treasures;
 
+function createSprite(treasure: Treasure) {
+    return Sprite.from(treasure.tx).anchored(0.5, 0.5);
+}
+
 export function objTreasure(kind: TreasureKind) {
     const treasure: Treasure = treasures[kind] ?? treasures.GoldIdol;
-    return Sprite.from(treasure.tx)
-        .anchored(0.5, 0.5)
-        .mixin(mxnStaticAffectedByHoles)
+
+    const sprite = createSprite(treasure);
+    const spriteMask = createSprite(treasure);
+    const mysteryObj = container(Sprite.from(Tx.Dig.Mystery).anchored(0.5, 0.5).mixin(mxnBoilPivot)).filtered(
+        alphaMaskFilter(spriteMask),
+    );
+
+    return container(sprite, spriteMask, mysteryObj)
+        .mixin(mxnStaticAffectedByHoles, sprite)
         .mixin(mxnInhabitsAcre)
         .coro(function* (self) {
             yield () =>
@@ -48,7 +61,7 @@ export function objTreasure(kind: TreasureKind) {
  */
 export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple) {
     const treasure: Treasure = treasures[kind] ?? treasures.GoldIdol;
-    const obj = Sprite.from(treasure.tx).anchored(0.5, 0.5).at(origin).show();
+    const obj = createSprite(treasure).at(origin).show();
     // TODO vfx
     yield sleep(500);
     yield interpvr(obj).factor(factor.sine).to([0, -100].add(playerObj)).over(1000);
