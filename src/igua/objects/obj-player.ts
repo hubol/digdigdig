@@ -51,6 +51,8 @@ function objPlayer() {
     return objCharacter(playerCharacterArgs)
         .merge({ state })
         .step(self => {
+            self.controls.isNude = progress.upgrades.nude;
+
             if (!self.objects.feetHitboxObj.collidesOne(Instances(objBlock))) {
                 lastGoodPosition.at(self);
             }

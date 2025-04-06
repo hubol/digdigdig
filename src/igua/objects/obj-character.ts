@@ -20,6 +20,8 @@ const [
     txFootLeftAngled,
 ] = Tx.Character.split({ width: 100 });
 
+const [txButt, txPenis, txPenisUpsideDown] = Tx.CharacterNude.split({ width: 100 });
+
 type FacingDirection = "north" | "east" | "south" | "west";
 
 export interface ObjCharacterArgs {
@@ -30,6 +32,7 @@ export interface ObjCharacterArgs {
 
 export function objCharacter(args: ObjCharacterArgs) {
     const controls = {
+        isNude: false,
         upsideDownUnit: 0,
         facingDirection: <FacingDirection> "south",
         pedometer: 0,
@@ -82,7 +85,7 @@ export function objCharacter(args: ObjCharacterArgs) {
             }
         });
 
-    const underwearMaskObj = new Graphics().beginFill(0xff0000).drawRect(26, 111, 49, 13);
+    const underwearMaskObj = new Graphics().beginFill(0xff0000).drawRect(26, 108, 49, 20);
 
     const lowerBodyObj = container(
         Sprite.from(txTorso),
@@ -107,7 +110,12 @@ export function objCharacter(args: ObjCharacterArgs) {
                 targetX *= -1;
             }
 
-            const nextTexture = controls.facingDirection === "north" ? txUnderwearBack : txUnderwearFront;
+            const txBack = controls.isNude ? txButt : txUnderwearBack;
+            const txFront = controls.isNude
+                ? (controls.upsideDownUnit > 0.5 ? txPenisUpsideDown : txPenis)
+                : txUnderwearFront;
+
+            const nextTexture = controls.facingDirection === "north" ? txBack : txFront;
 
             if (self.texture !== nextTexture) {
                 self.x = targetX;

@@ -7,6 +7,7 @@ function createInitialProgress() {
             radius: 0,
             speed: 0,
         },
+        nude: false,
     };
 
     return {
