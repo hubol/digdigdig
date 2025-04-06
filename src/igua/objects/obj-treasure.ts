@@ -30,35 +30,45 @@ const treasures = {
     "DrillUpgradeEnergy": {
         tx: Tx.Treasures.DrillUpgrade0,
         description: "Max EN. UP",
-        progress: p => p.upgrades.drill.energy += 1,
+        progress: () => {
+            progress.upgrades.drill.energy += 1;
+        },
     },
     "DrillUpgradeRadius": {
         tx: Tx.Treasures.DrillUpgrade1,
         description: "Max Hole Radius UP",
-        progress: p => p.upgrades.drill.radius += 1,
+        progress: () => {
+            progress.upgrades.drill.radius += 1;
+        },
     },
     "DrillUpgradeSpeed": {
         tx: Tx.Treasures.DrillUpgrade2,
         description: "Drill Speed UP",
-        progress: p => p.upgrades.drill.speed += 1,
+        progress: () => {
+            progress.upgrades.drill.speed += 1;
+        },
     },
     "DrillUpgradeAttack": {
         tx: Tx.Treasures.DrillUpgrade3,
         description: "Drill Attack Power UP",
-        progress: p => p.upgrades.drill.attack += 1,
+        progress: () => {
+            progress.upgrades.drill.attack += 1;
+        },
     },
     "Tea": {
         tx: Tx.Treasures.Tea,
         description: "Scented water\nraises Max LI.",
-        progress: p => {
-            p.upgrades.life += 1;
-            p.life = p.lifeMaximum;
+        progress: () => {
+            progress.upgrades.life += 1;
+            progress.life = progress.lifeMaximum;
         },
     },
     "InvisibleUnderwear": {
         tx: Tx.Treasures.InvisibleUnderwear,
         description: "I want to wear them.",
-        progress: p => p.upgrades.nude = true,
+        progress: () => {
+            progress.upgrades.nude = true;
+        },
     },
 } satisfies Record<string, Treasure>;
 
@@ -66,7 +76,7 @@ interface Treasure {
     tx: Texture;
     description?: string;
     value?: Integer;
-    progress?: (progress: Progress) => void;
+    progress?: () => void;
 }
 
 export type TreasureKind = keyof typeof treasures;
@@ -76,7 +86,8 @@ function createSprite(treasure: Treasure) {
 }
 
 export function objTreasure(kind: TreasureKind) {
-    const treasure: Treasure = treasures[kind] ?? treasures.GoldIdol;
+    kind = kind in treasures ? kind : "GoldIdol";
+    const treasure: Treasure = treasures[kind];
 
     const sprite = createSprite(treasure);
     const spriteMask = createSprite(treasure);
@@ -105,7 +116,9 @@ export function objTreasure(kind: TreasureKind) {
  * Claim the `playerObj.state.isBusy` lock before calling
  */
 export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple) {
-    const treasure: Treasure = treasures[kind] ?? treasures.GoldIdol;
+    kind = kind in treasures ? kind : "GoldIdol";
+    const treasure: Treasure = treasures[kind];
+
     const obj = createSprite(treasure).at(origin).show();
     // TODO vfx
     yield sleep(500);
@@ -113,7 +126,7 @@ export function* coroGivePlayerTreasure(kind: TreasureKind, origin: VectorSimple
     layers.overlay.objects.treasureMessageObj.methods.show(getMessage(treasure));
     yield sleep(2000);
     layers.overlay.objects.treasureMessageObj.methods.clear();
-    applyTreasureToProgress(treasure);
+    applyTreasureToProgress(kind);
     obj.destroy();
 }
 
@@ -127,9 +140,12 @@ function getMessage(treasure: Treasure) {
     return "Unknown purpose";
 }
 
-function applyTreasureToProgress(treasure: Treasure) {
+function applyTreasureToProgress(kind: TreasureKind) {
+    const treasure: Treasure = treasures[kind];
+
     if (treasure.value) {
         progress.money += treasure.value;
     }
-    treasure.progress?.(progress);
+    treasure.progress?.();
+    progress.treasures.push(kind);
 }

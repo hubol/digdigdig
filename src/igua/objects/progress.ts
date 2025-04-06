@@ -1,3 +1,6 @@
+import { Empty } from "../../lib/types/empty";
+import { TreasureKind } from "./obj-treasure";
+
 function createInitialProgress() {
     const upgrades = {
         life: 0,
@@ -40,6 +43,7 @@ function createInitialProgress() {
             everTookDamage: false,
         },
         upgrades,
+        treasures: Empty<TreasureKind>(),
     };
 }
 
