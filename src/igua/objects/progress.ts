@@ -26,7 +26,7 @@ function createInitialProgress() {
             return 50 + upgrades.life * 50;
         },
         money: 0,
-        moneyMaximum: 1000, // TODO set to something that makes sense
+        moneyMaximum: 800, // Set to maximum money I think you can get in the game...
         get attackPower() {
             return 10 + upgrades.drill.attack * 5;
         },

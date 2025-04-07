@@ -1,4 +1,5 @@
 import { forceViewportResize } from "../../lib/browser/on-viewport-resize";
+import { Environment } from "../../lib/environment";
 import { createDebugKey } from "../../lib/game-engine/debug/debug-key";
 import { createDebugPanel } from "../../lib/game-engine/debug/debug-panel";
 import { elDebugColors } from "../../lib/game-engine/elements/el-debug-colors";
@@ -8,6 +9,11 @@ import { SceneLibrary } from "../core/scene/scene-library";
 import { layers, sceneStack } from "../globals";
 
 export function installDevTools() {
+    // TODO this should be put in the template...
+    if (Environment.isProduction) {
+        return;
+    }
+
     // @ts-expect-error
     const el = document.body.appendChild(createDebugPanel(layers._root));
     createDebugKey("KeyM", "globalMute", (x, keydown) => {

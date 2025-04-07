@@ -1,7 +1,7 @@
 {
-  "name": "asshat-project",
+  "name": "digdigdig",
   "version": "0.1.0",
-  "description": "Template for asshat game projects",
+  "description": "Game made for Ludum Dare 57",
   "scripts": {
     "postinstall": "npm run patch",
     "build": "node esbuild.mjs",
